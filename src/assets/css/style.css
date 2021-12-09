@@ -1,0 +1,770 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/***********************   Deafult Start    ****************************/
+
+.jci-site {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.jci-site-content {
+    flex: 1 0 auto;
+}
+
+.btn {
+    padding: 8px 45px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.btn-success {
+    background-color: #4AB862;
+    border-color: #4AB862;
+}
+
+.jci-section-title {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 50px;
+}
+
+.form-select {
+    background-image: url("data:image/svg+xml,%3Csvg id='expand_more_black_24dp_6_' data-name='expand_more_black_24dp (6)' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath id='Path_254' data-name='Path 254' d='M24,24H0V0H24Z' fill='none' opacity='0.87'/%3E%3Cpath id='Path_255' data-name='Path 255' d='M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z' fill='%234ab862'/%3E%3C/svg%3E%0A");
+    background-size: 25px;
+    border: 1px solid #4AB862;
+}
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: none;
+}
+
+.btn svg {
+    margin-right: 8px;
+}
+
+.form-control {
+    color: #000000;
+    border: 1px solid #4AB862;
+}
+
+.form-control::placeholder {
+    color: #000000;
+}
+
+.table {
+    border-color: #1B172D;
+}
+
+.btn-group-sm>.btn,
+.btn-sm {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+}
+
+.jci-site .scrollbar-thumb {
+    background: linear-gradient( 180deg, rgba(44, 151, 222, 1) 0%, rgba(10, 29, 51, 1) 100%);
+}
+
+.scroll-content {
+    height: 100%;
+}
+
+.toggle.btn {
+    min-width: 160px;
+    min-height: 42px;
+}
+
+.toggle-group .btn {
+    padding: 8px 25px;
+}
+
+.modal-header {
+    padding: 20px 16px;
+    border-bottom: 1px solid #000000;
+}
+
+.btn-close {
+    opacity: 1;
+}
+
+.jci-login-form-notes:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.jci-login-form-notes a {
+    color: #1c1c1c;
+}
+
+
+/***********************   Deafult End    ****************************/
+
+
+/***********************   Header Start    ****************************/
+
+.jci-site-header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(30px);
+}
+
+.navbar {
+    padding: 15px 0;
+}
+
+.navbar .container-fluid {
+    padding: 0 60px;
+}
+
+.navbar-nav {
+    margin: auto;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 40px;
+    color: #000000;
+    padding: 0;
+}
+
+.navbar-brand:hover {
+    color: #000000;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    color: #1C1C1C;
+    font-weight: 500;
+    padding: 0 22px;
+}
+
+.jci-header-btn .btn:first-child {
+    margin-right: 15px;
+}
+
+
+/***********************   Header End    ****************************/
+
+
+/***********************   Home Page Start    ****************************/
+
+.jci-landing-section {
+    background-image: url(../images/home-landing-img.png);
+    padding: 260px 0;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.jci-landing-section .jci-section-title {
+    font-size: 60px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.jci-landing-section .jci-section-description {
+    width: 585px;
+    font-size: 18px;
+    max-width: 100%;
+    margin-bottom: 25px;
+}
+
+.jci-manage-companies {
+    padding: 100px 0;
+}
+
+.jci-testimonial {
+    background-image: url(../images/testimonial-back.png);
+    color: #ffffff;
+    padding: 100px 0;
+}
+
+.jci-testimonial-content {
+    text-align: center;
+}
+
+.jci-testimonial-img {
+    text-align: center;
+}
+
+.jci-testimonial-content .jci-section-title {
+    margin-bottom: 45px;
+}
+
+.jci-testimonial-description {
+    margin-bottom: 20px;
+}
+
+.jci-testimonial-label {
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.jci-features .row {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.jci-about {
+    background-image: url(../images/about-back.png);
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+}
+
+.jci-about-card {
+    text-align: center;
+    color: #fff;
+    backdrop-filter: blur(30px);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px 50px;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.jci-about-icon {
+    margin-bottom: 25px;
+    height: 80px;
+}
+
+.jci-about-title {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.jci-about-label {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.jci-our-customer {
+    padding: 100px 0;
+}
+
+.jci-section-heading {
+    width: 640px;
+    max-width: 100%;
+    margin: auto;
+    margin-bottom: 60px;
+}
+
+
+/***********************   Home Page End    ****************************/
+
+
+/***********************   Login Page Start    ****************************/
+
+.jci-login-landing-section {
+    padding: 140px 0 50px;
+}
+
+.jci-login-content {
+    padding: 50px;
+    border-radius: 20px 0 0 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(30px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.jci-login-content__inner {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 100px 0;
+}
+
+.jci-login-content__inner form {
+    width: 100%;
+}
+
+.jci-login-landing-section .jci-section-title {
+    color: #000000;
+    font-size: 40px;
+    margin-bottom: 0;
+}
+
+.jci-login-form-notes {
+    color: #000000;
+    text-align: center;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.jci-login-content__inner .form-control {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(30px);
+    border: none;
+    padding: 10px 60px 10px 15px;
+    color: #000;
+}
+
+.jci-login-content__inner .form-control::placeholder {
+    color: #000;
+}
+
+.jci-login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.jci-forgot-link {
+    color: #000000;
+    text-decoration: none;
+}
+
+.jci-forgot-link:hover {
+    color: #000000;
+    opacity: 0.8;
+}
+
+.jci-register-content {
+    background-color: rgba(255, 255, 255, 0.40);
+    border-radius: 0 20px 20px 0;
+}
+
+.jci-login-content__inner .form-group {
+    position: relative;
+}
+
+.jci-login-content__inner .form-group svg {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.jci-register-content .jci-login-content__inner .form-control {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+}
+
+.jci-register-content .jci-login-content__inner .form-control::placeholder {
+    color: #ffffff;
+}
+
+
+/***********************   Login Page End    ****************************/
+
+
+/***********************   Dashboard Page Start    ****************************/
+
+
+
+.jci-dashboard-sidebar .scrollbar-thumb {
+    background: rgba(255, 255, 255, 1);
+}
+
+.jci-dashboard-sidebar .scrollbar-track {
+    background: rgba(255, 255, 255, .60);
+    border-radius: 10px;
+}
+
+.jci-dashboard-section {
+    padding: 30px;
+    background-color: #FEDDDB;
+    height: 100vh;
+}
+
+.jci-dashboard__inner {
+    display: flex;
+    position: relative;
+    height: 100%;
+}
+
+.jci-dashboard-sidebar {
+    width: 330px;
+    position: absolute;
+    padding: 50px 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.jci-dashboard-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.jci-dashboard-sidebar__inner {
+    border-radius: 20px;
+    background-color: #4AB862;
+    padding: 30px 40px;
+    height: 100%;
+}
+
+.jci-dashboard-sidebar-menu {
+    height: calc(100% - 230px);
+    overflow: auto;
+    margin-bottom: 30px;
+}
+
+.jci-dashboard-sidebar .nav-link {
+    color: #ffffff;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.jci-dashboard-sidebar .nav-link svg {
+    margin-right: 15px;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #000000;
+    background-color: transparent;
+}
+
+.nav-pills .nav-link.active svg rect[fill="#fff"],
+.nav-pills .show>.nav-link svg rect[fill="#fff"],
+.nav-pills .nav-link.active svg circle[fill="#fff"],
+.nav-pills .show>.nav-link svg circle[fill="#fff"],
+.nav-pills .nav-link.active svg path[fill="#fff"],
+.nav-pills .show>.nav-link svg path[fill="#fff"] {
+    fill: #000;
+}
+
+.jci-dashboard-content {
+    background-color: #ffffff;
+    padding: 35px 35px 35px 200px;
+    border-radius: 20px;
+    width: calc(100% - 165px);
+    margin-left: auto;
+}
+
+.jci-dashboard-info {
+    padding: 30px 25px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    width: 100%;
+}
+
+.jci-dashboard-info-text {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.jci-total-count-card {
+    padding: 40px;
+    background: linear-gradient( 180deg, rgba(44, 151, 222, 1) 0%, rgba(10, 29, 51, 1) 100%);
+    border-radius: 10px;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.jci-dashboard-content__inner,
+.tab-content,
+.tab-pane {
+    height: 100%;
+}
+
+.jci-dashboard-filter {
+    margin-bottom: 30px;
+}
+
+.jci-dashboard-content-area {
+    height: 100%;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.jci-total-count-number {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.jci-total-count-label {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+/* Property Reports Start */
+
+.jci-property-report-card {
+    display: flex;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.16);
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.jci-property-img {
+    width: 20%;
+}
+
+.jci-property-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px 0 0 10px;
+}
+
+.jci-property-card-body {
+    width: 80%;
+    padding: 15px;
+}
+
+.jci-property-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.jci-property-info-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.jci-property-info-item {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.jci-property-info-item svg {
+    margin-right: 10px;
+}
+
+.jci-property-report-card .btn {
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    margin-left: auto;
+    padding: 8px 30px;
+}
+
+.jci-property-details__inner:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.jci-property-details-title span {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.jci-property-details__inner .jci-property-info-list {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.jci-property-details-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.jci-property-details__inner .jci-property-info-item {
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.jci-property-details__inner .jci-property-info-item svg {
+    margin-right: 5px;
+}
+
+
+/* Property Reports End */
+
+
+/* Upcoming Booking start */
+
+.jci-property-report-btn {
+    display: flex;
+    align-items: center;
+}
+
+.jci-property-report-btn .btn {
+    margin: 2px;
+    padding: 4px 15px;
+}
+
+.jci-view-booking .jci-property-img,
+.jci-upcoming-booking .jci-property-img {
+    width: 30%;
+}
+
+
+/* Upcoming Booking End */
+
+
+/* Staff on Duty Start */
+
+.jci-content-area {
+    box-shadow: 0 0 15px rgb(0 0 0 / 15%);
+    padding: 30px;
+    border-radius: 20px;
+    min-height: 100%;
+}
+
+
+/* Staff on Duty End */
+
+
+/* Create Department Start */
+
+.jci-dashboard-title {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.jci-create-department form .btn {
+    margin-top: 30px;
+}
+
+.jci-approval .btn:not(:last-child) {
+    margin-right: 10px;
+}
+
+
+/* Create Department End */
+
+.jci-user-login-section .jci-login-content {
+    border-radius: 20px;
+}
+
+.jci-bill-detail-content {
+    padding: 15px 30px 0;
+    font-size: 14px;
+    border: 1px solid #707070;
+    border-radius: 10px;
+}
+
+.jci-bill-detail {
+    display: none;
+}
+
+.jci-bill-detail.show {
+    display: table-row;
+}
+
+.jci-bill-detail-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.jci-bill-head {
+    cursor: pointer;
+}
+
+
+/***********************   Dashboard Page End    ****************************/
+
+
+/***********************   404 Page Start    ****************************/
+
+.jci-error-landing-section {
+    height: 100vh;
+    background-color: #4AB862;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.jci-error-landing-section .jci-section-title {
+    font-size: 180px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.jci-error-landing-section .jci-section-description {
+    margin-bottom: 40px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+
+/***********************   404 Page End    ****************************/
+
+
+/***********************   Footer Start    ****************************/
+
+.jci-site-footer {
+    background: linear-gradient( 180deg, rgba(44, 151, 222, 1) 0%, rgba(10, 29, 51, 1) 100%);
+    padding: 50px 0 0;
+}
+
+.jci-footer-logo {
+    margin-bottom: 30px;
+}
+
+.jci-footer-description {
+    color: #ffffff;
+    margin-bottom: 35px;
+}
+
+.jci-social-media-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.jci-social-media-item:not(:last-child) {
+    margin-right: 40px;
+}
+
+.jci-social-media-link:hover {
+    opacity: 0.8;
+}
+
+.jci-footer-menu-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.jci-footer-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.jci-footer-menu-link {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.jci-footer-menu-link:hover {
+    color: #fff;
+    opacity: 0.8;
+}
+
+.jci-footer-menu-item {
+    margin-bottom: 10px;
+}
+
+.jci-site-info {
+    padding: 25px 0;
+    margin-top: 50px;
+    border-top: 1px solid #ffffff;
+}
+
+.jci-site-info-text {
+    color: #ffffff;
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/***********************   Footer End    ****************************/
