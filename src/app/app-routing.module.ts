@@ -7,6 +7,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { DashboardManagerComponent } from './pages/dashboard-manager/dashboard-manager.component';
 
 const routes: Routes = [
   { 
@@ -20,6 +22,14 @@ const routes: Routes = [
   { 
     path: 'signup', 
     component: SignupComponent 
+  },
+  { 
+    path: 'dashboard', 
+    component: DashboardComponent 
+  },
+  { 
+    path: 'dashboard_manager', 
+    component: DashboardManagerComponent 
   },
   { 
     path: '**', 

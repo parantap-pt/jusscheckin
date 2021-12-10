@@ -23,6 +23,8 @@ import { AuthService } from './service/auth.service';
 /* Third Party Installation */
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ToastrModule } from 'ngx-toastr';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { DashboardManagerComponent } from './pages/dashboard-manager/dashboard-manager.component';
 
 
 export function  commonServiceFactory(commonService: CommonService): Function {
@@ -41,7 +43,9 @@ export function  authServiceFactory(authService: AuthService): Function {
     FooterComponent,
     LoginComponent,
     SignupComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    DashboardComponent,
+    DashboardManagerComponent
   ],
   imports: [
     BrowserModule,
