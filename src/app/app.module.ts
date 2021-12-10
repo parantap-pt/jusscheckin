@@ -25,6 +25,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { ToastrModule } from 'ngx-toastr';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { DashboardManagerComponent } from './pages/dashboard-manager/dashboard-manager.component';
+import { LeftmenuComponent } from './shared/leftmenu/leftmenu.component';
+import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
 
 
 export function  commonServiceFactory(commonService: CommonService): Function {
@@ -45,7 +47,9 @@ export function  authServiceFactory(authService: AuthService): Function {
     SignupComponent,
     PagenotfoundComponent,
     DashboardComponent,
-    DashboardManagerComponent
+    DashboardManagerComponent,
+    LeftmenuComponent,
+    ManageTaskComponent
   ],
   imports: [
     BrowserModule,
