@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../service/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonService } from '../../service/common.service';
 import { ToastrService } from 'ngx-toastr';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { NgxSpinnerService } from "ngx-spinner";
+
 
 @Component({
   selector: 'app-manage-task',
@@ -16,7 +18,7 @@ export class ManageTaskComponent implements OnInit {
 
   public tasks: any = {data : []};
 
-  constructor(public commonservice:CommonService,private activatedRoute: ActivatedRoute,private router: Router,public fb: FormBuilder,public toastr : ToastrService,private spinner: NgxSpinnerService) { 
+  constructor(public commonservice:CommonService,private activatedRoute: ActivatedRoute,private router: Router,public fb: FormBuilder,public toastr : ToastrService,private spinner: NgxSpinnerService, public authService:AuthService) { 
 
     this.Constant = this.commonservice.getConstants();
 
@@ -31,16 +33,13 @@ export class ManageTaskComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadAllTasks(1);
+    this.loadAllTasks();
   }
 
-  public loadAllTasks(page : number = 0,limit : number = 0){
+  public loadAllTasks(){
 
-    page = (page > 0 ? page : 1);
-    limit = this.Constant['LIMIT'];
-    
     let body = new FormData();
-    body.append('user_id', '1');
+    body.append('user_id', this.authService.loggedInUserId);
     body.append('token', this.Constant['API_TOKEN']);
 
     

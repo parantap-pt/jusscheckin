@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       {name : 'og:title' , content : 'Login '+' - '+this.Constant['SITE_NM']}
     ];
     this.commonservice.changeMetaTagOfPage(meta_tag);
-    this.commonservice.setTitle('Login - '+this.Constant['SITE_NM']);
+    this.commonservice.setTitle('Login');
     //meta tags set
 
     this.frmLogin = fb.group({
@@ -57,12 +57,12 @@ export class LoginComponent implements OnInit {
         this.spinner.hide();
         if(response.status == true){
           
-          response.data.auth_token = response.data.token;
+          response.data.auth_token = response.data.auth_token;
           this.toastr.success(response.message);
           
           this.authService.grantAuth(response.data.user_id,response.data);
 
-          //this.router.navigate(['/church-dashboard']);
+          this.router.navigate(['/dashboard_manager']);
           return true;
           
         }else{

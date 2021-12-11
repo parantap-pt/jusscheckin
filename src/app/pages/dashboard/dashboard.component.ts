@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
       {name : 'og:title' , content : 'Dashboard '+' - '+this.Constant['SITE_NM']}
     ];
     this.commonservice.changeMetaTagOfPage(meta_tag);
-    this.commonservice.setTitle('Login - '+this.Constant['SITE_NM']);
+    this.commonservice.setTitle('Dashboard');
     //meta tags set
    
   }

@@ -28,8 +28,8 @@ export class AuthService{
 
     if(localStorage.getItem("auth_token") && localStorage.getItem("auth_token") !== null && localStorage.getItem("auth_token") !== undefined && localStorage.getItem("auth_token") != '' ){
       var auth_token =  localStorage.getItem('auth_token');
-      /*if(auth_token != ''){
-      let headers : object[] = [];
+      if(auth_token != ''){
+      /*let headers : object[] = [];
         return this.http
         .post(BaseUrl+'getTokenData/'+auth_token,{})
         .toPromise()
@@ -41,10 +41,14 @@ export class AuthService{
           }else{
             this.removeAuth();
           }
-        });
+        });*/
+        this.isLoggedIn = true;
+        this.loggedInUserId = '1';
+        this.loggedInUserData.user_id = 1;
       }else{
         this.removeAuth();
-      }*/
+      }
+      
     }
   }
   

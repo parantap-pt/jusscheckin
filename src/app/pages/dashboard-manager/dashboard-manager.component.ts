@@ -26,7 +26,7 @@ export class DashboardManagerComponent implements OnInit {
 	      {name : 'og:title' , content : 'Dashboard Manager '+' - '+this.Constant['SITE_NM']}
 	    ];
 	    this.commonservice.changeMetaTagOfPage(meta_tag);
-	    this.commonservice.setTitle('Dashboard Manager - '+this.Constant['SITE_NM']);
+	    this.commonservice.setTitle('Dashboard');
 	    //meta tags set
 
 	     this.frmAddTask = fb.group({

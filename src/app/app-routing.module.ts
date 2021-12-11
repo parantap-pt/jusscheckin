@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { LoggedauthGuard } from './guards/loggedauth.guard';
+import { AuthGuard } from './guards/auth.guard';
+
 
 //Website module component
 import { HomeComponent } from './pages/home/home.component';
@@ -18,22 +21,27 @@ const routes: Routes = [
   },
   { 
     path: 'login', 
+    canActivate: [LoggedauthGuard],
     component: LoginComponent 
   },
   { 
     path: 'signup', 
+    canActivate: [LoggedauthGuard],
     component: SignupComponent 
   },
   { 
     path: 'dashboard', 
+    canActivate : [AuthGuard],
     component: DashboardComponent 
   },
   { 
     path: 'dashboard_manager', 
+    canActivate : [AuthGuard],
     component: DashboardManagerComponent 
   },
   { 
     path: 'manage-task', 
+    canActivate : [AuthGuard],
     component: ManageTaskComponent 
   },
   { 

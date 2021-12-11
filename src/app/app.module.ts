@@ -28,6 +28,10 @@ import { DashboardManagerComponent } from './pages/dashboard-manager/dashboard-m
 import { LeftmenuComponent } from './shared/leftmenu/leftmenu.component';
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
 
+/* Auth Guards */
+import { LoggedauthGuard } from './guards/loggedauth.guard';
+/* Auth Guards */
+
 
 export function  commonServiceFactory(commonService: CommonService): Function {
   return () => commonService.load();  
@@ -68,6 +72,7 @@ export function  authServiceFactory(authService: AuthService): Function {
     BrowserAnimationsModule
   ],
   providers: [
+    LoggedauthGuard,
     Title,
     CommonService,
     {
