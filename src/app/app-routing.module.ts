@@ -13,6 +13,8 @@ import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.compone
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { DashboardManagerComponent } from './pages/dashboard-manager/dashboard-manager.component';
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
+import { AddGuestComponent } from './pages/add-guest/add-guest.component';
+import { ManageGuestComponent } from './pages/manage-guest/manage-guest.component';
 
 const routes: Routes = [
   { 
@@ -43,6 +45,16 @@ const routes: Routes = [
     path: 'manage-task', 
     canActivate : [AuthGuard],
     component: ManageTaskComponent 
+  },
+  { 
+    path: 'add-guest', 
+    canActivate : [AuthGuard],
+    component: AddGuestComponent 
+  },
+  { 
+    path: 'manage-guest', 
+    canActivate : [AuthGuard],
+    component: ManageGuestComponent 
   },
   { 
     path: '**', 

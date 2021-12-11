@@ -6,37 +6,36 @@ import { ToastrService } from 'ngx-toastr';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { NgxSpinnerService } from "ngx-spinner";
 
-
 @Component({
-  selector: 'app-manage-task',
-  templateUrl: './manage-task.component.html',
-  styleUrls: ['./manage-task.component.css']
+  selector: 'app-manage-guest',
+  templateUrl: './manage-guest.component.html',
+  styleUrls: ['./manage-guest.component.css']
 })
-export class ManageTaskComponent implements OnInit {
+export class ManageGuestComponent implements OnInit {
 
   public Constant : any;
 
-  public tasks: any = {data : []};
+  public guest: any = {data : []};
 
   constructor(public commonservice:CommonService,private activatedRoute: ActivatedRoute,private router: Router,public fb: FormBuilder,public toastr : ToastrService,private spinner: NgxSpinnerService, public authService:AuthService) { 
-
+    
     this.Constant = this.commonservice.getConstants();
 
   	//meta tags set
     var meta_tag = [
-      {name : 'og:title' , content : 'Manage Tasks '+' - '+this.Constant['SITE_NM']}
+      {name : 'og:title' , content : 'Manage Guest '+' - '+this.Constant['SITE_NM']}
     ];
     this.commonservice.changeMetaTagOfPage(meta_tag);
-    this.commonservice.setTitle('Manage Tasks');
+    this.commonservice.setTitle('Manage Guest Facilities');
     //meta tags set
 
   }
 
   ngOnInit(): void {
-    this.loadAllTasks();
+    this.loadAllGuest();
   }
 
-  public loadAllTasks(){
+  public loadAllGuest(){
 
     let body = new FormData();
     body.append('user_id', this.authService.loggedInUserId);
@@ -44,19 +43,19 @@ export class ManageTaskComponent implements OnInit {
 
     
     let options = this.commonservice.generateRequestHeaders(false);
-    this.commonservice.SubmiPostFormData('get_task_list',body,options)
+    this.commonservice.SubmiPostFormData('get_guest_facility',body,options)
     .then((response) => {  
       //console.log(response.data);        
       if(response.status == true){
         if(response.data.length  > 0){
-          this.tasks.data = response.data;
+          this.guest.data = response.data;
         }
         else{
-          this.tasks.data = [];
+          this.guest.data = [];
         }
       }  
       else{
-        this.tasks.data = [];
+        this.guest.data = [];
       }  
     })
     .catch((error) => {
@@ -65,22 +64,22 @@ export class ManageTaskComponent implements OnInit {
     });
   }
 
-  public deleteTasks(id : string = ''){
+  public deleteGuest(id : string = ''){
 
     let exeFn = (result:any)=>{
       if(result.value){
         
         let body = new FormData();
-        body.append('task_id', id);
+        body.append('guest_facility_id', id);
         body.append('user_id', this.authService.loggedInUserId);
         body.append('token', this.Constant['API_TOKEN']);
     
         let options = this.commonservice.generateRequestHeaders(false);
-        this.commonservice.SubmiPostFormData('delete_task',body,options)
+        this.commonservice.SubmiPostFormData('delete_guest_facility',body,options)
         .then((response) => {          
           if(response.status == true){
             this.toastr.success(response.message);
-            this.loadAllTasks();
+            this.loadAllGuest();
             return true;
           }else{
             if(response.message != ''){
@@ -93,7 +92,7 @@ export class ManageTaskComponent implements OnInit {
         });
       }
     };
-    this.commonservice.showConfirmDialog('Delete','Are you sure you want to delete this task','Yes','No',exeFn);
+    this.commonservice.showConfirmDialog('Delete','Are you sure you want to delete this guest','Yes','No',exeFn);
   }
 
 }

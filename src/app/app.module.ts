@@ -19,6 +19,10 @@ import { CommonService } from './service/common.service';
 import { AuthService } from './service/auth.service';
 /* Service Installation */
 
+/* Auth Guards */
+import { LoggedauthGuard } from './guards/loggedauth.guard';
+/* Auth Guards */
+
 
 /* Third Party Installation */
 import { NgxSpinnerModule } from "ngx-spinner";
@@ -27,10 +31,10 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { DashboardManagerComponent } from './pages/dashboard-manager/dashboard-manager.component';
 import { LeftmenuComponent } from './shared/leftmenu/leftmenu.component';
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
+import { AddGuestComponent } from './pages/add-guest/add-guest.component';
+import { ManageGuestComponent } from './pages/manage-guest/manage-guest.component';
 
-/* Auth Guards */
-import { LoggedauthGuard } from './guards/loggedauth.guard';
-/* Auth Guards */
+
 
 
 export function  commonServiceFactory(commonService: CommonService): Function {
@@ -53,7 +57,9 @@ export function  authServiceFactory(authService: AuthService): Function {
     DashboardComponent,
     DashboardManagerComponent,
     LeftmenuComponent,
-    ManageTaskComponent
+    ManageTaskComponent,
+    AddGuestComponent,
+    ManageGuestComponent
   ],
   imports: [
     BrowserModule,

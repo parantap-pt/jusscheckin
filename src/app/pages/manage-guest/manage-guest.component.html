@@ -9,17 +9,17 @@
                 <div class="tab-pane active" id="v-pills-manage-task" role="tabpanel"  aria-labelledby="v-pills-manage-task-tab">
                     <div class="jci-dashboard-content-area" data-scrollbar>
                        <div class="jci-upcoming-booking">
-                          <h2 class="jci-dashboard-title">Manage Task</h2>
+                          <h2 class="jci-dashboard-title">Manage Guest Facilities</h2>
                           <div class="row">
-                             <div class="col col-12 col-md-4 col-lg-4" *ngFor="let tasks of tasks.data">
+                             <div class="col col-12 col-md-4 col-lg-4" *ngFor="let guest of guest.data">
                                 <div class="jci-property-card card">
                                    <div class="card-body">
-                                      <h3 class="jci-property-name">{{tasks.task_title}}</h3>
-                                      <p class="card-body-text">{{tasks.task_description}}</p>
+                                      <h3 class="jci-property-name">{{guest.title}}</h3>
+                                      <p class="card-body-text">{{guest.description}}</p>
                                       <div class="col-md-12 mt-3">
                                          <button type="button" class="btn btn-dark">View</button>
                                          <button type="button" class="btn btn-success">Edit</button>
-                                         <button (click)="deleteTasks(tasks.task_id)" type="button" class="btn btn-danger">Delete</button>
+                                         <button (click)="deleteGuest(guest.id)" type="button" class="btn btn-danger">Delete</button>
                                       </div>
                                    </div>
                                 </div>
