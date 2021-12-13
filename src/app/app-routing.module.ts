@@ -18,6 +18,8 @@ import { ManageGuestComponent } from './pages/manage-guest/manage-guest.componen
 import { AddTaskComponent } from './pages/add-task/add-task.component';
 import { AddPropertyComponent } from './pages/add-property/add-property.component';
 import { ManagePropertyComponent } from './pages/manage-property/manage-property.component';
+import { EditTaskComponent } from './pages/edit-task/edit-task.component';
+import { EditGuestComponent } from './pages/edit-guest/edit-guest.component';
 
 const routes: Routes = [
   { 
@@ -73,6 +75,16 @@ const routes: Routes = [
     path: 'manage-property', 
     canActivate : [AuthGuard],
     component: ManagePropertyComponent 
+  },
+  { 
+    path: 'edit-task/:id', 
+    canActivate : [AuthGuard],
+    component: EditTaskComponent 
+  },
+  { 
+    path: 'edit-guest/:id', 
+    canActivate : [AuthGuard],
+    component: EditGuestComponent 
   },
   { 
     path: '**', 

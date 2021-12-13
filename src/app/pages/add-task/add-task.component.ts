@@ -37,8 +37,6 @@ export class AddTaskComponent implements OnInit {
    }
 
   ngOnInit(): void {
-  	console.log(this.authService.loggedInUserId) ;
-  	console.log(this.authService.loggedInUserData) ;
   }
 
   submitAddTask() { 
