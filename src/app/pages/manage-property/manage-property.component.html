@@ -1,0 +1,52 @@
+<section class="jci-dashboard-section">
+    <div class="jci-dashboard__inner">
+       <div class="jci-dashboard-sidebar">
+        <app-leftmenu></app-leftmenu>
+       </div>
+       <div class="jci-dashboard-content">
+          <div class="jci-dashboard-content__inner">
+             <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane active" id="v-pills-manage-property" role="tabpanel"  aria-labelledby="v-pills-manage-property-tab">
+                   <div class="jci-dashboard-content-area" data-scrollbar>
+                      <div class="jci-upcoming-booking">
+                         <h2 class="jci-dashboard-title">Manage Property</h2>
+                         <div class="row">
+                            <div class="col col-12 col-md-4 col-lg-4" *ngFor="let property of property.data">
+                               <div class="jci-property-card card">
+                                  <div class="jci-property-card-img">
+                                     <img src="http://localhost/jusscheckin/assets/images/mp1.jpg" alt="" class="card-img-top img-fluid">
+                                  </div>
+                                  <div class="card-body">
+                                     <h3 class="jci-property-name">{{property.property_name}}, {{property.location}}</h3>
+                                     <ul class="jci-property-info-list">
+                                        <li class="jci-property-info-item">
+                                           <svg id="meeting_room_black_24dp_1_" data-name="meeting_room_black_24dp (1)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                              <path id="Path_235" data-name="Path 235" d="M0,0H24V24H0Z" fill="none"></path>
+                                              <path id="Path_236" data-name="Path 236" d="M19,19V4H15V3H5V19H3v2H15V6h2V21h4V19Zm-6,0H7V5h6Zm-3-8h2v2H10Z" fill="#4ab862"></path>
+                                           </svg>
+                                           <span>{{property.total_room}} Room</span>
+                                        </li>
+                                        <li class="jci-property-info-item">
+                                           <svg xmlns="http://www.w3.org/2000/svg" width="23.04" height="16.32" viewBox="0 0 23.04 16.32">
+                                              <path id="Icon_map-swimming" data-name="Icon map-swimming" d="M23.52,19.2a3.419,3.419,0,0,1-1.416-.307,3.512,3.512,0,0,0-2.924,0,3.419,3.419,0,0,1-2.833,0,3.518,3.518,0,0,0-2.927,0,3.431,3.431,0,0,1-2.838,0,3.5,3.5,0,0,0-2.92,0,3.428,3.428,0,0,1-2.838,0,3.58,3.58,0,0,0-1.463-.319,3.587,3.587,0,0,0-1.458.319A3.458,3.458,0,0,1,.48,19.2V17.09a3.586,3.586,0,0,0,1.422-.3,3.458,3.458,0,0,1,2.921,0,3.475,3.475,0,0,0,2.838,0,3.457,3.457,0,0,1,2.92,0,3.476,3.476,0,0,0,2.838,0,3.508,3.508,0,0,1,1.464-.324,3.553,3.553,0,0,1,1.463.324,3.465,3.465,0,0,0,2.833,0,3.464,3.464,0,0,1,2.924,0,3.542,3.542,0,0,0,1.417.3Zm-3.337-5.969a2.723,2.723,0,1,0-2.742-2.725A2.668,2.668,0,0,0,20.183,13.231ZM4.22,14.763a3.382,3.382,0,0,1,.6.209,3.425,3.425,0,0,0,2.838,0,3.448,3.448,0,0,1,2.92,0,3.425,3.425,0,0,0,2.838,0,3.586,3.586,0,0,1,1.464-.324,3.626,3.626,0,0,1,1.463.324,3.465,3.465,0,0,0,1.417.308,3.533,3.533,0,0,0,1.055-.166L14.245,6.927l5.318-.963A1.574,1.574,0,0,0,20.91,4.428,1.556,1.556,0,0,0,19.344,2.88l-.178.005L10.952,4.369a1.468,1.468,0,0,0-.905,2l.07.166,2.144,3.841L4.22,14.763Z" transform="translate(-0.48 -2.88)" fill="#4ab862"/>
+                                           </svg>
+                                           <span>Swimming</span>
+                                        </li>
+                                     </ul>
+                                     <div class="col-md-12 mt-3">
+                                        <button type="button" class="btn btn-dark">View</button>
+                                        <button type="button" class="btn btn-success">Edit</button>
+                                        <button type="button" (click)="deleteProperty(property.id)" class="btn btn-danger">Delete</button>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>

@@ -893,15 +893,10 @@
                       <div class="jci-assign-roles h-100">
                          <div class="jci-content-area">
                             <h2 class="jci-dashboard-title">Add Task</h2>
-                            <form class="row g-3" id='frmAddTask' [formGroup]="frmAddTask" name="frmAddTask" method="POST" (ngSubmit)="submitAddTask()" novalidate>
+                            <form class="row g-3" id='frmAddTask' name="frmAddTask" method="POST"  novalidate>
                             <div class="col-md-6">
                                <label for="taskTitle" class="form-label">Task Title</label>
                                <input type="text" class="form-control" id="taskTitle" name="taskTitle" formControlName="taskTitle" placeholder="Enter title">
-                               <div *ngIf="frmAddTask.controls.taskTitle.invalid && (frmAddTask.controls.taskTitle.dirty || frmAddTask.controls.taskTitle.touched)">
-                                  <div class="error-block" *ngIf="frmAddTask.get('taskTitle')?.hasError('required')">
-                                     Please enter email name
-                                  </div>
-                               </div>
                             </div>
                             <div class="col-md-6">
                                <label for="taskTimeline" class="form-label">Task Timeline (If any)</label>
@@ -912,7 +907,7 @@
                                <textarea class="form-control" rows="4" resize="none" id="taskDescription" name="taskDescription" formControlName="taskDescription" placeholder="Enter Description"></textarea>
                             </div>
                             <div class="col-12">
-                               <button type="submit" [disabled]="(!frmAddTask.valid)" class="btn btn-success">Add Task</button>
+                               <button type="submit" class="btn btn-success">Add Task</button>
                             </div>
                             </form>
                          </div>

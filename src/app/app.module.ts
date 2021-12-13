@@ -33,6 +33,9 @@ import { LeftmenuComponent } from './shared/leftmenu/leftmenu.component';
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
 import { AddGuestComponent } from './pages/add-guest/add-guest.component';
 import { ManageGuestComponent } from './pages/manage-guest/manage-guest.component';
+import { AddTaskComponent } from './pages/add-task/add-task.component';
+import { AddPropertyComponent } from './pages/add-property/add-property.component';
+import { ManagePropertyComponent } from './pages/manage-property/manage-property.component';
 
 
 
@@ -59,7 +62,10 @@ export function  authServiceFactory(authService: AuthService): Function {
     LeftmenuComponent,
     ManageTaskComponent,
     AddGuestComponent,
-    ManageGuestComponent
+    ManageGuestComponent,
+    AddTaskComponent,
+    AddPropertyComponent,
+    ManagePropertyComponent
   ],
   imports: [
     BrowserModule,

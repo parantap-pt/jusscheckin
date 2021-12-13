@@ -15,6 +15,9 @@ import { DashboardManagerComponent } from './pages/dashboard-manager/dashboard-m
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
 import { AddGuestComponent } from './pages/add-guest/add-guest.component';
 import { ManageGuestComponent } from './pages/manage-guest/manage-guest.component';
+import { AddTaskComponent } from './pages/add-task/add-task.component';
+import { AddPropertyComponent } from './pages/add-property/add-property.component';
+import { ManagePropertyComponent } from './pages/manage-property/manage-property.component';
 
 const routes: Routes = [
   { 
@@ -42,6 +45,11 @@ const routes: Routes = [
     component: DashboardManagerComponent 
   },
   { 
+    path: 'add-task', 
+    canActivate : [AuthGuard],
+    component: AddTaskComponent 
+  },
+  { 
     path: 'manage-task', 
     canActivate : [AuthGuard],
     component: ManageTaskComponent 
@@ -55,6 +63,16 @@ const routes: Routes = [
     path: 'manage-guest', 
     canActivate : [AuthGuard],
     component: ManageGuestComponent 
+  },
+  { 
+    path: 'add-property', 
+    canActivate : [AuthGuard],
+    component: AddPropertyComponent 
+  },
+  { 
+    path: 'manage-property', 
+    canActivate : [AuthGuard],
+    component: ManagePropertyComponent 
   },
   { 
     path: '**', 
