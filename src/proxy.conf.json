@@ -1,6 +1,6 @@
 {
     "/api/*": {
-        "target": "http://jusscheckin.amazingwebprojects.com/api",
+        "target": "https://jusscheckin.amazingwebprojects.com/api",
         "secure": false,
         "logLevel": "debug"
     }
