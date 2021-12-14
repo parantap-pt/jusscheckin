@@ -8,17 +8,19 @@ import { customValidations } from '../../validators/custom-validator';
 import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
-  selector: 'app-add-property',
-  templateUrl: './add-property.component.html',
-  styleUrls: ['./add-property.component.css']
+  selector: 'app-edit-property',
+  templateUrl: './edit-property.component.html',
+  styleUrls: ['./edit-property.component.css']
 })
-export class AddPropertyComponent implements OnInit {
+export class EditPropertyComponent implements OnInit {
 
   public Constant : any;
   public file : any;
   public imageSrc: string;
-  public frmProperty: FormGroup;
+  public frmEditProperty: FormGroup;
   public propertyType: any = {data : []};
+  public property: any;
+  public property_id: any;
 
   constructor(public commonservice:CommonService,private activatedRoute: ActivatedRoute,private router: Router,public fb: FormBuilder,public toastr : ToastrService,private spinner: NgxSpinnerService,public authService:AuthService) { 
 
@@ -26,24 +28,48 @@ export class AddPropertyComponent implements OnInit {
 
   	//meta tags set
     var meta_tag = [
-      {name : 'og:title' , content : 'Add Property '+' - '+this.Constant['SITE_NM']}
+      {name : 'og:title' , content : 'Edit Property '+' - '+this.Constant['SITE_NM']}
     ];
     this.commonservice.changeMetaTagOfPage(meta_tag);
-    this.commonservice.setTitle('Add Property');
+    this.commonservice.setTitle('Edit Property');
     //meta tags set
 
-    this.frmProperty = fb.group({
+    this.frmEditProperty = fb.group({
       'propertyName' : ['', [Validators.required]],
       'propertyType' : ['', [Validators.required]],
       'address' : ['', [Validators.required]],
       'totalRoom' : ['', [Validators.required]],
-      'image' : ['', [Validators.required]]
+      'image' : ['']
     });
+
+    this.property_id = this.activatedRoute.snapshot.paramMap.get('id');
 
   }
 
   ngOnInit(): void {
     this.loadPropertyType();
+
+    if(this.authService.isLoggedIn){  
+      let body = new FormData();
+      body.append('user_id', this.authService.loggedInUserId);
+      body.append('property_id', this.property_id);
+      body.append('token', this.Constant['API_TOKEN']);
+
+      let options = this.commonservice.generateRequestHeaders();
+      this.commonservice.SubmiPostFormData('get_property_details',body,options)
+      .then((response) => {          
+        if(response.status == true){
+          this.property = response.data[0];
+          console.log(this.property) ;
+          this.frmEditProperty.controls['propertyName'].setValue(this.property.property_name);
+          this.frmEditProperty.controls['propertyType'].setValue(this.property.property_type_id);
+          this.frmEditProperty.controls['address'].setValue(this.property.location);
+          this.frmEditProperty.controls['totalRoom'].setValue(this.property.total_room);
+          this.imageSrc = this.property.image;
+  
+        }  
+      });
+    }
   }
 
   onFileChange(event:any) {
@@ -59,27 +85,30 @@ export class AddPropertyComponent implements OnInit {
       reader.readAsDataURL(file);
       reader.onload = () => {
         this.imageSrc = reader.result as string;
-        this.frmProperty.patchValue({
+        this.frmEditProperty.patchValue({
           fileSource: reader.result
         });
       };
     }
   }
 
-  submitProperty(){
-    console.log(this.frmProperty.value.image);
+  submitEditProperty(){
+    console.log(this.frmEditProperty.value.image);
     let body = new FormData();
     body.append('user_id', this.authService.loggedInUserId);
-    body.append('property_name', this.frmProperty.value.propertyName);
-    body.append('property_type', this.frmProperty.value.propertyType);
-    body.append('location', this.frmProperty.value.address);
-    body.append('total_room', this.frmProperty.value.totalRoom);
+    body.append('property_id', this.property_id);
+    body.append('property_name', this.frmEditProperty.value.propertyName);
+    body.append('property_type', this.frmEditProperty.value.propertyType);
+    body.append('location', this.frmEditProperty.value.address);
+    body.append('total_room', this.frmEditProperty.value.totalRoom);
     body.append('guest_facility_id', '1');
-    body.append('image', this.file[0]);
+    if(this.file){
+      body.append('image', this.file[0]);
+    }
     body.append('token', this.Constant['API_TOKEN']);
 
     let options = this.commonservice.generateRequestHeaders();
-    this.commonservice.SubmiPostFormData('add_property',body,options)
+    this.commonservice.SubmiPostFormData('edit_property',body,options)
     .then((response) => {     
       this.spinner.hide();
       if(response.status == true){

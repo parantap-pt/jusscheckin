@@ -38,6 +38,7 @@ import { AddPropertyComponent } from './pages/add-property/add-property.componen
 import { ManagePropertyComponent } from './pages/manage-property/manage-property.component';
 import { EditTaskComponent } from './pages/edit-task/edit-task.component';
 import { EditGuestComponent } from './pages/edit-guest/edit-guest.component';
+import { EditPropertyComponent } from './pages/edit-property/edit-property.component';
 
 
 
@@ -69,7 +70,8 @@ export function  authServiceFactory(authService: AuthService): Function {
     AddPropertyComponent,
     ManagePropertyComponent,
     EditTaskComponent,
-    EditGuestComponent
+    EditGuestComponent,
+    EditPropertyComponent
   ],
   imports: [
     BrowserModule,

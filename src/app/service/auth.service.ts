@@ -4,7 +4,7 @@ import { environment } from '.././../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/x-www-form-urlencoded'
+    'Content-Type': 'application/json'
   })
 };
 
@@ -28,23 +28,22 @@ export class AuthService{
 
     if(localStorage.getItem("auth_token") && localStorage.getItem("auth_token") !== null && localStorage.getItem("auth_token") !== undefined && localStorage.getItem("auth_token") != '' ){
       var auth_token =  localStorage.getItem('auth_token');
+      var user_id =  localStorage.getItem('user_id');
       if(auth_token != ''){
-      /*let headers : object[] = [];
+      let headers : object[] = [];
         return this.http
-        .post(BaseUrl+'getTokenData/'+auth_token,{})
+        .post(BaseUrl+'check_auth',{'token':'123456789','auth_token':auth_token,'user_id':user_id},httpOptions)
         .toPromise()
-        .then((response: any )=>{
+        .then((response: any)=>{
           if(response.status){
-            response.data.auth_token = response.data.token;
+            response.data.auth_token = response.data.auth_token;
+            //console.log(response.data.auth_token);
             this.grantAuth(response.data.user_id,response.data);
             return true;
           }else{
             this.removeAuth();
           }
-        });*/
-        this.isLoggedIn = true;
-        this.loggedInUserId = '1';
-        this.loggedInUserData.user_id = 1;
+        });
       }else{
         this.removeAuth();
       }
@@ -61,6 +60,7 @@ export class AuthService{
     this.loggedInUserId = loggedInUserId1;
     this.loggedInUserData = loggedInUserData;
     localStorage.setItem('auth_token',this.loggedInUserData.auth_token);
+    localStorage.setItem('user_id',this.loggedInUserId);
   }
 
   public removeAuth(){
@@ -69,5 +69,9 @@ export class AuthService{
     this.loggedInUserId = '';
     this.loggedInUserData = [];
     localStorage.removeItem('auth_token');
+    localStorage.removeItem('user_id');
+    localStorage.removeItem('loggedInUserId');
+    localStorage.removeItem('userDetails');
+    localStorage.removeItem('loggedInUserData');
   }
 }

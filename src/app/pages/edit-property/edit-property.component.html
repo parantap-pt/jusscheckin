@@ -10,23 +10,13 @@
                    <div class="jci-dashboard-content-area" data-scrollbar>
                       <div class="jci-assign-roles h-100">
                          <div class="jci-content-area">
-                            <h2 class="jci-dashboard-title">Add Property</h2>
-                            <form class="row g-3" [formGroup]="frmProperty" name="frmProperty" method="POST" (ngSubmit)="submitProperty()" novalidate>
-                               <!-- <div class="col-md-6">
-                                  <label for="inputPassword4" class="form-label">Property Name</label>
-                                  <select id="inputState" class="form-select">
-                                     <option selected="">Select Property Name</option>
-                                     <option>Property Name 1</option>
-                                     <option>Property Name 2</option>
-                                     <option>Property Name 3</option>
-                                     <option>Property Name 4</option>
-                                  </select>
-                               </div> -->
+                            <h2 class="jci-dashboard-title">Edit Property</h2>
+                            <form class="row g-3" [formGroup]="frmEditProperty" name="frmEditProperty" method="POST" (ngSubmit)="submitEditProperty()" novalidate>
                                <div class="col-md-6">
                                   <label for="inputPropertyName" class="form-label">Property Name</label>
                                   <input type="text" class="form-control" id="propertyName" name="propertyName" formControlName="propertyName" placeholder="Enter Property Name">
-                                  <div *ngIf="frmProperty.controls.propertyName.invalid && (frmProperty.controls.propertyName.dirty || frmProperty.controls.propertyName.touched)">
-                                        <div class="error-block" *ngIf="frmProperty.get('propertyName')?.hasError('required')">
+                                  <div *ngIf="frmEditProperty.controls.propertyName.invalid && (frmEditProperty.controls.propertyName.dirty || frmEditProperty.controls.propertyName.touched)">
+                                        <div class="error-block" *ngIf="frmEditProperty.get('propertyName')?.hasError('required')">
                                             Please enter property name
                                         </div>
                                   </div>
@@ -37,8 +27,8 @@
                                      <option selected="">Select Property Type</option>
                                      <option  *ngFor="let propertyType of propertyType.data" value="{{propertyType.id}}">{{propertyType.name}}</option>
                                   </select>
-                                  <div *ngIf="frmProperty.controls.propertyType.invalid && (frmProperty.controls.propertyType.dirty || frmProperty.controls.propertyType.touched)">
-                                        <div class="error-block" *ngIf="frmProperty.get('propertyType')?.hasError('required')">
+                                  <div *ngIf="frmEditProperty.controls.propertyType.invalid && (frmEditProperty.controls.propertyType.dirty || frmEditProperty.controls.propertyType.touched)">
+                                        <div class="error-block" *ngIf="frmEditProperty.get('propertyType')?.hasError('required')">
                                             Please enter property type
                                         </div>
                                   </div>
@@ -46,8 +36,8 @@
                                <div class="col-md-6">
                                   <label for="inputAddress" class="form-label">Address</label>
                                   <input type="text" class="form-control" name="address" id="address" formControlName="address" placeholder="Enter address">
-                                  <div *ngIf="frmProperty.controls.address.invalid && (frmProperty.controls.address.dirty || frmProperty.controls.address.touched)">
-                                        <div class="error-block" *ngIf="frmProperty.get('address')?.hasError('required')">
+                                  <div *ngIf="frmEditProperty.controls.address.invalid && (frmEditProperty.controls.address.dirty || frmEditProperty.controls.address.touched)">
+                                        <div class="error-block" *ngIf="frmEditProperty.get('address')?.hasError('required')">
                                             Please enter address
                                         </div>
                                   </div>
@@ -55,8 +45,8 @@
                                <div class="col-md-6">
                                   <label for="inputRoom" class="form-label">Total Room</label>
                                   <input type="text" class="form-control" name="totalRoom" formControlName="totalRoom" id="totalRoom" placeholder="Enter Total Room">
-                                  <div *ngIf="frmProperty.controls.totalRoom.invalid && (frmProperty.controls.totalRoom.dirty || frmProperty.controls.totalRoom.touched)">
-                                        <div class="error-block" *ngIf="frmProperty.get('totalRoom')?.hasError('required')">
+                                  <div *ngIf="frmEditProperty.controls.totalRoom.invalid && (frmEditProperty.controls.totalRoom.dirty || frmEditProperty.controls.totalRoom.touched)">
+                                        <div class="error-block" *ngIf="frmEditProperty.get('totalRoom')?.hasError('required')">
                                             Please enter total room
                                         </div>
                                   </div>
@@ -66,15 +56,15 @@
                                   <div class="jci-choose-file-input">
                                      <input type="file" class="form-control" name="image" id="image" formControlName="image" (change)="onFileChange($event)">
                                      <img [src]="imageSrc" *ngIf="imageSrc" style="height: 100px; width:100px">
-                                     <div *ngIf="frmProperty.controls.image.invalid && (frmProperty.controls.image.dirty || frmProperty.controls.image.touched)">
-                                        <div class="error-block" *ngIf="frmProperty.get('image')?.hasError('required')">
+                                     <div *ngIf="frmEditProperty.controls.image.invalid && (frmEditProperty.controls.image.dirty || frmEditProperty.controls.image.touched)">
+                                        <div class="error-block" *ngIf="frmEditProperty.get('image')?.hasError('required')">
                                             Please select image
                                         </div>
                                   </div>
                                   </div>
                                </div>
                                <div class="col-12">
-                                  <button type="submit" [disabled]="(!frmProperty.valid)" class="btn btn-success">Add Property</button>
+                                  <button type="submit" [disabled]="(!frmEditProperty.valid)" class="btn btn-success">Edit Property</button>
                                </div>
                             </form>
                          </div>

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_END_POINT : 'http://jusscheckin.amazingwebprojects.com/api/',
+  API_END_POINT : 'https://jusscheckin.notionprojects.tech/laravel/public/api/',
   API_TOKEN : '123456789'
 };
 

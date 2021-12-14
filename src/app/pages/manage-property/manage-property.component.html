@@ -35,7 +35,7 @@
                                      </ul>
                                      <div class="col-md-12 mt-3">
                                         <button type="button" class="btn btn-dark">View</button>
-                                        <button type="button" class="btn btn-success">Edit</button>
+                                        <a routerLink="/edit-property/{{property.id}}" class="btn btn-success">Edit</a>
                                         <button type="button" (click)="deleteProperty(property.id)" class="btn btn-danger">Delete</button>
                                      </div>
                                   </div>
