@@ -7,16 +7,16 @@ import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
-  selector: 'app-add-guest',
-  templateUrl: './add-guest.component.html',
-  styleUrls: ['./add-guest.component.css']
+  selector: 'app-add-travel-agent',
+  templateUrl: './add-travel-agent.component.html',
+  styleUrls: ['./add-travel-agent.component.css']
 })
-export class AddGuestComponent implements OnInit {
+export class AddTravelAgentComponent implements OnInit {
 
   public Constant : any;
   public file : any;
   public imageSrc: string;
-  public frmGuest: FormGroup;
+  public frmAgent: FormGroup;
 
   constructor(public commonservice:CommonService,private activatedRoute: ActivatedRoute,private router: Router,public fb: FormBuilder,public toastr : ToastrService,private spinner: NgxSpinnerService,public authService:AuthService) { 
 
@@ -30,9 +30,10 @@ export class AddGuestComponent implements OnInit {
     this.commonservice.setTitle('Add Guest Facilities');
     //meta tags set
 
-    this.frmGuest = fb.group({
-      'title' : ['', [Validators.required]],
-      'description' : ['', [Validators.required]],
+    this.frmAgent = fb.group({
+      'agent_name' : ['', [Validators.required]],
+      'agency_name' : ['', [Validators.required]],
+      'travel_name' : ['', [Validators.required]],
       'image' : ['', [Validators.required]]
     });
 
@@ -54,7 +55,7 @@ export class AddGuestComponent implements OnInit {
       reader.readAsDataURL(file);
       reader.onload = () => {
         this.imageSrc = reader.result as string;
-        this.frmGuest.patchValue({
+        this.frmAgent.patchValue({
           fileSource: reader.result
         });
       };
@@ -62,22 +63,23 @@ export class AddGuestComponent implements OnInit {
   }
 
   submitGuest(){
-    console.log(this.frmGuest.value.image);
+    console.log(this.frmAgent.value.image);
     let body = new FormData();
     body.append('user_id', this.authService.loggedInUserId);
-    body.append('title', this.frmGuest.value.title);
-    body.append('description', this.frmGuest.value.description);
+    body.append('agent_name', this.frmAgent.value.agent_name);
+    body.append('agency_name', this.frmAgent.value.agency_name);
+    body.append('travel_name', this.frmAgent.value.travel_name);
     body.append('image', this.file[0]);
     body.append('token', this.Constant['API_TOKEN']);
 
     let options = this.commonservice.generateRequestHeaders();
-    this.commonservice.SubmiPostFormData('add_guest_facility',body,options)
+    this.commonservice.SubmiPostFormData('add_travel_agent',body,options)
     .then((response) => {     
       this.spinner.hide();
       if(response.status == true){
         
         this.toastr.success(response.message);
-        this.router.navigate(['/manage-guest']);
+        this.router.navigate(['/manage-travel-agent']);
         return true;
         
       }else{

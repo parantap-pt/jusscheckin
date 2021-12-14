@@ -39,6 +39,8 @@ import { ManagePropertyComponent } from './pages/manage-property/manage-property
 import { EditTaskComponent } from './pages/edit-task/edit-task.component';
 import { EditGuestComponent } from './pages/edit-guest/edit-guest.component';
 import { EditPropertyComponent } from './pages/edit-property/edit-property.component';
+import { AddTravelAgentComponent } from './pages/add-travel-agent/add-travel-agent.component';
+import { ManageTravelAgentComponent } from './pages/manage-travel-agent/manage-travel-agent.component';
 
 
 
@@ -71,7 +73,9 @@ export function  authServiceFactory(authService: AuthService): Function {
     ManagePropertyComponent,
     EditTaskComponent,
     EditGuestComponent,
-    EditPropertyComponent
+    EditPropertyComponent,
+    AddTravelAgentComponent,
+    ManageTravelAgentComponent
   ],
   imports: [
     BrowserModule,

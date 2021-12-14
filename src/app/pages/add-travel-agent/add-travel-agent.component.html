@@ -1,0 +1,75 @@
+<section class="jci-dashboard-section">
+    <div class="jci-dashboard__inner">
+       <div class="jci-dashboard-sidebar">
+        <app-leftmenu></app-leftmenu>
+       </div>
+       <div class="jci-dashboard-content">
+          <div class="jci-dashboard-content__inner">
+             <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane active" id="v-pills-manage-task" role="tabpanel"  aria-labelledby="v-pills-manage-task-tab">
+                    <div class="jci-dashboard-content-area" data-scrollbar>
+                        <div class="jci-guest-facilities h-100">
+                           <div class="jci-content-area">
+                              <h2 class="jci-dashboard-title">Add Travel Agent</h2>
+                              <form class="row g-3" [formGroup]="frmAgent" name="frmAgent" method="POST" (ngSubmit)="submitGuest()" novalidate>
+                                 <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Agent Name</label>
+                                    <input type="text" class="form-control" name="agent_name" id="agent_name" formControlName="agent_name" placeholder="Enter agent name">
+
+                                    <div *ngIf="frmAgent.controls.agent_name.invalid && (frmAgent.controls.agent_name.dirty || frmAgent.controls.agent_name.touched)">
+                                        <div class="error-block" *ngIf="frmAgent.get('agent_name')?.hasError('required')">
+                                            Please enter agent name
+                                        </div>
+                                    </div>
+
+                                 </div>
+                                 <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Travel Agency Name</label>
+                                    <input type="text" class="form-control" name="agency_name" id="agency_name" formControlName="agency_name" placeholder="Enter travel agency name">
+
+                                    <div *ngIf="frmAgent.controls.agency_name.invalid && (frmAgent.controls.agency_name.dirty || frmAgent.controls.agency_name.touched)">
+                                        <div class="error-block" *ngIf="frmAgent.get('agency_name')?.hasError('required')">
+                                            Please enter agency name
+                                        </div>
+                                    </div>
+
+                                 </div>
+                                 <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Travels name</label>
+                                    <input type="text" class="form-control" name="travel_name" id="travel_name" formControlName="travel_name" placeholder="Enter travels name">
+
+                                    <div *ngIf="frmAgent.controls.travel_name.invalid && (frmAgent.controls.travel_name.dirty || frmAgent.controls.travel_name.touched)">
+                                        <div class="error-block" *ngIf="frmAgent.get('travel_name')?.hasError('required')">
+                                            Please enter travels name
+                                        </div>
+                                    </div>
+
+                                 </div>
+                                 <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Travels Image</label>
+                                    <div class="jci-choose-file-input">
+                                       <input type="file" class="form-control" id="image" formControlName="image" (change)="onFileChange($event)">
+
+                                       <img [src]="imageSrc" *ngIf="imageSrc" style="height: 100px; width:100px">
+
+                                       <div *ngIf="frmAgent.controls.image.invalid && (frmAgent.controls.image.dirty || frmAgent.controls.image.touched)">
+                                            <div class="error-block" *ngIf="frmAgent.get('image')?.hasError('required')">
+                                                Please enter name
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-12">
+                                    <button type="submit" class="btn btn-success" [disabled]="(!frmAgent.valid)">Add Travel Agent</button>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                 </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
