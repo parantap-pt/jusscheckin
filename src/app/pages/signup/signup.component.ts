@@ -34,7 +34,7 @@ export class SignupComponent implements OnInit {
     this.frmRegistration = fb.group({
       'firstName' : ['', [Validators.required]],
       'lastName' : ['', [Validators.required]],
-      'email' : ['', [Validators.required,this.csValid.validEmail]],
+      'email' : ['', [Validators.required]],
       'password' : ['', [Validators.required]]
     });
 

@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     //meta tags set
 
     this.frmLogin = fb.group({
-      'email' : ['', [Validators.required,this.csValid.validEmail]],
+      'email' : ['', [Validators.required]],
       'password' : ['', [Validators.required]]
     });
 
