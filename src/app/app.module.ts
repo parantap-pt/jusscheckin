@@ -43,6 +43,7 @@ import { AddTravelAgentComponent } from './pages/add-travel-agent/add-travel-age
 import { ManageTravelAgentComponent } from './pages/manage-travel-agent/manage-travel-agent.component';
 import { AddRolesPermissionComponent } from './pages/add-roles-permission/add-roles-permission.component';
 import { ManageRolesPermissionComponent } from './pages/manage-roles-permission/manage-roles-permission.component';
+import { AddRoomServiceComponent } from './pages/add-room-service/add-room-service.component';
 
 
 
@@ -79,7 +80,8 @@ export function  authServiceFactory(authService: AuthService): Function {
     AddTravelAgentComponent,
     ManageTravelAgentComponent,
     AddRolesPermissionComponent,
-    ManageRolesPermissionComponent
+    ManageRolesPermissionComponent,
+    AddRoomServiceComponent
   ],
   imports: [
     BrowserModule,
