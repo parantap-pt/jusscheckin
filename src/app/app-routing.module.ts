@@ -23,6 +23,8 @@ import { EditGuestComponent } from './pages/edit-guest/edit-guest.component';
 import { EditPropertyComponent } from './pages/edit-property/edit-property.component';
 import { AddTravelAgentComponent } from './pages/add-travel-agent/add-travel-agent.component';
 import { ManageTravelAgentComponent } from './pages/manage-travel-agent/manage-travel-agent.component';
+import { AddRolesPermissionComponent } from './pages/add-roles-permission/add-roles-permission.component';
+import { ManageRolesPermissionComponent } from './pages/manage-roles-permission/manage-roles-permission.component';
 
 const routes: Routes = [
   { 
@@ -103,6 +105,16 @@ const routes: Routes = [
     path: 'manage-travel-agent', 
     canActivate : [AuthGuard],
     component: ManageTravelAgentComponent 
+  },
+  { 
+    path: 'add-roles-permission', 
+    canActivate : [AuthGuard],
+    component: AddRolesPermissionComponent 
+  },
+  { 
+    path: 'manage-roles-permission', 
+    canActivate : [AuthGuard],
+    component: ManageRolesPermissionComponent 
   },
   { 
     path: '**', 
