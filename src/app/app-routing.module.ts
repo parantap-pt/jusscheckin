@@ -30,6 +30,8 @@ import { AddCouponCodeComponent } from './pages/add-coupon-code/add-coupon-code.
 import { ManageCouponCodeComponent } from './pages/manage-coupon-code/manage-coupon-code.component';
 import { EditCouponCodeComponent } from './pages/edit-coupon-code/edit-coupon-code.component';
 import { EditRolesPermissionComponent } from './pages/edit-roles-permission/edit-roles-permission.component';
+import { AddEmployeeComponent } from './pages/add-employee/add-employee.component';
+import { AssignTasksComponent } from './pages/assign-tasks/assign-tasks.component';
 
 const routes: Routes = [
   { 
@@ -145,6 +147,16 @@ const routes: Routes = [
     path: 'manage-coupon-code', 
     canActivate : [AuthGuard],
     component: ManageCouponCodeComponent 
+  },
+  { 
+    path: 'add-employee', 
+    canActivate : [AuthGuard],
+    component: AddEmployeeComponent 
+  },
+  { 
+    path: 'assign-tasks', 
+    canActivate : [AuthGuard],
+    component: AssignTasksComponent 
   },
   { 
     path: '**', 

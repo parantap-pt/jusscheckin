@@ -48,6 +48,8 @@ import { AddCouponCodeComponent } from './pages/add-coupon-code/add-coupon-code.
 import { EditCouponCodeComponent } from './pages/edit-coupon-code/edit-coupon-code.component';
 import { ManageCouponCodeComponent } from './pages/manage-coupon-code/manage-coupon-code.component';
 import { EditRolesPermissionComponent } from './pages/edit-roles-permission/edit-roles-permission.component';
+import { AddEmployeeComponent } from './pages/add-employee/add-employee.component';
+import { AssignTasksComponent } from './pages/assign-tasks/assign-tasks.component';
 
 
 
@@ -89,7 +91,9 @@ export function  authServiceFactory(authService: AuthService): Function {
     AddCouponCodeComponent,
     EditCouponCodeComponent,
     ManageCouponCodeComponent,
-    EditRolesPermissionComponent
+    EditRolesPermissionComponent,
+    AddEmployeeComponent,
+    AssignTasksComponent
   ],
   imports: [
     BrowserModule,
