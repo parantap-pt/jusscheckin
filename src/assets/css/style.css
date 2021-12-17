@@ -2,6 +2,11 @@
 
 /***********************   Deafult Start    ****************************/
 
+.jci-site-header,
+.jci-site-footer {
+    display: none;
+}
+
 .jci-site {
     font-family: 'Poppins', sans-serif;
     position: relative;
@@ -101,6 +106,11 @@
     color: #1c1c1c;
 }
 
+.table-responsive th,
+.table-responsive td {
+    white-space: nowrap;
+}
+
 
 /***********************   Deafult End    ****************************/
 
@@ -139,7 +149,7 @@
     color: #000000;
 }
 
-.navbar-expand-lg .navbar-nav .nav-link {
+.navbar-expand-xl .navbar-nav .nav-link {
     color: #1C1C1C;
     font-weight: 500;
     padding: 0 22px;
@@ -167,6 +177,7 @@
     font-size: 60px;
     font-weight: 600;
     margin-bottom: 30px;
+    line-height: 1;
 }
 
 .jci-landing-section .jci-section-description {
@@ -359,8 +370,6 @@
 
 /***********************   Dashboard Page Start    ****************************/
 
-
-
 .jci-dashboard-sidebar .scrollbar-thumb {
     background: rgba(255, 255, 255, 1);
 }
@@ -389,6 +398,7 @@
     top: 0;
     left: 0;
     height: 100%;
+    z-index: 10;
 }
 
 .jci-dashboard-logo {
@@ -476,8 +486,12 @@
 
 .jci-dashboard-content-area {
     height: 100%;
-    padding: 15px;
+    padding: 15px 0;
     overflow-y: auto;
+}
+
+.scroll-content {
+    padding: 0px 15px;
 }
 
 .jci-total-count-number {
@@ -664,6 +678,81 @@
 }
 
 
+/* Manage Property start */
+
+.card .btn {
+    padding: 8px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 10px;
+}
+
+.jci-property-card.card {
+    -webkit-box-shadow: 0 0 15px rgb(0 0 0 / 16%);
+    -moz-box-shadow: 0 0 15px rgb(0 0 0 / 16%);
+    -o-box-shadow: 0 0 15px rgb(0 0 0 / 16%);
+    box-shadow: 0 0 15px rgb(0 0 0 / 16%);
+    border: 0px !important;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.jci-property-card-img img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body-text {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.26)
+}
+
+.jci-property-icon {
+    display: block;
+    width: 42px;
+    height: 42px;
+    background: #4ab862;
+    text-align: center;
+    line-height: 42px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.jci-property-sub-name {
+    font-size: 13px;
+    color: rgba(43, 18, 18, 0.8);
+    margin-bottom: 10px;
+}
+
+.card-body h6 {
+    font-size: 14px;
+    color: #4AB862;
+}
+
+
+/* Manage Property end */
+
+
+/* view coupon code & offer */
+
+.jci-property-coupon-code {
+    display: block;
+    font-size: 14px;
+    border: 2px dashed #4ab862;
+    text-align: center;
+    padding: 5px 30px;
+    border-radius: 50px;
+    margin: 15px 0px;
+}
+
+.card.jci-property-coupon .btn {
+    width: 45%;
+}
+
+
+/* view coupon code & offer end*/
+
+
 /***********************   Dashboard Page End    ****************************/
 
 
@@ -768,3 +857,444 @@
 
 
 /***********************   Footer End    ****************************/
+
+
+/***********************   Responsive Start    ****************************/
+
+@media (max-width: 1199px) {
+    .jci-features .row {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .jci-about .col {
+        margin-bottom: 30px;
+    }
+    .jci-about {
+        padding: 80px 0 50px;
+    }
+    .jci-social-media-item:not(:last-child) {
+        margin-right: 25px;
+    }
+    .navbar-toggler {
+        order: 5;
+        position: relative;
+        z-index: 100;
+    }
+    .navbar-toggler-icons {
+        background-color: #ffffff;
+        height: 3px;
+        width: 30px;
+        display: block;
+        margin-bottom: 5px;
+        transition: all ease-in-out 0.3s;
+    }
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icons:nth-child(1) {
+        position: relative;
+        transform: rotate(45deg);
+        margin-bottom: 0;
+        top: 5px;
+    }
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icons:nth-child(2) {
+        opacity: 0;
+        margin-bottom: 0;
+    }
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icons:nth-child(3) {
+        position: relative;
+        transform: rotate(-45deg);
+        margin-bottom: 0;
+    }
+    .navbar .container-fluid {
+        padding: 0 15px;
+        justify-content: unset;
+    }
+    .jci-header-btn {
+        margin-left: auto;
+    }
+    .navbar-toggler:focus:not(:focus-visible) {
+        border: none;
+        box-shadow: none;
+    }
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .navbar-nav {
+        margin: auto;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #4AB862;
+    }
+    .navbar-expand-xl .navbar-nav .nav-link {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+    .jci-about-icon img {
+        height: 100%;
+    }
+    .jci-dashboard-sidebar {
+        width: 300px;
+    }
+    .jci-dashboard-sidebar__inner {
+        padding: 20px 30px;
+    }
+    .jci-dashboard-content {
+        padding: 35px 35px 35px 200px;
+        width: calc(100% - 135px);
+    }
+    .jci-total-count-card {
+        padding: 20px;
+        height: 100%;
+        margin-bottom: 0;
+    }
+    .jci-total-count-data .col {
+        margin-bottom: 20px;
+    }
+    .btn {
+        padding: 5px 30px;
+    }
+    .jci-dashboard-filter .form-control {
+        margin-bottom: 10px;
+    }
+    .jci-room-booking .jci-property-report-card {
+        align-items: flex-start;
+    }
+    .jci-room-booking .jci-property-details__inner .jci-property-info-list {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .jci-total-count-number {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    .jci-total-count-label {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .jci-property-img {
+        width: 30%;
+    }
+    .jci-property-card-body {
+        width: 70%;
+        padding: 15px;
+    }
+    .table {
+        font-size: 14px;
+    }
+    .jci-dashboard-sidebar .nav-link {
+        padding: 10px 0;
+    }
+    .btn-sm {
+        padding: 5px 20px;
+    }
+    .jci-approval .btn:not(:last-child) {
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 991px) {
+    .jci-landing-section {
+        padding: 180px 0 100px;
+    }
+    .jci-landing-section .jci-section-title {
+        font-size: 44px;
+        margin-bottom: 20px;
+    }
+    .jci-testimonial-content .jci-section-title {
+        margin-bottom: 20px;
+    }
+    .jci-manage-companies {
+        padding: 60px 0;
+    }
+    .jci-testimonial {
+        padding: 60px 0;
+    }
+    .jci-features .row {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .jci-section-title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .jci-about-title {
+        font-size: 32px;
+        margin-bottom: 5px;
+    }
+    .jci-our-customer {
+        padding: 60px 0;
+    }
+    .jci-footer-logo {
+        margin-bottom: 0;
+    }
+    .jci-footer-menu-title {
+        margin-bottom: 15px;
+    }
+    .jci-footer-menu-item {
+        margin-bottom: 5px;
+    }
+    .navbar .btn {
+        padding: 5px 30px;
+    }
+    .jci-dashboard-section {
+        padding: 15px;
+    }
+    .jci-dashboard-content {
+        padding: 60px 10px 10px;
+        width: calc(100% - 0px);
+        margin-top: 35px;
+    }
+    .rl-mob-menu-content {
+        background-color: #4ab862;
+        border-radius: 15px;
+        position: fixed;
+        width: calc(100% - 70px);
+        left: 35px;
+        top: 20px;
+        z-index: 15;
+        padding: 5px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .rl-mob-logo img {
+        max-width: 120px;
+    }
+    span.rl-mob-menu-icon {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        margin-bottom: 4px;
+        position: relative;
+        transition: all ease-in-out 0.3s;
+    }
+    .rl-menu-show .rl-mob-menu-icon:nth-child(1) {
+        transform: rotate(45deg);
+        top: 5px;
+        margin-bottom: 0;
+    }
+    .rl-menu-show .rl-mob-menu-icon:nth-child(2) {
+        opacity: 0;
+        margin-bottom: 0;
+    }
+    .rl-menu-show .rl-mob-menu-icon:nth-child(3) {
+        transform: rotate(-45deg);
+        margin-bottom: 0;
+    }
+    .jci-dashboard-sidebar {
+        width: 300px;
+        z-index: 100;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        border-radius: 0 15px 0 15px;
+        position: fixed;
+        padding: 0;
+        left: -100%;
+        transition: all ease-in-out 0.3s;
+    }
+    .jci-dashboard-sidebar.show {
+        left: 0;
+    }
+    .jci-dashboard-sidebar__inner {
+        border-radius: 0 15px 0 15px;
+    }
+    .jci-dashboard-title {
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+    .jci-create-department form .btn {
+        margin-top: 10px;
+    }
+    .jci-login-content {
+        padding: 30px 20px;
+    }
+    .jci-login-content__inner {
+        padding: 40px 0;
+    }
+    .jci-login-btn {
+        flex-direction: column-reverse;
+    }
+    .jci-login-btn .jci-forgot-link {
+        margin-bottom: 15px;
+    }
+    .jci-login-content__inner form {
+        width: 100%;
+        margin: 0;
+    }
+    .jci-login-landing-section {
+        padding: 100px 0 100px;
+    }
+}
+
+@media(min-width:768px) and (max-width:1024px) {
+    .card .btn {
+        padding: 8px 15px;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 10px;
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .jci-property-coupon-code {
+        display: inline-block;
+        font-size: 12px;
+        border: 2px dashed #4ab862;
+        text-align: center;
+        padding: 5px 30px;
+        border-radius: 50px;
+        margin: 6px 0px;
+    }
+    .card.jci-property-coupon .btn {
+        width: 48%;
+        margin: 0px !important;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 767px) {
+    .card.jci-property-coupon .btn {
+        width: auto;
+        margin-bottom: 0px !important;
+    }
+    .jci-header-btn .btn:first-child {
+        margin-right: 5px;
+    }
+    .navbar-brand {
+        font-size: 32px;
+    }
+    .jci-header-btn {
+        order: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: unset;
+        width: 100%;
+    }
+    .navbar .btn {
+        flex: 1 0 auto;
+    }
+    .navbar-toggler {
+        margin-left: auto;
+    }
+    .jci-landing-section .jci-section-title {
+        font-size: 34px;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+    .btn {
+        padding: 6px 25px;
+    }
+    .jci-landing-section {
+        padding: 150px 0 60px;
+    }
+    .jci-manage-companies-img {
+        margin-bottom: 20px;
+    }
+    .jci-section-title {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .jci-testimonial-slider {
+        margin-bottom: 30px;
+    }
+    .jci-features .row:nth-child(odd) {
+        flex-direction: column-reverse;
+    }
+    .jci-features .row {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .jci-features-img {
+        margin-bottom: 30px;
+    }
+    .jci-about-icon {
+        margin-bottom: 20px;
+        height: 65px;
+    }
+    .jci-about-label {
+        font-size: 18px;
+    }
+    .jci-section-heading {
+        margin-bottom: 30px;
+    }
+    .jci-footer-description {
+        margin-bottom: 15px;
+    }
+    .jci-social-media-list {
+        margin-bottom: 20px;
+    }
+    .jci-social-media-link svg {
+        width: 22px;
+        height: 22px;
+    }
+    .jci-site-info {
+        padding: 20px 0;
+        margin-top: 30px;
+    }
+    .jci-dashboard-sidebar {
+        width: auto;
+        max-width: 280px;
+    }
+    .jci-dashboard-logo img {
+        max-width: 100px;
+    }
+    .jci-dashboard-logo {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .jci-dashboard-info {
+        padding: 15px;
+    }
+    .rl-mob-logo img {
+        max-width: 100px;
+    }
+    .jci-dashboard-content {
+        padding: 50px 10px 10px;
+    }
+    .jci-property-img {
+        width: 100%;
+        height: 250px;
+    }
+    .jci-property-report-card {
+        flex-direction: column;
+    }
+    .jci-property-card-body {
+        width: 100%;
+    }
+    .jci-property-img img {
+        border-radius: 10px 10px 0 0;
+    }
+    .jci-dashboard-filter:nth-child(2) .btn {
+        display: block;
+        width: 100%;
+    }
+    .jci-view-booking .jci-property-img,
+    .jci-upcoming-booking .jci-property-img {
+        width: 100%;
+    }
+    .jci-content-area {
+        padding: 30px 15px;
+    }
+    .form-label {
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+    .jci-add-restaurants .btn {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .jci-login-content__inner {
+        padding: 0px 0 40px 0;
+    }
+    .jci-login-form-notes {
+        font-size: 14px;
+    }
+}
+
+
+/***********************   Responsive End    ****************************/

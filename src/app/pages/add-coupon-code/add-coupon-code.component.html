@@ -1,0 +1,67 @@
+<section class="jci-dashboard-section">
+    <div class="jci-dashboard__inner">
+       <div class="jci-dashboard-sidebar">
+        <app-leftmenu></app-leftmenu>
+       </div>
+       <div class="jci-dashboard-content">
+          <div class="jci-dashboard-content__inner">
+             <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane active" id="v-pills-discounts-coupon" role="tabpanel"  aria-labelledby="v-pills-discounts-coupon-tab">
+                   <div class="jci-dashboard-content-area" data-scrollbar>
+                      <div class="jci-approval h-100">
+                         <div class="jci-content-area">
+                            <!-- <h2 class="jci-dashboard-title">Property Manager</h2>
+                            <form class="row g-3 mb-5">
+                               <div class="col-md-6">
+                                  <label for="inputPassword4" class="form-label">Property Name</label>
+                                  <select id="inputState" class="form-select">
+                                     <option selected="">Select Property Name</option>
+                                     <option>Property Name 1</option>
+                                     <option>Property Name 2</option>
+                                     <option>Property Name 3</option>
+                                     <option>Property Name 4</option>
+                                  </select>
+                               </div>
+                               <div class="col-md-6">
+                                  <label for="inputPassword4" class="form-label">Add offers</label>
+                                  <input type="text" class="form-control" id="inputDepartmentName" placeholder="Enter offers for property">
+                               </div>
+                               <div class="col-12">
+                                  <button type="submit" class="btn btn-success">Create Offers</button>
+                               </div>
+                            </form> -->
+                            <h2 class="jci-dashboard-title">Create discounts coupon code</h2>
+                            <form class="row g-3 " [formGroup]="frmCouponCode" name="frmCouponCode" method="POST" (ngSubmit)="submitCouponCode()" novalidate>
+                               <div class="col-md-6">
+                                  <label for="inputPassword4" class="form-label">Coupon Code</label>
+                                  <input type="text" class="form-control" id="couponcode" name="couponcode" formControlName="couponcode" placeholder="Enter Coupon Code">
+                                  <div *ngIf="frmCouponCode.controls.couponcode.invalid && (frmCouponCode.controls.couponcode.dirty || frmCouponCode.controls.couponcode.touched)">
+                                        <div class="error-block" *ngIf="frmCouponCode.get('couponcode')?.hasError('required')">
+                                            Please Enter Coupon Code
+                                        </div>
+                                    </div>
+                               </div>
+                               <div class="col-md-6">
+                                  <label for="inputPassword4" class="form-label">Add discount</label>
+                                  <input type="text" class="form-control" id="discount" name="discount" formControlName="discount" placeholder="Enter discount for code">
+                                  <div *ngIf="frmCouponCode.controls.discount.invalid && (frmCouponCode.controls.discount.dirty || frmCouponCode.controls.discount.touched)">
+                                        <div class="error-block" *ngIf="frmCouponCode.get('discount')?.hasError('required')">
+                                            Please Enter discount
+                                        </div>
+                                    </div>
+                               </div>
+                               <div class="col-12">
+                                  <button type="submit" [disabled]="(!frmCouponCode.valid)" class="btn btn-success">Create coupon </button>
+                               </div>
+                            </form>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+
+
