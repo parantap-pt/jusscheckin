@@ -18,7 +18,7 @@
                                                     <h6>Up to {{coupon.discount}}% Instant Discount</h6>
                                                     <p class="text-muted jci-property-coupon-code">{{coupon.coupon_code}}</p>                                                 
                                                     <div class="col-md-12 mt-3">                                                    
-                                                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+                                                        <button (click)="editCouponCode(coupon.coupon_code_id)" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
                                                         <button type="button" (click)="deleteCouponCode(coupon.coupon_code_id)" class="btn btn-danger">Delete</button>
                                                     </div>
                                                 </div>
@@ -40,30 +40,31 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
+    <form class="jci-property-coupon-form" [formGroup]="frmCouponCode" name="frmCouponCode" method="POST" (ngSubmit)="submitCouponCode()" novalidate>
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Edit Offer & Coupon</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="/" class="jci-property-coupon-form">
             <div class="col-md-12">
                 <div class="form-group mb-3">
                     <label for="inputPassword4" class="form-label">Enter  Offers</label>
-                    <input type="text" class="form-control" id="inputDepartmentName" placeholder="Up to 25% Instant Discount">
+                    <input type="text" class="form-control" id="discount" name="discount" formControlName="discount" placeholder="Up to 25% Instant Discount">
                 </div>
                 <div class="form-group  mb-3">
                     <label for="inputPassword4" class="form-label">Enter  Coupon Code</label>
-                    <input type="text" class="form-control" id="inputDepartmentName" placeholder="X520-17CT-0L5T">
+                    <input type="text" class="form-control" id="couponcode" name="couponcode" formControlName="couponcode" placeholder="X520-17CT-0L5T">
                 </div>
             </div>
-        </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <input type="hidden" class="form-control" id="couponcodeId" name="couponcodeId" formControlName="couponcodeId">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" #closeCouponCodeModal>Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
     </div>
+    </form>
   </div>
 </div>
 <!-- Modal coupon code & offer end-->

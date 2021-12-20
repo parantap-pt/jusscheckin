@@ -50,6 +50,7 @@ import { ManageCouponCodeComponent } from './pages/manage-coupon-code/manage-cou
 import { EditRolesPermissionComponent } from './pages/edit-roles-permission/edit-roles-permission.component';
 import { AddEmployeeComponent } from './pages/add-employee/add-employee.component';
 import { AssignTasksComponent } from './pages/assign-tasks/assign-tasks.component';
+import { AddTravelAgentCommissionComponent } from './pages/add-travel-agent-commission/add-travel-agent-commission.component';
 
 
 
@@ -93,7 +94,8 @@ export function  authServiceFactory(authService: AuthService): Function {
     ManageCouponCodeComponent,
     EditRolesPermissionComponent,
     AddEmployeeComponent,
-    AssignTasksComponent
+    AssignTasksComponent,
+    AddTravelAgentCommissionComponent
   ],
   imports: [
     BrowserModule,

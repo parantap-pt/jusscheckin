@@ -1,0 +1,60 @@
+<section class="jci-dashboard-section">
+    <div class="jci-dashboard__inner">
+       <div class="jci-dashboard-sidebar">
+        <app-leftmenu></app-leftmenu>
+       </div>
+       <div class="jci-dashboard-content">
+          <div class="jci-dashboard-content__inner">
+             <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane active" id="v-pills-agent-commission" role="tabpanel"  aria-labelledby="v-pills-agent-commission-tab">
+                   <div class="jci-dashboard-content-area" data-scrollbar>
+                      <div class="jci-travel-agent-commission h-100">
+                         <div class="jci-content-area">
+                            <h2 class="jci-dashboard-title">Travel Agent Commission</h2>
+                            <form class="row g-3" [formGroup]="frmAgentCommission" name="frmAgentCommission" method="POST" (ngSubmit)="submitAgentCommission()" novalidate>
+                               <div class="col-md-6">
+                                  <label for="inputPassword4" class="form-label">Agent Name</label>
+                                  <select id="agentName" name="agentName" formControlName="agentName" class="form-select">
+                                     <option selected="">Select Agent Name</option>
+                                     <option  *ngFor="let agent of agentData.data" value="{{agent.agent_id}}">{{agent.agent_name}}</option>
+                                  </select>
+                                  <div *ngIf="frmAgentCommission.controls.agentName.invalid && (frmAgentCommission.controls.agentName.dirty || frmAgentCommission.controls.agentName.touched)">
+                                        <div class="error-block" *ngIf="frmAgentCommission.get('agentName')?.hasError('required')">
+                                            Please Select Agent Name
+                                        </div>
+                                  </div>
+                               </div>
+                               <div class="col-md-6">
+                                  <label for="inputPassword4" class="form-label">Travel Agency Name</label>
+                                  <select id="inputState" class="form-select">
+                                     <option selected="">Select Travel Agency</option>
+                                     <option>Agency 1</option>
+                                     <option>Agency 2</option>
+                                     <option>Agency 3</option>
+                                     <option>Agency 4</option>
+                                  </select>
+                               </div>
+                               <div class="col-md-6">
+                                  <label for="inputPassword4" class="form-label">Agent Commission</label>
+                                  <input type="text" class="form-control" id="agentCommission" name="agentCommission" formControlName="agentCommission" placeholder="Enter Agent Commission">
+                                  <div *ngIf="frmAgentCommission.controls.agentCommission.invalid && (frmAgentCommission.controls.agentCommission.dirty || frmAgentCommission.controls.agentCommission.touched)">
+                                        <div class="error-block" *ngIf="frmAgentCommission.get('agentCommission')?.hasError('required')">
+                                            Please Enter Agent Commission
+                                        </div>
+                                  </div>
+                               </div>
+                               <div class="col-12">
+                                  <button [disabled]="(!frmAgentCommission.valid)" type="submit" class="btn btn-success">Add Travel Agent</button>
+                               </div>
+                            </form>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+
+

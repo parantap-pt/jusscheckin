@@ -32,6 +32,7 @@ import { EditCouponCodeComponent } from './pages/edit-coupon-code/edit-coupon-co
 import { EditRolesPermissionComponent } from './pages/edit-roles-permission/edit-roles-permission.component';
 import { AddEmployeeComponent } from './pages/add-employee/add-employee.component';
 import { AssignTasksComponent } from './pages/assign-tasks/assign-tasks.component';
+import { AddTravelAgentCommissionComponent } from './pages/add-travel-agent-commission/add-travel-agent-commission.component';
 
 const routes: Routes = [
   { 
@@ -157,6 +158,11 @@ const routes: Routes = [
     path: 'assign-tasks', 
     canActivate : [AuthGuard],
     component: AssignTasksComponent 
+  },
+  { 
+    path: 'add-travel-agent-commission', 
+    canActivate : [AuthGuard],
+    component: AddTravelAgentCommissionComponent 
   },
   { 
     path: '**', 
