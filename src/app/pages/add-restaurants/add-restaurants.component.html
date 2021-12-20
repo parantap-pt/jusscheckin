@@ -1,0 +1,75 @@
+<section class="jci-dashboard-section">
+    <div class="jci-dashboard__inner">
+       <div class="jci-dashboard-sidebar">
+        <app-leftmenu></app-leftmenu>
+       </div>
+       <div class="jci-dashboard-content">
+          <div class="jci-dashboard-content__inner">
+             <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane active" id="v-pills-manage-task" role="tabpanel"  aria-labelledby="v-pills-manage-task-tab">
+                    <div class="jci-dashboard-content-area" data-scrollbar>
+                        <div class="jci-guest-facilities h-100">
+                           <div class="jci-content-area">
+                              <h2 class="jci-dashboard-title">Add Restaurants</h2>
+                              <form class="row g-3" [formGroup]="frmRestaurants" name="frmRestaurants" method="POST" (ngSubmit)="submitGuest()" novalidate>
+                                 <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Name</label>
+                                    <input type="text" class="form-control" name="name" id="name" formControlName="name" placeholder="Enter Name">
+
+                                    <div *ngIf="frmRestaurants.controls.name.invalid && (frmRestaurants.controls.name.dirty || frmRestaurants.controls.name.touched)">
+                                        <div class="error-block" *ngIf="frmRestaurants.get('name')?.hasError('required')">
+                                            Please enter name
+                                        </div>
+                                    </div>
+
+                                 </div>
+                                 <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Total Room</label>
+                                    <input type="number" class="form-control" name="total_room" id="total_room" formControlName="total_room" placeholder="Enter Total Room">
+
+                                    <div *ngIf="frmRestaurants.controls.total_room.invalid && (frmRestaurants.controls.total_room.dirty || frmRestaurants.controls.total_room.touched)">
+                                        <div class="error-block" *ngIf="frmRestaurants.get('total_room')?.hasError('required')">
+                                            Please enter total room
+                                        </div>
+                                    </div>
+
+                                 </div>
+                                 <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Total Swimming Pool</label>
+                                    <input type="number" class="form-control" name="total_swimming_pool" id="total_swimming_pool" formControlName="total_swimming_pool" placeholder="Enter Total Swimming Pool">
+
+                                    <div *ngIf="frmRestaurants.controls.total_swimming_pool.invalid && (frmRestaurants.controls.total_swimming_pool.dirty || frmRestaurants.controls.total_swimming_pool.touched)">
+                                        <div class="error-block" *ngIf="frmRestaurants.get('total_swimming_pool')?.hasError('required')">
+                                            Please enter total swimming pool
+                                        </div>
+                                    </div>
+
+                                 </div>
+                                 <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Restaurants Image</label>
+                                    <div class="jci-choose-file-input">
+                                       <input type="file" class="form-control" id="image" formControlName="image" (change)="onFileChange($event)">
+
+                                       <img [src]="imageSrc" *ngIf="imageSrc" style="height: 100px; width:100px">
+
+                                       <div *ngIf="frmRestaurants.controls.image.invalid && (frmRestaurants.controls.image.dirty || frmRestaurants.controls.image.touched)">
+                                            <div class="error-block" *ngIf="frmRestaurants.get('image')?.hasError('required')">
+                                                Please upload image
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-12">
+                                    <button type="submit" class="btn btn-success" [disabled]="(!frmRestaurants.valid)">Add restaurants</button>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                 </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
