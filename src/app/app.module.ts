@@ -52,6 +52,7 @@ import { AddEmployeeComponent } from './pages/add-employee/add-employee.componen
 import { AssignTasksComponent } from './pages/assign-tasks/assign-tasks.component';
 import { AddTravelAgentCommissionComponent } from './pages/add-travel-agent-commission/add-travel-agent-commission.component';
 import { AddRestaurantsComponent } from './pages/add-restaurants/add-restaurants.component';
+import { ManageTravelAgentCommissionComponent } from './pages/manage-travel-agent-commission/manage-travel-agent-commission.component';
 
 
 
@@ -97,7 +98,8 @@ export function  authServiceFactory(authService: AuthService): Function {
     AddEmployeeComponent,
     AssignTasksComponent,
     AddTravelAgentCommissionComponent,
-    AddRestaurantsComponent
+    AddRestaurantsComponent,
+    ManageTravelAgentCommissionComponent
   ],
   imports: [
     BrowserModule,

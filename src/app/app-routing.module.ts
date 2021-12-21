@@ -34,6 +34,7 @@ import { AddEmployeeComponent } from './pages/add-employee/add-employee.componen
 import { AssignTasksComponent } from './pages/assign-tasks/assign-tasks.component';
 import { AddTravelAgentCommissionComponent } from './pages/add-travel-agent-commission/add-travel-agent-commission.component';
 import { AddRestaurantsComponent } from './pages/add-restaurants/add-restaurants.component';
+import { ManageTravelAgentCommissionComponent } from './pages/manage-travel-agent-commission/manage-travel-agent-commission.component';
 
 const routes: Routes = [
   { 
@@ -169,6 +170,11 @@ const routes: Routes = [
     path: 'add-restaurants', 
     canActivate : [AuthGuard],
     component: AddRestaurantsComponent 
+  },
+  { 
+    path: 'manage-travel-agent-commission', 
+    canActivate : [AuthGuard],
+    component: ManageTravelAgentCommissionComponent 
   },
   { 
     path: '**', 

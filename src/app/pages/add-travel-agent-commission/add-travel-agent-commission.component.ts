@@ -80,7 +80,7 @@ export class AddTravelAgentCommissionComponent implements OnInit {
       if(response.status == true){
         
         this.toastr.success(response.message);
-        //this.router.navigate(['/manage-guest']);
+        this.router.navigate(['/manage-travel-agent-commission']);
         return true;
         
       }else{

@@ -1,17 +1,15 @@
 <app-header></app-header>
 <main class="jci-site-content">
     <!-- Landing Section Start -->
-    <section class="jci-landing-section">
+    <section class="jci-landing-section" style="background-image: url('{{bannerData.data.image}}');">
         <div class="container">
             <div class="row">
                 <div class="col col-12 col-md-8 col-lg-8">
                     <h1 class="jci-section-title">
-                        A One stop solution <br />
-                        for all your hotel operations
+                        {{bannerData.data.title}}
                     </h1>
                     <p class="jci-section-description">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis dolorum, facilis sint soluta dignissimos nesciunt sequi eum quas hic voluptatem nostrum minus dolores necessitatibus id vitae officia saepe
-                        obcaecati reprehenderit!
+                        {{bannerData.data.description}}
                     </p>
                     <a href="#" class="btn btn-success">Know More</a>
                 </div>
