@@ -36,6 +36,8 @@ import { AddTravelAgentCommissionComponent } from './pages/add-travel-agent-comm
 import { AddRestaurantsComponent } from './pages/add-restaurants/add-restaurants.component';
 import { ManageTravelAgentCommissionComponent } from './pages/manage-travel-agent-commission/manage-travel-agent-commission.component';
 import { ContentComponent } from './pages/content/content.component';
+import { AddAgencyComponent } from './pages/add-agency/add-agency.component';
+import { ManageAgencyComponent } from './pages/manage-agency/manage-agency.component';
 
 const routes: Routes = [
   { 
@@ -180,6 +182,16 @@ const routes: Routes = [
   { 
     path: 'content/:name', 
     component: ContentComponent 
+  },
+  { 
+    path: 'add-agency', 
+    canActivate : [AuthGuard],
+    component: AddAgencyComponent 
+  },
+  { 
+    path: 'manage-agency', 
+    canActivate : [AuthGuard],
+    component: ManageAgencyComponent 
   },
   { 
     path: '**', 

@@ -54,6 +54,8 @@ import { AddTravelAgentCommissionComponent } from './pages/add-travel-agent-comm
 import { AddRestaurantsComponent } from './pages/add-restaurants/add-restaurants.component';
 import { ManageTravelAgentCommissionComponent } from './pages/manage-travel-agent-commission/manage-travel-agent-commission.component';
 import { ContentComponent } from './pages/content/content.component';
+import { AddAgencyComponent } from './pages/add-agency/add-agency.component';
+import { ManageAgencyComponent } from './pages/manage-agency/manage-agency.component';
 
 
 
@@ -101,7 +103,9 @@ export function  authServiceFactory(authService: AuthService): Function {
     AddTravelAgentCommissionComponent,
     AddRestaurantsComponent,
     ManageTravelAgentCommissionComponent,
-    ContentComponent
+    ContentComponent,
+    AddAgencyComponent,
+    ManageAgencyComponent
   ],
   imports: [
     BrowserModule,
