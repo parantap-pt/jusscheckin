@@ -38,6 +38,7 @@ import { ManageTravelAgentCommissionComponent } from './pages/manage-travel-agen
 import { ContentComponent } from './pages/content/content.component';
 import { AddAgencyComponent } from './pages/add-agency/add-agency.component';
 import { ManageAgencyComponent } from './pages/manage-agency/manage-agency.component';
+import { DashboardOwnerComponent } from './pages/dashboard-owner/dashboard-owner.component';
 
 const routes: Routes = [
   { 
@@ -192,6 +193,11 @@ const routes: Routes = [
     path: 'manage-agency', 
     canActivate : [AuthGuard],
     component: ManageAgencyComponent 
+  },
+  { 
+    path: 'dashboard_owner', 
+    canActivate : [AuthGuard],
+    component: DashboardOwnerComponent 
   },
   { 
     path: '**', 

@@ -61,6 +61,7 @@ export class AuthService{
     this.loggedInUserData = loggedInUserData;
     localStorage.setItem('auth_token',this.loggedInUserData.auth_token);
     localStorage.setItem('user_id',this.loggedInUserId);
+    localStorage.setItem('user_type',this.loggedInUserData.user_type);
   }
 
   public removeAuth(){
@@ -70,6 +71,7 @@ export class AuthService{
     this.loggedInUserData = [];
     localStorage.removeItem('auth_token');
     localStorage.removeItem('user_id');
+    localStorage.removeItem('user_type');
     localStorage.removeItem('loggedInUserId');
     localStorage.removeItem('userDetails');
     localStorage.removeItem('loggedInUserData');

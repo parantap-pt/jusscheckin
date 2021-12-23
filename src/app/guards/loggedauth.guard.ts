@@ -14,8 +14,11 @@ export class LoggedauthGuard implements CanActivate {
 		next: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 		//Check for login
-		if(this.authService.loggedInUserData.user_id){
+		if(this.authService.loggedInUserData.user_type == 'm'){
 				this.router.navigate(['/dashboard_manager']);    
+		}
+		else if(this.authService.loggedInUserData.user_type == 'o'){
+				this.router.navigate(['/dashboard_owner']);    
 		}
 		return true;
 		
