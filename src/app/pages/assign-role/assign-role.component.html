@@ -1,0 +1,63 @@
+<section class="jci-dashboard-section">
+    <div class="jci-dashboard__inner">
+       <div class="jci-dashboard-sidebar">
+        <app-leftmenu></app-leftmenu>
+       </div>
+       <div class="jci-dashboard-content">
+          <div class="jci-dashboard-content__inner">
+             <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane active" id="v-pills-add-assign-tasks" role="tabpanel"  aria-labelledby="v-pills-add-assign-tasks-tab">
+                    <div class="jci-dashboard-content-area" data-scrollbar>
+                       <div class="jci-assign-tasks">
+                          <div class="jci-content-area">
+                             <h2 class="jci-dashboard-title">Assign Role</h2>
+                             <form class="row g-3" [formGroup]="frmAssignRole" name="frmAssignRole" method="POST" (ngSubmit)="submitAssignRole()">
+                                <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Employee</label>
+                                    <select name="employee_id" id="employee_id" formControlName="employee_id" class="form-select">
+                                       <option selected="selected" value="">Select Employee</option>
+                                       <option *ngFor="let employee of employee" value="{{employee.id}}">{{employee.name}}</option>
+                                    </select>
+                                    <div *ngIf="frmAssignRole.controls.employee_id.invalid && (frmAssignRole.controls.employee_id.dirty || frmAssignRole.controls.employee_id.touched)">
+                                     <div class="error-block" *ngIf="frmAssignRole.get('employee_id')?.hasError('required')">
+                                         Please select employee
+                                     </div>
+                                     </div>
+                                 </div>
+                                <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Department</label>
+                                    <select name="department_id" id="department_id" formControlName="department_id" class="form-select">
+                                       <option selected="selected" value="">Select Department</option>
+                                       <option *ngFor="let department of department" value="{{department.department_id}}">{{department.name}}</option>
+                                    </select>
+                                    <div *ngIf="frmAssignRole.controls.department_id.invalid && (frmAssignRole.controls.department_id.dirty || frmAssignRole.controls.department_id.touched)">
+                                     <div class="error-block" *ngIf="frmAssignRole.get('department_id')?.hasError('required')">
+                                         Please select department
+                                     </div>
+                                     </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Role</label>
+                                    <select name="role_id" id="role_id" formControlName="role_id" class="form-select">
+                                       <option selected="selected" value="">Select Role</option>
+                                       <option *ngFor="let role of role" value="{{role.role_id}}">{{role.role_name}}</option>
+                                    </select>
+                                    <div *ngIf="frmAssignRole.controls.role_id.invalid && (frmAssignRole.controls.role_id.dirty || frmAssignRole.controls.role_id.touched)">
+                                     <div class="error-block" *ngIf="frmAssignRole.get('role_id')?.hasError('required')">
+                                         Please select role
+                                     </div>
+                                     </div>
+                                 </div>
+                                <div class="col-12">
+                                   <button type="submit" class="btn btn-success" [disabled]="(!frmAssignRole.valid)">Assign Role</button>
+                                </div>
+                             </form>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
