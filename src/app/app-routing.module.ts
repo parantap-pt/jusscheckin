@@ -39,6 +39,7 @@ import { ContentComponent } from './pages/content/content.component';
 import { AddAgencyComponent } from './pages/add-agency/add-agency.component';
 import { ManageAgencyComponent } from './pages/manage-agency/manage-agency.component';
 import { DashboardOwnerComponent } from './pages/dashboard-owner/dashboard-owner.component';
+import { EditTravelAgentCommissionComponent } from './pages/edit-travel-agent-commission/edit-travel-agent-commission.component';
 
 const routes: Routes = [
   { 
@@ -198,6 +199,11 @@ const routes: Routes = [
     path: 'dashboard_owner', 
     canActivate : [AuthGuard],
     component: DashboardOwnerComponent 
+  },
+  { 
+    path: 'edit-travel-agent-commission/:id', 
+    canActivate : [AuthGuard],
+    component: EditTravelAgentCommissionComponent 
   },
   { 
     path: '**', 

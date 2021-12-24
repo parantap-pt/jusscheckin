@@ -42,7 +42,7 @@ export class ManageTravelAgentCommissionComponent implements OnInit {
 
     
     let options = this.commonservice.generateRequestHeaders(false);
-    this.commonservice.SubmiPostFormData('get_role_name',body,options)
+    this.commonservice.SubmiPostFormData('get_agent_commission_list',body,options)
     .then((response) => {  
       console.log(response.data);        
       if(response.status == true){
@@ -69,12 +69,12 @@ public deleteAgentCommission(id : string = ''){
       if(result.value){
         
         let body = new FormData();
-        body.append('role_id', id);
+        body.append('commission_id', id);
         body.append('user_id', this.authService.loggedInUserId);
         body.append('token', this.Constant['API_TOKEN']);
     
         let options = this.commonservice.generateRequestHeaders(false);
-        this.commonservice.SubmiPostFormData('delete_role',body,options)
+        this.commonservice.SubmiPostFormData('delete_agent_commission',body,options)
         .then((response) => {          
           if(response.status == true){
             this.toastr.success(response.message);
@@ -91,7 +91,7 @@ public deleteAgentCommission(id : string = ''){
         });
       }
     };
-    this.commonservice.showConfirmDialog('Delete','Are you sure you want to delete this Role','Yes','No',exeFn);
+    this.commonservice.showConfirmDialog('Delete','Are you sure you want to delete this Agent Commission','Yes','No',exeFn);
   }
 
 }

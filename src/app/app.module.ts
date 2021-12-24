@@ -57,6 +57,7 @@ import { ContentComponent } from './pages/content/content.component';
 import { AddAgencyComponent } from './pages/add-agency/add-agency.component';
 import { ManageAgencyComponent } from './pages/manage-agency/manage-agency.component';
 import { DashboardOwnerComponent } from './pages/dashboard-owner/dashboard-owner.component';
+import { EditTravelAgentCommissionComponent } from './pages/edit-travel-agent-commission/edit-travel-agent-commission.component';
 
 
 
@@ -107,7 +108,8 @@ export function  authServiceFactory(authService: AuthService): Function {
     ContentComponent,
     AddAgencyComponent,
     ManageAgencyComponent,
-    DashboardOwnerComponent
+    DashboardOwnerComponent,
+    EditTravelAgentCommissionComponent
   ],
   imports: [
     BrowserModule,

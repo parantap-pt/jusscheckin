@@ -163,7 +163,7 @@
 /***********************   Home Page Start    ****************************/
 
 .jci-landing-section {
-    /*background-image: url(../images/home-landing-img.png);*/
+    background-image: url(../images/home-landing-img.png);
     padding: 260px 0;
     background-size: cover;
     background-position: center;

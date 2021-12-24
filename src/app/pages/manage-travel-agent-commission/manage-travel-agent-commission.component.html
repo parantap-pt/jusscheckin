@@ -21,13 +21,13 @@
                             <div class="col col-12 col-md-4 col-lg-4" *ngFor="let commission of agentCommission.data">
                                <div class="jci-property-card card">
                                   <div class="card-body">
-                                     <h3 class="jci-property-name">{{commission.role_name}}</h3>
-                                     <p class="text-muted jci-property-sub-name">Property Owner</p>
-                                     <h6>Permission Granted</h6>
+                                     <h3 class="jci-property-name">Agency Name : {{commission.agency_name}}</h3>
+                                     <p class="text-muted jci-property-sub-name">Agent Name : {{commission.agent_name}}</p>
+                                     <h6>Commission : {{commission.commission_per}} %</h6>
                                      <div class="col-md-12 mt-3">
                                         <button type="button" class="btn btn-dark">View</button>
                                         <a class="btn btn-success">Edit</a>
-                                        <button type="button" class="btn btn-danger" >Delete</button>
+                                        <button type="button" class="btn btn-danger" (click)="deleteAgentCommission(commission.commission_id)">Delete</button>
                                      </div>
                                   </div>
                                </div>

@@ -7,18 +7,20 @@ import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
-  selector: 'app-add-travel-agent-commission',
-  templateUrl: './add-travel-agent-commission.component.html',
-  styleUrls: ['./add-travel-agent-commission.component.css']
+  selector: 'app-edit-travel-agent-commission',
+  templateUrl: './edit-travel-agent-commission.component.html',
+  styleUrls: ['./edit-travel-agent-commission.component.css']
 })
-export class AddTravelAgentCommissionComponent implements OnInit {
+export class EditTravelAgentCommissionComponent implements OnInit {
 
-   public Constant : any;
+  public Constant : any;
    public frmAgentCommission: FormGroup;
    public agentData: any = {data : []};
    public agencyData: any = {data : []};
    public selectedAgency  = '' ;
    public selectedAgent  = '' ;
+   public commission_id: any;
+   public commission: any;
 
   constructor(public commonservice:CommonService,private activatedRoute: ActivatedRoute,private router: Router,public fb: FormBuilder,public toastr : ToastrService,private spinner: NgxSpinnerService,public authService:AuthService) { 
 
@@ -37,10 +39,29 @@ export class AddTravelAgentCommissionComponent implements OnInit {
       'agencyName' : ['', [Validators.required]],
       'agentCommission' : ['', [Validators.required]]
     });
-
+    this.commission_id = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
   ngOnInit(): void {
+   if(this.authService.isLoggedIn){
+  	  let body = new FormData();
+	  body.append('user_id', this.authService.loggedInUserId);
+      body.append('commission_id', this.commission_id);
+      body.append('token', this.Constant['API_TOKEN']);
+
+	    let options = this.commonservice.generateRequestHeaders();
+	    this.commonservice.SubmiPostFormData('get_agent_commission_details',body,options)
+	    .then((response) => {          
+	      if(response.status == true){
+	         this.commission = response.data[0];
+          	 //console.log(this.commission) ;
+	          this.frmAgentCommission.controls['agencyName'].setValue(this.commission.agency_id);
+	          this.frmAgentCommission.controls['agentName'].setValue(this.commission.agent_id);
+	          this.frmAgentCommission.controls['agentCommission'].setValue(this.commission.commission_per);
+	
+	      }  
+	    });
+  	}
     this.loadAgncytList();
   }
 
