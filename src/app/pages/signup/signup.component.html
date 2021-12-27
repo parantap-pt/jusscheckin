@@ -6,6 +6,26 @@
                     <h1 class="jci-section-title text-center">Register</h1>
                     <div class="jci-login-content__inner">
                         <form class="row g-4" id='frmRegistration' [formGroup]="frmRegistration" name="frmRegistration" method="POST" (ngSubmit)="submitRegistration()" novalidate>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    
+                                    <select class="form-control" name="user_type" id="user_type" formControlName="user_type">
+                                        <option value="" selected="selected">Select User Type</option>
+                                        <option value="o" >Owner</option>
+                                        <option value="r">Receptionist</option>
+                                        <option value="a">Account</option>
+                                        <option value="m">Manager</option>
+                                    </select>
+
+                                    <div *ngIf="frmRegistration.controls.user_type.invalid && (frmRegistration.controls.user_type.dirty || frmRegistration.controls.user_type.touched)">
+                                        <div class="error-block" *ngIf="frmRegistration.get('user_type')?.hasError('required')">
+                                           Please select user type
+                                        </div>
+                                     </div>
+
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     
