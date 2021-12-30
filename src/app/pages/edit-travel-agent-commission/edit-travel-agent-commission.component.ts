@@ -54,10 +54,13 @@ export class EditTravelAgentCommissionComponent implements OnInit {
 	    .then((response) => {          
 	      if(response.status == true){
 	         this.commission = response.data[0];
-          	 //console.log(this.commission) ;
+            console.log(this.commission) ;
 	          this.frmAgentCommission.controls['agencyName'].setValue(this.commission.agency_id);
 	          this.frmAgentCommission.controls['agentName'].setValue(this.commission.agent_id);
 	          this.frmAgentCommission.controls['agentCommission'].setValue(this.commission.commission_per);
+            this.selectedAgency = this.commission.agency_id ;
+            this.loadAgents(this.commission.agency_id) ;
+            this.selectedAgent = this.commission.agent_id ;
 	
 	      }  
 	    });
@@ -72,7 +75,7 @@ export class EditTravelAgentCommissionComponent implements OnInit {
       let options = this.commonservice.generateRequestHeaders(false);
       this.commonservice.SubmiPostFormData('get_agency_list',body,options)
       .then((response) => {  
-        console.log(response.data);        
+        //console.log(response.data);        
         if(response.status == true){
           if(response.data.length  > 0){
             this.agencyData.data = response.data;
@@ -94,13 +97,15 @@ export class EditTravelAgentCommissionComponent implements OnInit {
   submitAgentCommission(){
     let body = new FormData();
     body.append('user_id', this.authService.loggedInUserId);
+    body.append('token', this.Constant['API_TOKEN']);
+    body.append('commission_id', this.commission_id);
     body.append('agent_id', this.frmAgentCommission.value.agentName);
     body.append('agency_id', this.frmAgentCommission.value.agencyName);
     body.append('commission_per', this.frmAgentCommission.value.agentCommission);
-    body.append('token', this.Constant['API_TOKEN']);
+
 
     let options = this.commonservice.generateRequestHeaders();
-    this.commonservice.SubmiPostFormData('add_agent_commission',body,options)
+    this.commonservice.SubmiPostFormData('edit_agent_commission',body,options)
     .then((response) => {     
       this.spinner.hide();
       if(response.status == true){
@@ -128,7 +133,7 @@ export class EditTravelAgentCommissionComponent implements OnInit {
   }
 
    loadAgentList($event:any){
-      let agency_id = $event.target.value
+      let agency_id = $event.target.value ;
       let body = new FormData();
       body.append('user_id', this.authService.loggedInUserId);
       body.append('agency_id', agency_id);
@@ -153,5 +158,33 @@ export class EditTravelAgentCommissionComponent implements OnInit {
         console.log(error);
         return false;
       });
-  }  
+   } 
+
+   loadAgents(agencyId:any){
+      let agency_id = agencyId ;
+      let body = new FormData();
+      body.append('user_id', this.authService.loggedInUserId);
+      body.append('agency_id', agency_id);
+      body.append('token', this.Constant['API_TOKEN']);
+      let options = this.commonservice.generateRequestHeaders(false);
+      this.commonservice.SubmiPostFormData('get_agent_of_agency',body,options)
+      .then((response) => {  
+        console.log(response.data);        
+        if(response.status == true){
+          if(response.data.length  > 0){
+            this.agentData.data = response.data;
+          }
+          else{
+            this.agentData.data = [];
+          }
+        }  
+        else{
+          this.agentData.data = [];
+        }  
+      })
+      .catch((error) => {
+        console.log(error);
+        return false;
+      });
+   }  
 }

@@ -26,7 +26,7 @@
                                      <h6>Commission : {{commission.commission_per}} %</h6>
                                      <div class="col-md-12 mt-3">
                                         <button type="button" class="btn btn-dark">View</button>
-                                        <a class="btn btn-success">Edit</a>
+                                        <a routerLink="/edit-travel-agent-commission/{{commission.commission_id}}"charset="  " class="btn btn-success">Edit</a>
                                         <button type="button" class="btn btn-danger" (click)="deleteAgentCommission(commission.commission_id)">Delete</button>
                                      </div>
                                   </div>
