@@ -9,55 +9,58 @@
                     <!-- Dashboard Content Start -->
                     <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel"  aria-labelledby="v-pills-dashboard-tab">
 
+                        
                         <div class="jci-dashboard-content-area" data-scrollbar>
-                            <div class="jci-dashboard-filter">
-                                <form class="row align-items-center">
-                                    <div class="col-md-3 col-lg-3 col-xl-2 mt-0">
-                                        <label for="Recipient's username" class="form-label mb-0">Property :</label>
-                                    </div>
-                                    <div class="col-md-9 col-lg-9 col-xl-8 mt-0">
-                                        <div class="input-group">
-                                            <select id="inputState" class="form-select">
-                                                <option selected>Select Property</option>
-                                                <option>Hotel Greate</option>
-                                                <option>Hotel 7 Star </option>
-                                                <option>Hotel Awesome</option>
-                                            </select>
-                                            <button class="btn btn-success" type="button" id="button-addon2">Search</button>
+                            
+                            
+                                <div class="jci-dashboard-filter">
+                                    <form class="col-md-12" [formGroup]="frmProperty" name="frmProperty" method="POST" (ngSubmit)="submitProperty()">
+                                        <div class="col-md-3 col-lg-3 col-xl-2 mt-0">
+                                            <label for="Recipient's username" class="form-label mb-0">Property :</label>
                                         </div>
-                                    </div>
-                                </form>
-                            </div>
+                                        <div class="col-md-9 col-lg-9 col-xl-8 mt-0">
+                                            <div class="input-group">
+                                                <select name="property_id" id="property_id" formControlName="property_id" class="form-select">
+                                                    <option selected="selected" value="">Select Property</option>
+                                                    <option *ngFor="let property of property" value="{{property.id}}">{{property.property_name}}</option>
+                                                </select>
+                                                <button [disabled]="(!frmProperty.valid)" class="btn btn-success" type="submit" id="button-addon2">Search</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            
 
                             <div class="jci-total-count-data">
                                 <div class="row">
                                     <div class="col col-12 col-md-6 col-lg-6">
                                         <div class="jci-total-count-card">
-                                            <h3 class="jci-total-count-number">5</h3>
+                                            <h3 class="jci-total-count-number">{{property_data.total_room}}</h3>
                                             <label class="jci-total-count-label">Total Numbers Of Rooms</label>
                                         </div>
                                     </div>
                                     <div class="col col-12 col-md-6 col-lg-6">
                                         <div class="jci-total-count-card">
-                                            <h3 class="jci-total-count-number">3</h3>
+                                            <h3 class="jci-total-count-number">{{property_data.booked_room}}</h3>
                                             <label class="jci-total-count-label">Booked Rooms</label>
                                         </div>
                                     </div>
                                     <div class="col col-12 col-md-6 col-lg-6">
                                         <div class="jci-total-count-card">
-                                            <h3 class="jci-total-count-number">2</h3>
+                                            <h3 class="jci-total-count-number">{{property_data.available_room}}</h3>
                                             <label class="jci-total-count-label">Available Rooms</label>
                                         </div>
                                     </div>
                                     <div class="col col-12 col-md-6 col-lg-6">
                                         <div class="jci-total-count-card">
-                                            <h3 class="jci-total-count-number">3000</h3>
+                                            <h3 class="jci-total-count-number">{{property_data.revenue}}</h3>
                                             <label class="jci-total-count-label">Revenue Earned</label>
                                         </div>
                                     </div>
                                     <div class="col col-12 col-md-6 col-lg-6">
                                         <div class="jci-total-count-card">
-                                            <h3 class="jci-total-count-number">1</h3>
+                                            <h3 class="jci-total-count-number">{{property_data.upcoming}}</h3>
                                             <label class="jci-total-count-label">Upcoming Bookings</label>
                                         </div>
                                     </div>

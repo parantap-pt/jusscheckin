@@ -336,7 +336,8 @@
    </div>
    <div class="jci-dashboard-sidebar-menu" data-scrollbar>
        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-
+           
+         <a routerLink="/dashboard_owner">
            <button class="nav-link active" id="v-pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#v-pills-dashboard" type="button" role="tab" aria-controls="v-pills-dashboard" aria-selected="true">
                <svg id="analytics_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                    <rect id="Rectangle_41" data-name="Rectangle 41" width="24" height="24" fill="none"/>
@@ -350,6 +351,7 @@
                </svg>
                <span>Dashboard</span>
            </button>
+           </a>
 
            <button class="nav-link" id="v-pills-property-reports-tab" data-bs-toggle="pill" data-bs-target="#v-pills-property-reports" type="button" role="tab" aria-controls="v-pills-property-reports" aria-selected="false">
                <svg id="analytics_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -404,6 +406,24 @@
                <span>Add Roles & Permission</span>
             </button>
            </a>
+
+           <a routerLink="/manage-property">
+            <button class="nav-link" id="v-pills-manage-property-tab" data-bs-toggle="pill" data-bs-target="#v-pills-manage-property" type="button" role="tab" aria-controls="v-pills-manage-property" aria-selected="false">
+               <svg id="add_business_black_24dp_1_" data-name="add_business_black_24dp (1)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <g id="Group_1167" data-name="Group 1167">
+                     <rect id="Rectangle_57" data-name="Rectangle 57" width="24" height="24" fill="none"/>
+                  </g>
+                  <g id="Group_1169" data-name="Group 1169">
+                     <g id="Group_1168" data-name="Group 1168">
+                        <rect id="Rectangle_58" data-name="Rectangle 58" width="15" height="2" transform="translate(2 4)" fill="#fff"/>
+                        <path id="Path_264" data-name="Path 264" d="M15,17h2V14h1V12L17,7H2L1,12v2H2v6h9V14h4ZM9,18H4V14H9ZM3.04,12l.6-3H15.36l.6,3Z" fill="#fff"/>
+                        <path id="Path_265" data-name="Path 265" d="M23,18H20V15H18v3H15v2h3v3h2V20h3Z" fill="#fff"/>
+                     </g>
+                  </g>
+               </svg>
+               <span>Manage Property</span>
+            </button>
+          </a>
 
            <a routerLink="/add-property">
             <button class="nav-link" id="v-pills-add-property-tab" data-bs-toggle="pill" data-bs-target="#v-pills-add-property" type="button" role="tab" aria-controls="v-pills-add-property" aria-selected="false">

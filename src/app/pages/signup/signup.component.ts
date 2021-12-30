@@ -32,7 +32,6 @@ export class SignupComponent implements OnInit {
     //meta tags set
 
     this.frmRegistration = fb.group({
-      'user_type' : ['', [Validators.required]],
       'firstName' : ['', [Validators.required]],
       'lastName' : ['', [Validators.required]],
       'email' : ['', [Validators.required]],
@@ -49,7 +48,7 @@ export class SignupComponent implements OnInit {
     this.spinner.show();
 
     let body = new FormData();
-    body.append('user_type', this.frmRegistration.value.user_type);
+    body.append('user_type', 'o');
     body.append('first_name', this.frmRegistration.value.firstName);
     body.append('last_name', this.frmRegistration.value.lastName);
     body.append('email', this.frmRegistration.value.email);
