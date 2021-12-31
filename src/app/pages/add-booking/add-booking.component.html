@@ -1,0 +1,112 @@
+<section class="jci-dashboard-section">
+    <div class="jci-dashboard__inner">
+       <div class="jci-dashboard-sidebar">
+        <app-leftmenu></app-leftmenu>
+       </div>
+       <div class="jci-dashboard-content">
+          <div class="jci-dashboard-content__inner">
+             <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane active" id="v-pills-add-employees" role="tabpanel"  aria-labelledby="v-pills-add-employees-tab">
+                    <div class="jci-dashboard-content-area" data-scrollbar>
+                       <div class="jci-new-employee h-100">
+                          <div class="jci-content-area">
+                             <h2 class="jci-dashboard-title">Add Booking</h2>
+                             <form class="row g-3" [formGroup]="frmBooking" name="frmBooking" method="POST" (ngSubmit)="submitEmployee()">
+                             	<div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Property</label>
+                                    <select name="property_id" id="property_id" formControlName="property_id" class="form-select">
+                                        <option  selected="selected" value="">Select Property</option>
+                                        <option *ngFor="let property of property" value="{{property.id}}">{{property.property_name}}</option>
+                                    </select>
+                                    <div *ngIf="frmBooking.controls.property_id.invalid && (frmBooking.controls.property_id.dirty || frmBooking.controls.property_id.touched)">
+                                        <div class="error-block" *ngIf="frmBooking.get('property_id')?.hasError('required')">
+                                            Please select property
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                   <label for="inputDepartmentName" class="form-label">Total Room</label>
+                                   <input type="number" class="form-control" name="total_room" id="total_room" formControlName="total_room" placeholder="Enter Total Room">
+                                    <div *ngIf="frmBooking.controls.total_room.invalid && (frmBooking.controls.total_room.dirty || frmBooking.controls.total_room.touched)">
+                                        <div class="error-block" *ngIf="frmBooking.get('total_room')?.hasError('required')">
+                                            Please enter total room
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                   <label for="inputPassword4" class="form-label">Room Number</label>
+                                   <input type="number" class="form-control" name="room_no" id="room_no" formControlName="room_no" placeholder="Room No">
+                                   <div *ngIf="frmBooking.controls.room_no.invalid && (frmBooking.controls.room_no.dirty || frmBooking.controls.room_no.touched)">
+                                    <div class="error-block" *ngIf="frmBooking.get('room_no')?.hasError('required')">
+                                        Please enter total room
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="col-md-6">
+                                   <label for="inputPassword4" class="form-label">Adult Guest</label>
+                                   <input type="number" class="form-control" name="adult_guest" id="adult_guest" formControlName="adult_guest" placeholder="Enter Adult Guest">
+                                   <div *ngIf="frmBooking.controls.adult_guest.invalid && (frmBooking.controls.adult_guest.dirty || frmBooking.controls.adult_guest.touched)">
+                                    <div class="error-block" *ngIf="frmBooking.get('adult_guest')?.hasError('required')">
+                                        Please enter adult guest 
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                   <label for="inputPassword4" class="form-label">Children</label>
+                                   <input type="number" class="form-control" name="children" id="children" formControlName="children" placeholder="Enter children">
+                                   <div *ngIf="frmBooking.controls.children.invalid && (frmBooking.controls.children.dirty || frmBooking.controls.children.touched)">
+                                    <div class="error-block" *ngIf="frmBooking.get('children')?.hasError('required')">
+                                        Please enter children 
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                   <label for="inputPassword4" class="form-label">From Date</label>
+                                   <input type="date" class="form-control" name="from_date" id="from_date" formControlName="from_date" placeholder="Select From Date">
+                                   <div *ngIf="frmBooking.controls.from_date.invalid && (frmBooking.controls.from_date.dirty || frmBooking.controls.from_date.touched)">
+                                    <div class="error-block" *ngIf="frmBooking.get('from_date')?.hasError('required')">
+                                        Please select From Date 
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                   <label for="inputPassword4" class="form-label">To Date</label>
+                                   <input type="date" class="form-control" name="to_date" id="to_date" formControlName="to_date" placeholder="Select To Date">
+                                   <div *ngIf="frmBooking.controls.to_date.invalid && (frmBooking.controls.to_date.dirty || frmBooking.controls.to_date.touched)">
+                                    <div class="error-block" *ngIf="frmBooking.get('to_date')?.hasError('required')">
+                                        Please select To Date 
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                               
+                               <table class="table table-bordered" formArrayName="members">  
+							      <tr>  
+							        <th colspan="2">Add Guest Details:</th>  
+							        <th width="150px"><button type="button" (click)="addMember()">Add More</button></th>  
+							      </tr>  
+							      <tr *ngFor="let quantity of members().controls; let i=index" [formGroupName]="i">  
+							        <td>  
+							            Guest Name :  
+							            <input type="text" formControlName="guest_name" class="form-control">  
+							        </td>  
+							        <td>  
+							            Age:  
+							            <input type="text" formControlName="age" class="form-control">  
+							        </td>  
+							        <td>  
+							            <button (click)="removeQuantity(i)">Remove</button>  
+							        </td>  
+							      </tr>  
+							    </table>    <button type="submit" class="btn btn-success" [disabled]="(!frmBooking.valid)">Add Booking</button>
+                                </div>
+                             </form>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>

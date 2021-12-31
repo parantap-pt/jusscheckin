@@ -60,6 +60,7 @@ import { DashboardOwnerComponent } from './pages/dashboard-owner/dashboard-owner
 import { EditTravelAgentCommissionComponent } from './pages/edit-travel-agent-commission/edit-travel-agent-commission.component';
 import { AddDepartmentComponent } from './pages/add-department/add-department.component';
 import { AssignRoleComponent } from './pages/assign-role/assign-role.component';
+import { AddBookingComponent } from './pages/add-booking/add-booking.component';
 
 
 
@@ -113,7 +114,8 @@ export function  authServiceFactory(authService: AuthService): Function {
     DashboardOwnerComponent,
     EditTravelAgentCommissionComponent,
     AddDepartmentComponent,
-    AssignRoleComponent
+    AssignRoleComponent,
+    AddBookingComponent
   ],
   imports: [
     BrowserModule,
