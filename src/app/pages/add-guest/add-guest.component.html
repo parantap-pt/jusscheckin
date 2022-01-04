@@ -10,11 +10,11 @@
                     <div class="jci-dashboard-content-area" data-scrollbar>
                         <div class="jci-guest-facilities h-100">
                            <div class="jci-content-area">
-                              <h2 class="jci-dashboard-title">Add Guest Facilities</h2>
+                              <h2 class="jci-dashboard-title">Add Guest Facility</h2>
                               <form class="row g-3" [formGroup]="frmGuest" name="frmGuest" method="POST" (ngSubmit)="submitGuest()" novalidate>
                                  <div class="col-md-6">
-                                    <label for="inputPassword4" class="form-label">Guest Name</label>
-                                    <input type="text" class="form-control" name="title" id="title" formControlName="title" placeholder="Enter Guest Name">
+                                    <label for="inputPassword4" class="form-label">Facility Name</label>
+                                    <input type="text" class="form-control" name="title" id="title" formControlName="title" placeholder="Enter Facility Name">
 
                                     <div *ngIf="frmGuest.controls.title.invalid && (frmGuest.controls.title.dirty || frmGuest.controls.title.touched)">
                                         <div class="error-block" *ngIf="frmGuest.get('title')?.hasError('required')">
@@ -24,18 +24,18 @@
 
                                  </div>
                                  <div class="col-md-6">
-                                    <label for="inputPassword4" class="form-label">Guest Description</label>
+                                    <label for="inputPassword4" class="form-label">Facility Description</label>
                                     <input type="text" class="form-control" name="description" id="description" formControlName="description" placeholder="Enter Description">
 
                                     <div *ngIf="frmGuest.controls.description.invalid && (frmGuest.controls.description.dirty || frmGuest.controls.description.touched)">
                                         <div class="error-block" *ngIf="frmGuest.get('description')?.hasError('required')">
-                                            Please enter name
+                                            Please enter description
                                         </div>
                                     </div>
 
                                  </div>
                                  <div class="col-md-6">
-                                    <label for="inputPassword4" class="form-label">Guest Image</label>
+                                    <label for="inputPassword4" class="form-label">Facility Image</label>
                                     <div class="jci-choose-file-input">
                                        <input type="file" class="form-control" id="image" formControlName="image" (change)="onFileChange($event)">
 
@@ -43,14 +43,14 @@
 
                                        <div *ngIf="frmGuest.controls.image.invalid && (frmGuest.controls.image.dirty || frmGuest.controls.image.touched)">
                                             <div class="error-block" *ngIf="frmGuest.get('image')?.hasError('required')">
-                                                Please enter name
+                                                Please select image
                                             </div>
                                         </div>
 
                                     </div>
                                  </div>
                                  <div class="col-12">
-                                    <button type="submit" class="btn btn-success" [disabled]="(!frmGuest.valid)">Add Facilities</button>
+                                    <button type="submit" class="btn btn-success" [disabled]="(!frmGuest.valid)">Add Facility</button>
                                  </div>
                               </form>
                            </div>

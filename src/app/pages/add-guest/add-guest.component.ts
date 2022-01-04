@@ -27,7 +27,7 @@ export class AddGuestComponent implements OnInit {
       {name : 'og:title' , content : 'Login '+' - '+this.Constant['SITE_NM']}
     ];
     this.commonservice.changeMetaTagOfPage(meta_tag);
-    this.commonservice.setTitle('Add Guest Facilities');
+    this.commonservice.setTitle('Add Guest Facility');
     //meta tags set
 
     this.frmGuest = fb.group({

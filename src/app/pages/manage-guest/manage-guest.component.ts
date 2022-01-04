@@ -26,7 +26,7 @@ export class ManageGuestComponent implements OnInit {
       {name : 'og:title' , content : 'Manage Guest '+' - '+this.Constant['SITE_NM']}
     ];
     this.commonservice.changeMetaTagOfPage(meta_tag);
-    this.commonservice.setTitle('Manage Guest Facilities');
+    this.commonservice.setTitle('Manage Guest Facility');
     //meta tags set
 
   }
