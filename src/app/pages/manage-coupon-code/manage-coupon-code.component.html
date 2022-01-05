@@ -14,8 +14,9 @@
                                     <div class="row">
                                         <div class="col col-12 col-md-4 col-lg-6 col-xl-4" *ngFor="let coupon of couponcode.data">
                                             <div class="jci-property-card card jci-property-coupon">    <div class="card-body">
-                                                    <h3 class="jci-property-name">Salama Property</h3>
-                                                    <h6>Up to {{coupon.discount}}% Instant Discount</h6>
+                                                   <!--  <h3 class="jci-property-name">Salama Property</h3> -->
+                                                    <h6 *ngIf="(coupon.discount_type == 'Percentage')">Up to {{coupon.discount}}% Instant Discount</h6>
+                                                    <h6 *ngIf="(coupon.discount_type == 'Amount')">Up to {{coupon.discount}}₹ Instant Discount</h6>
                                                     <p class="text-muted jci-property-coupon-code">{{coupon.coupon_code}}</p>                                                 
                                                     <div class="col-md-12 mt-3">                                                    
                                                         <button (click)="editCouponCode(coupon.coupon_code_id)" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
@@ -48,6 +49,19 @@
       </div>
       <div class="modal-body">
             <div class="col-md-12">
+                <div class="form-group mb-3">
+                    <label for="inputPassword4" class="form-label">Select Discount Type</label>
+                    <select id="discount_type" name="discount_type" formControlName="discount_type" class="form-select">
+                       <option value="" selected="">Select Discount Type</option>
+                       <option value="p">Percentage</option>
+                       <option value="a">Fixed Amount</option>
+                    </select>
+                    <div *ngIf="frmCouponCode.controls.discount_type.invalid && (frmCouponCode.controls.discount_type.dirty || frmCouponCode.controls.discount_type.touched)">
+                          <div class="error-block" *ngIf="frmCouponCode.get('discount_type')?.hasError('required')">
+                              Please select discount type
+                          </div>
+                      </div>
+                 </div>
                 <div class="form-group mb-3">
                     <label for="inputPassword4" class="form-label">Enter  Offers</label>
                     <input type="text" class="form-control" id="discount" name="discount" formControlName="discount" placeholder="Up to 25% Instant Discount">

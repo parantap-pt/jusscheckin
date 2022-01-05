@@ -96,40 +96,46 @@ export class AddBookingComponent implements OnInit {
   }
 
   submitEmployee(){
-    console.log(this.frmBooking.value);
-    let body = new FormData();
-    body.append('user_id', this.authService.loggedInUserId);
-    body.append('property_id', this.frmBooking.value.property_id);
-    body.append('total_room', this.frmBooking.value.total_room);
-    body.append('room_no', this.frmBooking.value.room_no);
-    body.append('adult_guest', this.frmBooking.value.adult_guest);
-    body.append('children', this.frmBooking.value.children);
-    body.append('from_date', this.frmBooking.value.from_date);
-    body.append('to_date', this.frmBooking.value.to_date);
-    body.append('members', this.frmBooking.value.members);
-    body.append('token', this.Constant['API_TOKEN']);
+    //console.log(this.frmBooking.value);
+    if(this.frmBooking.value.members.length > 0){
+        let body = new FormData();
+        body.append('user_id', this.authService.loggedInUserId);
+        body.append('property_id', this.frmBooking.value.property_id);
+        body.append('total_room', this.frmBooking.value.total_room);
+        body.append('room_no', this.frmBooking.value.room_no);
+        body.append('adult_guest', this.frmBooking.value.adult_guest);
+        body.append('children', this.frmBooking.value.children);
+        body.append('from_date', this.frmBooking.value.from_date);
+        body.append('to_date', this.frmBooking.value.to_date);
+        body.append('members', JSON.stringify(this.frmBooking.value.members));
+        body.append('token', this.Constant['API_TOKEN']);
 
-    let options = this.commonservice.generateRequestHeaders();
-    this.commonservice.SubmiPostFormData('add_booking',body,options)
-    .then((response) => {     
-      this.spinner.hide();
-      if(response.status == true){
-        
-        this.toastr.success(response.message);
-        this.frmBooking.reset();
-        return true;
-        
-      }else{
-        if(response.message != ''){
-          this.toastr.error(response.message);        
-        }
+        let options = this.commonservice.generateRequestHeaders();
+        this.commonservice.SubmiPostFormData('add_booking',body,options)
+        .then((response) => {     
+          this.spinner.hide();
+          if(response.status == true){
+            
+            this.toastr.success(response.message);
+            this.frmBooking.reset();
+            return true;
+            
+          }else{
+            if(response.message != ''){
+              this.toastr.error(response.message);        
+            }
+            return false;
+          }  
+        }).catch((error) => {
+          console.log(error);
+          this.toastr.error('Something went wrong');
+          return false;
+        }); 
+    }else{
+        this.toastr.error('Please add Guest user Data');
         return false;
-      }  
-    }).catch((error) => {
-      console.log(error);
-      this.toastr.error('Something went wrong');
-      return false;
-    }); 
+    }
+    
   }
 
 }

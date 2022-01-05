@@ -16,7 +16,7 @@ export class ManageCouponCodeComponent implements OnInit {
   public Constant : any;
   public editId : any;
   public frmCouponCode: FormGroup;
-
+  
   public couponcode: any = {data : []};
   public coupons: any;
   @ViewChild('closeCouponCodeModal') closeCouponCodeModal: ElementRef;
@@ -36,6 +36,7 @@ export class ManageCouponCodeComponent implements OnInit {
     this.frmCouponCode = fb.group({
        'couponcode' : ['', [Validators.required]],
        'discount' : ['', [Validators.required]] ,
+       'discount_type' : ['', [Validators.required]] ,
        'couponcodeId' : ['', [Validators.required]] 
      });
 
@@ -118,9 +119,10 @@ export class ManageCouponCodeComponent implements OnInit {
       .then((response) => {          
         if(response.status == true){
           this.coupons = response.data[0];
-            //console.log(this.coupons) ;
+            console.log(this.coupons) ;
             this.frmCouponCode.controls['couponcode'].setValue(this.coupons.coupon_code);
             this.frmCouponCode.controls['discount'].setValue(this.coupons.discount);
+            this.frmCouponCode.controls['discount_type'].setValue(this.coupons.discount_type);
             this.frmCouponCode.controls['couponcodeId'].setValue(this.coupons.coupon_code_id);
           }  
       });
@@ -133,6 +135,7 @@ export class ManageCouponCodeComponent implements OnInit {
       body.append('coupon_code', this.frmCouponCode.value.couponcode);
       body.append('discount', this.frmCouponCode.value.discount);
       body.append('user_id', this.authService.loggedInUserId);
+      body.append('discount_type', this.frmCouponCode.value.discount_type);
       body.append('coupon_code_id', this.frmCouponCode.value.couponcodeId);
       body.append('token', this.Constant['API_TOKEN']);
 

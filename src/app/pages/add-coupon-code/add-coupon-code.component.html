@@ -42,6 +42,19 @@
                                     </div>
                                </div>
                                <div class="col-md-6">
+                                  <label for="inputPassword4" class="form-label">Select Discount Type</label>
+                                  <select id="discount_type" name="discount_type" formControlName="discount_type" class="form-select">
+                                     <option value="" selected="">Select Discount Type</option>
+                                     <option value="p">Percentage</option>
+                                     <option value="a">Fixed Amount</option>
+                                  </select>
+                                  <div *ngIf="frmCouponCode.controls.discount_type.invalid && (frmCouponCode.controls.discount_type.dirty || frmCouponCode.controls.discount_type.touched)">
+                                        <div class="error-block" *ngIf="frmCouponCode.get('discount_type')?.hasError('required')">
+                                            Please select discount type
+                                        </div>
+                                    </div>
+                               </div>
+                               <div class="col-md-6">
                                   <label for="inputPassword4" class="form-label">Add discount</label>
                                   <input type="text" class="form-control" id="discount" name="discount" formControlName="discount" placeholder="Enter discount for code">
                                   <div *ngIf="frmCouponCode.controls.discount.invalid && (frmCouponCode.controls.discount.dirty || frmCouponCode.controls.discount.touched)">

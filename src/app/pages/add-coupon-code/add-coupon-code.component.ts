@@ -32,6 +32,7 @@ export class AddCouponCodeComponent implements OnInit {
 
     this.frmCouponCode = fb.group({
       'couponcode' : ['', [Validators.required]],
+      'discount_type' : ['', [Validators.required]],
       'discount' : ['', [Validators.required]]
     });
 
@@ -41,33 +42,39 @@ export class AddCouponCodeComponent implements OnInit {
   }
 
   submitCouponCode(){
-    let body = new FormData();
-    body.append('token', this.Constant['API_TOKEN']);
-    body.append('user_id', this.authService.loggedInUserId);
-    body.append('coupon_code', this.frmCouponCode.value.couponcode);
-    body.append('discount', this.frmCouponCode.value.discount);
+    if(this.frmCouponCode.value.discount_type !=''){
+        let body = new FormData();
+        body.append('token', this.Constant['API_TOKEN']);
+        body.append('user_id', this.authService.loggedInUserId);
+        body.append('coupon_code', this.frmCouponCode.value.couponcode);
+        body.append('discount_type', this.frmCouponCode.value.discount_type);
+        body.append('discount', this.frmCouponCode.value.discount);
 
-    let options = this.commonservice.generateRequestHeaders();
-    this.commonservice.SubmiPostFormData('create_coupon_code',body,options)
-    .then((response) => {     
-      this.spinner.hide();
-      if(response.status == true){
-        
-        this.toastr.success(response.message);
-        this.router.navigate(['/manage-coupon-code']);
-        return true;
-        
-      }else{
-        if(response.message != ''){
-          this.toastr.error(response.message);        
-        }
-        return false;
-      }  
-    }).catch((error) => {
-      console.log(error);
+        let options = this.commonservice.generateRequestHeaders();
+        this.commonservice.SubmiPostFormData('create_coupon_code',body,options)
+        .then((response) => {     
+          this.spinner.hide();
+          if(response.status == true){
+            
+            this.toastr.success(response.message);
+            this.router.navigate(['/manage-coupon-code']);
+            return true;
+            
+          }else{
+            if(response.message != ''){
+              this.toastr.error(response.message);        
+            }
+            return false;
+          }  
+        }).catch((error) => {
+          console.log(error);
+          this.toastr.error('Something went wrong');
+          return false;
+        });
+    }else{
       this.toastr.error('Something went wrong');
       return false;
-    });
+    }
   }
 
 }
