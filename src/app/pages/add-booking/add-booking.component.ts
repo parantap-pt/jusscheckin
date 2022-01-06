@@ -102,7 +102,7 @@ export class AddBookingComponent implements OnInit {
         body.append('user_id', this.authService.loggedInUserId);
         body.append('property_id', this.frmBooking.value.property_id);
         body.append('total_room', this.frmBooking.value.total_room);
-        body.append('room_no', this.frmBooking.value.room_no);
+        body.append('room_number', this.frmBooking.value.room_no);
         body.append('adult_guest', this.frmBooking.value.adult_guest);
         body.append('children', this.frmBooking.value.children);
         body.append('from_date', this.frmBooking.value.from_date);

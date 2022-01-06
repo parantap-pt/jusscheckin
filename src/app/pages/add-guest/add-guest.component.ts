@@ -17,6 +17,7 @@ export class AddGuestComponent implements OnInit {
   public file : any;
   public imageSrc: string;
   public frmGuest: FormGroup;
+  public facility_type = 'n';
 
   constructor(public commonservice:CommonService,private activatedRoute: ActivatedRoute,private router: Router,public fb: FormBuilder,public toastr : ToastrService,private spinner: NgxSpinnerService,public authService:AuthService) { 
 
@@ -33,7 +34,8 @@ export class AddGuestComponent implements OnInit {
     this.frmGuest = fb.group({
       'title' : ['', [Validators.required]],
       'description' : ['', [Validators.required]],
-      'image' : ['', [Validators.required]]
+      'image' : ['', [Validators.required]],
+      'amount' : ['']
     });
 
   }
@@ -61,12 +63,18 @@ export class AddGuestComponent implements OnInit {
     }
   }
 
+  onTypeClick(facility_type:any){
+    this.facility_type = facility_type;
+  }
+
   submitGuest(){
     console.log(this.frmGuest.value.image);
     let body = new FormData();
     body.append('user_id', this.authService.loggedInUserId);
     body.append('title', this.frmGuest.value.title);
     body.append('description', this.frmGuest.value.description);
+    body.append('facility_type', this.frmGuest.value.facility_type);
+    body.append('amount', this.frmGuest.value.amount);
     body.append('image', this.file[0]);
     body.append('token', this.Constant['API_TOKEN']);
 

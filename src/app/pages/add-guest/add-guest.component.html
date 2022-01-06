@@ -34,7 +34,7 @@
                                     </div>
 
                                  </div>
-                                 <div class="col-md-6">
+                                 <div class="col-md-12">
                                     <label for="inputPassword4" class="form-label">Facility Image</label>
                                     <div class="jci-choose-file-input">
                                        <input type="file" class="form-control" id="image" formControlName="image" (change)="onFileChange($event)">
@@ -49,6 +49,20 @@
 
                                     </div>
                                  </div>
+                                 <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Facility Type</label>
+                                    <div class="jci-choose-file-input">
+                                       <input type="radio" name="facility_type" value="f" checked (click)="onTypeClick('free')">Free
+                                       <input type="radio" name="facility_type" value="p" (click)="onTypeClick('paid')">Paid
+                                    </div>
+                                 </div>
+
+                                 <div class="col-md-6" *ngIf="facility_type=='paid'">
+                                    <label for="inputPassword4" class="form-label">Amount</label>
+                                    <input type="text" class="form-control" name="amount" id="amount" formControlName="amount" placeholder="Enter Amount">
+
+                                 </div>
+
                                  <div class="col-12">
                                     <button type="submit" class="btn btn-success" [disabled]="(!frmGuest.valid)">Add Facility</button>
                                  </div>

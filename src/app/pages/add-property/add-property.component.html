@@ -73,6 +73,18 @@
                                   </div>
                                   </div>
                                </div>
+                               <div class="col-md-6">
+                                 <label for="inputImage" class="form-label">ID Proof</label>
+                                 <div class="jci-choose-file-input">
+                                    <input type="file" class="form-control" name="upload_id" id="upload_id" formControlName="upload_id" (change)="onIdFileChange($event)">
+                                    <img [src]="IdImageSrc" *ngIf="IdImageSrc" style="height: 100px; width:100px">
+                                    <div *ngIf="frmProperty.controls.upload_id.invalid && (frmProperty.controls.upload_id.dirty || frmProperty.controls.upload_id.touched)">
+                                       <div class="error-block" *ngIf="frmProperty.get('upload_id')?.hasError('required')">
+                                           Please select ID proof
+                                       </div>
+                                 </div>
+                                 </div>
+                              </div>
                                <div class="col-12">
                                   <button type="submit" [disabled]="(!frmProperty.valid)" class="btn btn-success">Add Property</button>
                                </div>

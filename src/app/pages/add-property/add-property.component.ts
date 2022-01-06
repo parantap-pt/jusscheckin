@@ -16,7 +16,9 @@ export class AddPropertyComponent implements OnInit {
 
   public Constant : any;
   public file : any;
+  public idfile : any;
   public imageSrc: string;
+  public IdImageSrc: string;
   public frmProperty: FormGroup;
   public propertyType: any = {data : []};
 
@@ -37,7 +39,8 @@ export class AddPropertyComponent implements OnInit {
       'propertyType' : ['', [Validators.required]],
       'address' : ['', [Validators.required]],
       'totalRoom' : ['', [Validators.required]],
-      'image' : ['', [Validators.required]]
+      'image' : ['', [Validators.required]],
+      'upload_id' : ['', [Validators.required]]
     });
 
   }
@@ -66,6 +69,26 @@ export class AddPropertyComponent implements OnInit {
     }
   }
 
+  onIdFileChange(event:any) {
+
+    const reader = new FileReader();
+
+    if(event.target.files && event.target.files.length) {
+
+      const [file] = event.target.files;
+
+      this.idfile = event.target.files;
+
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.IdImageSrc = reader.result as string;
+        this.frmProperty.patchValue({
+          fileSource: reader.result
+        });
+      };
+    }
+  }
+
   submitProperty(){
     console.log(this.frmProperty.value.image);
     let body = new FormData();
@@ -76,6 +99,7 @@ export class AddPropertyComponent implements OnInit {
     body.append('total_room', this.frmProperty.value.totalRoom);
     body.append('guest_facility_id', '1');
     body.append('image', this.file[0]);
+    body.append('upload_id', this.idfile[0]);
     body.append('token', this.Constant['API_TOKEN']);
 
     let options = this.commonservice.generateRequestHeaders();
