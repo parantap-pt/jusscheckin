@@ -31,7 +31,8 @@ export class EditTaskComponent implements OnInit {
       this.frmEditTask = fb.group({
        'taskTitle' : ['', [Validators.required]],
        'taskTimeline' : ['', [Validators.required]],
-       'taskDescription' : ['', [Validators.required]]
+       'taskDescription' : ['', [Validators.required]],
+       'task_date' : ['', [Validators.required]]
      });
 
      this.task_id = this.activatedRoute.snapshot.paramMap.get('id');
@@ -49,10 +50,11 @@ export class EditTaskComponent implements OnInit {
 	    .then((response) => {          
 	      if(response.status == true){
 	        this.tasks = response.data;
-          
+          console.log(this.tasks.task_date);
           this.frmEditTask.controls['taskTitle'].setValue(this.tasks.task_title);
           this.frmEditTask.controls['taskDescription'].setValue(this.tasks.task_description);
           this.frmEditTask.controls['taskTimeline'].setValue(this.tasks.task_timeline);
+          this.frmEditTask.controls['task_date'].setValue(this.tasks.task_date);
 	
 	      }  
 	    });
@@ -66,6 +68,7 @@ export class EditTaskComponent implements OnInit {
       body.append('task_title', this.frmEditTask.value.taskTitle);
       body.append('task_timeline', this.frmEditTask.value.taskTimeline);
       body.append('task_description', this.frmEditTask.value.taskDescription);
+      body.append('task_date', this.frmEditTask.value.task_date);
       body.append('user_id', this.authService.loggedInUserId);
       body.append('task_id', this.task_id);
       body.append('token', this.Constant['API_TOKEN']);

@@ -30,7 +30,16 @@
 				                  </div>
 				               </div>
 				            </div>
-				            <div class="col-md-12">
+							<div class="col-md-6">
+								<label for="inputPassword4" class="form-label">Date</label>
+								<input type="date" class="form-control" name="task_date" id="task_date" formControlName="task_date" placeholder="Select To Date">
+								<div *ngIf="frmEditTask.controls.task_date.invalid && (frmEditTask.controls.task_date.dirty || frmEditTask.controls.task_date.touched)">
+								 <div class="error-block" *ngIf="frmEditTask.get('task_date')?.hasError('required')">
+									 Please select Date 
+								 </div>
+								 </div>
+							 </div>
+				            <div class="col-md-6">
 				               <label for="taskDescription" class="form-label">Task Description</label>
 				               <textarea class="form-control" rows="4" resize="none" id="taskDescription" name="taskDescription" formControlName="taskDescription" placeholder="Enter Description"></textarea>
 				               <div *ngIf="frmEditTask.controls.taskDescription.invalid && (frmEditTask.controls.taskDescription.dirty || frmEditTask.controls.taskDescription.touched)">

@@ -73,7 +73,7 @@ export class AddGuestComponent implements OnInit {
     body.append('user_id', this.authService.loggedInUserId);
     body.append('title', this.frmGuest.value.title);
     body.append('description', this.frmGuest.value.description);
-    body.append('facility_type', this.frmGuest.value.facility_type);
+    body.append('facility_type', this.facility_type);
     body.append('amount', this.frmGuest.value.amount);
     body.append('image', this.file[0]);
     body.append('token', this.Constant['API_TOKEN']);

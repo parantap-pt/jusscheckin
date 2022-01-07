@@ -32,7 +32,8 @@ export class AddTaskComponent implements OnInit {
 	     this.frmAddTask = fb.group({
 	      'taskTitle' : ['', [Validators.required]],
 	      'taskTimeline' : ['', [Validators.required]],
-	      'taskDescription' : ['', [Validators.required]]
+	      'taskDescription' : ['', [Validators.required]],
+        'task_date' : ['', [Validators.required]]
 	    });
    }
 
@@ -47,6 +48,7 @@ export class AddTaskComponent implements OnInit {
       body.append('task_title', this.frmAddTask.value.taskTitle);
       body.append('task_timeline', this.frmAddTask.value.taskTimeline);
       body.append('task_description', this.frmAddTask.value.taskDescription);
+      body.append('task_date', this.frmAddTask.value.task_date);
       body.append('user_id', this.authService.loggedInUserId);
       body.append('token', this.Constant['API_TOKEN']);
 

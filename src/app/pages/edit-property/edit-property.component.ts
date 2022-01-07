@@ -16,7 +16,9 @@ export class EditPropertyComponent implements OnInit {
 
   public Constant : any;
   public file : any;
+  public idfile : any;
   public imageSrc: string;
+  public IdImageSrc: string;
   public frmEditProperty: FormGroup;
   public propertyType: any = {data : []};
   public property: any;
@@ -39,7 +41,8 @@ export class EditPropertyComponent implements OnInit {
       'propertyType' : ['', [Validators.required]],
       'address' : ['', [Validators.required]],
       'totalRoom' : ['', [Validators.required]],
-      'image' : ['']
+      'image' : [''],
+      'upload_id' : ['']
     });
 
     this.property_id = this.activatedRoute.snapshot.paramMap.get('id');
@@ -60,12 +63,13 @@ export class EditPropertyComponent implements OnInit {
       .then((response) => {          
         if(response.status == true){
           this.property = response.data[0];
-          console.log(this.property) ;
+          //console.log(this.property) ;
           this.frmEditProperty.controls['propertyName'].setValue(this.property.property_name);
           this.frmEditProperty.controls['propertyType'].setValue(this.property.property_type_id);
           this.frmEditProperty.controls['address'].setValue(this.property.location);
           this.frmEditProperty.controls['totalRoom'].setValue(this.property.total_room);
           this.imageSrc = this.property.image;
+          this.IdImageSrc = this.property.upload_id;
   
         }  
       });
@@ -92,6 +96,26 @@ export class EditPropertyComponent implements OnInit {
     }
   }
 
+  onIdFileChange(event:any) {
+
+    const reader = new FileReader();
+
+    if(event.target.files && event.target.files.length) {
+
+      const [file] = event.target.files;
+
+      this.idfile = event.target.files;
+
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.IdImageSrc = reader.result as string;
+        this.frmEditProperty.patchValue({
+          fileSource: reader.result
+        });
+      };
+    }
+  }
+
   submitEditProperty(){
     console.log(this.frmEditProperty.value.image);
     let body = new FormData();
@@ -104,6 +128,9 @@ export class EditPropertyComponent implements OnInit {
     body.append('guest_facility_id', '1');
     if(this.file){
       body.append('image', this.file[0]);
+    }
+    if(this.idfile){
+      body.append('upload_id', this.idfile[0]);
     }
     body.append('token', this.Constant['API_TOKEN']);
 

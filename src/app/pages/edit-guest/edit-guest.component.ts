@@ -19,6 +19,7 @@ export class EditGuestComponent implements OnInit {
   public imageSrc: string;
   public frmGuest: FormGroup;
   public guest_id: any;
+  public facility_type:any;
 
   constructor(public commonservice:CommonService,private activatedRoute: ActivatedRoute,private router: Router,public fb: FormBuilder,public toastr : ToastrService,private spinner: NgxSpinnerService,public authService:AuthService) { 
     this.Constant = this.commonservice.getConstants();
@@ -33,7 +34,8 @@ export class EditGuestComponent implements OnInit {
       this.frmGuest = fb.group({
         'title' : ['', [Validators.required]],
         'description' : ['', [Validators.required]],
-        'image' : ['']
+        'image' : [''],
+        'amount' : ['']
       });
 
      this.guest_id = this.activatedRoute.snapshot.paramMap.get('id');
@@ -51,16 +53,20 @@ export class EditGuestComponent implements OnInit {
 	    .then((response) => {          
 	      if(response.status == true){
 	        this.guest = response.data[0];
-          
+          console.log(this.guest.amount);
           this.frmGuest.controls['title'].setValue(this.guest.title);
           this.frmGuest.controls['description'].setValue(this.guest.description);
-
+          this.facility_type = this.guest.facility_type;
           this.imageSrc = this.guest.image;
-	
+          this.frmGuest.controls['amount'].setValue(this.guest.amount);
 	      }  
 	    });
   	}
 
+  }
+
+  onTypeClick(facility_type:any){
+    this.facility_type = facility_type;
   }
 
   submitGuest(){
@@ -70,6 +76,8 @@ export class EditGuestComponent implements OnInit {
     body.append('guest_facility_id', this.guest.id);
     body.append('title', this.frmGuest.value.title);
     body.append('description', this.frmGuest.value.description);
+    body.append('facility_type', this.facility_type);
+    body.append('amount', this.frmGuest.value.amount);
     if(this.file){
       body.append('image', this.file[0]);
     }
