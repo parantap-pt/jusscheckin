@@ -61,12 +61,15 @@ export class LoginComponent implements OnInit {
           this.toastr.success(response.message);
           
           this.authService.grantAuth(response.data.user_id,response.data);
-          //console.log(response.data.user_type);
+          
           if(response.data.user_type == 'm'){
               this.router.navigate(['/dashboard_manager']);    
           }
           else if(response.data.user_type == 'o'){
               this.router.navigate(['/dashboard_owner']);    
+          }
+          else if(response.data.user_type == 'r'){
+              this.router.navigate(['/dashboard_reception']);    
           }
           //this.router.navigate(['/dashboard_manager']);
           return true;

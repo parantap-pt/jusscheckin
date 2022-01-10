@@ -43,6 +43,7 @@ import { EditTravelAgentCommissionComponent } from './pages/edit-travel-agent-co
 import { AddDepartmentComponent } from './pages/add-department/add-department.component';
 import { AssignRoleComponent } from './pages/assign-role/assign-role.component';
 import { AddBookingComponent } from './pages/add-booking/add-booking.component';
+import { DashboardReceptionComponent } from './pages/dashboard-reception/dashboard-reception.component';
 
 const routes: Routes = [
   { 
@@ -222,6 +223,11 @@ const routes: Routes = [
     path: 'add-booking', 
     canActivate : [AuthGuard],
     component: AddBookingComponent 
+  },
+  { 
+    path: 'dashboard_reception', 
+    canActivate : [AuthGuard],
+    component: DashboardReceptionComponent 
   },
   { 
     path: '**', 

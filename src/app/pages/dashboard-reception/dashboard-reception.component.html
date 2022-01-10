@@ -1,0 +1,539 @@
+<!-- Dashboard Section Start -->
+<section class="jci-dashboard-section">
+    <div class="jci-dashboard__inner">
+       <div class="jci-dashboard-sidebar">
+        <app-leftmenu></app-leftmenu>
+       </div>
+       <div class="jci-dashboard-content">
+          <div class="jci-dashboard-content__inner">
+             <div class="tab-content" id="v-pills-tabContent">
+                <!-- Manage Bookings Content Start -->
+                <div class="tab-pane fade show active" id="v-pills-manage-bookings" role="tabpanel"  aria-labelledby="v-pills-manage-bookings-tab">
+                   <div class="jci-dashboard-content-area" data-scrollbar>
+                      <div class="jci-content-area">
+                         <h2 class="jci-dashboard-title">Manage Bookings</h2>
+                         <div class="table-responsive">
+                            <table class="table table-hover">
+                               <thead>
+                                  <tr>
+                                     <th scope="col">Bookings Date</th>
+                                     <th scope="col">Customer Name</th>
+                                     <th scope="col">Total Peoples</th>
+                                     <th scope="col" class="text-end">Action</th>
+                                  </tr>
+                               </thead>
+                               <tbody>
+                                  <tr>
+                                     <td>10 Oct 2021</td>
+                                     <td>Name</td>
+                                     <td>10</td>
+                                     <td class="text-end">
+                                        <button data-bs-toggle="pill" data-bs-target="#v-pills-checkIn" type="button" role="tab" class="btn btn-dark btn-sm">Assign Room</button>
+                                     </td>
+                                  </tr>
+                                  <tr>
+                                     <td>10 Oct 2021</td>
+                                     <td>Name</td>
+                                     <td>10</td>
+                                     <td class="text-end">
+                                        <button data-bs-toggle="pill" data-bs-target="#v-pills-checkIn" type="button" role="tab" class="btn btn-dark btn-sm">Assign Room</button>
+                                     </td>
+                                  </tr>
+                                  <tr>
+                                     <td>10 Oct 2021</td>
+                                     <td>Name</td>
+                                     <td>10</td>
+                                     <td class="text-end">
+                                        <button data-bs-toggle="pill" data-bs-target="#v-pills-checkIn" type="button" role="tab" class="btn btn-dark btn-sm">Assign Room</button>
+                                     </td>
+                                  </tr>
+                                  <tr>
+                                     <td>10 Oct 2021</td>
+                                     <td>Name</td>
+                                     <td>10</td>
+                                     <td class="text-end">
+                                        <button data-bs-toggle="pill" data-bs-target="#v-pills-checkIn" type="button" role="tab" class="btn btn-dark btn-sm">Assign Room</button>
+                                     </td>
+                                  </tr>
+                                  <tr>
+                                     <td>10 Oct 2021</td>
+                                     <td>Name</td>
+                                     <td>10</td>
+                                     <td class="text-end">
+                                        <button data-bs-toggle="pill" data-bs-target="#v-pills-checkIn" type="button" role="tab" class="btn btn-dark btn-sm">Assign Room</button>
+                                     </td>
+                                  </tr>
+                               </tbody>
+                            </table>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <!-- Manage Bookings Content End -->
+                <!-- Property Reports Content Start -->
+                <div class="tab-pane fade" id="v-pills-checkIn" role="tabpanel" aria-labelledby="v-pills-checkIn-tab">
+                   <div class="jci-dashboard-content-area" data-scrollbar>
+                      <div class="jci-content-area">
+                         <div class="jci-property-report">
+                            <h2 class="jci-dashboard-title">Check In</h2>
+                            <form class="row g-3 mb-5">
+                               <div class="col-md-6">
+                                  <label for="inputPassword4" class="form-label">Guest Name</label>
+                                  <select id="inputState" class="form-select">
+                                     <option selected="">Select Guest Name</option>
+                                     <option>Guest Name 1</option>
+                                     <option>Guest Name 2</option>
+                                     <option>Guest Name 3</option>
+                                     <option>Guest Name 4</option>
+                                  </select>
+                               </div>
+                               <div class="col-md-6">
+                                  <label for="inputPassword4" class="form-label">ID proof</label>
+                                  <div class="jci-choose-file-input">
+                                     <input type="file" class="form-control" id="inputPassword4">
+                                  </div>
+                               </div>
+                               <div class="col-12 text-center">
+                                  <button type="submit" class="btn btn-success">Add Guest</button>
+                               </div>
+                            </form>
+                            <h2 class="jci-dashboard-title">Check In</h2>
+                            <form class="row g-3 mb-5">
+                               <div class="col-md-6">
+                                  <label for="inputPassword4" class="form-label">Upgrade Rooms for Discount Price</label>
+                                  <input type="text" class="form-control" id="inputDepartmentName" placeholder="Enter Discount Price">
+                               </div>
+                               <div class="col-md-6">
+                                  <label for="inputPassword4" class="form-label">Checkout Date</label>
+                                  <input type="date" class="form-control" id="inputDepartmentName" placeholder="Select Checkout Date">
+                               </div>
+                               <div class="col-12 text-center">
+                                  <button type="button" data-bs-toggle="modal" data-bs-target="#checkingRoomModal" class="btn btn-success">Check In</button>
+                               </div>
+                            </form>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <!-- Property Reports Content End -->
+                <!-- Room Booking Status Content Start -->
+                <div class="tab-pane fade" id="v-pills-check-out" role="tabpanel" aria-labelledby="v-pills-check-out-tab">
+                   <div class="jci-dashboard-content-area" data-scrollbar>
+                      <div class="jci-content-area">
+                         <div class="jci-check-out">
+                            <h2 class="jci-dashboard-title">Check Out</h2>
+                            <div class="table-responsive">
+                               <table class="table table-hover">
+                                  <thead>
+                                     <tr>
+                                        <th scope="col">Bookings Date</th>
+                                        <th scope="col">Customer Name</th>
+                                        <th scope="col">Room No.</th>
+                                        <th scope="col" class="text-end">Bill Ammount</th>
+                                     </tr>
+                                  </thead>
+                                  <tbody>
+                                     <tr class="jci-bill-head">
+                                        <td>10 Oct 2021</td>
+                                        <td>Name</td>
+                                        <td>10</td>
+                                        <td><b>$490</b></td>
+                                     </tr>
+                                     <tr class="jci-bill-detail">
+                                        <td colspan="4">
+                                           <div class="jci-bill-detail-content">
+                                              <h3 class="jci-bill-detail-title">Bill Details</h3>
+                                              <table class="table">
+                                                 <thead>
+                                                    <tr>
+                                                       <th scope="col">Service NAme</th>
+                                                       <th scope="col">Price</th>
+                                                       <th scope="col">Qty</th>
+                                                       <th scope="col">Sub Total</th>
+                                                    </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                    <tr>
+                                                       <td>Service NAme</td>
+                                                       <td>$30</td>
+                                                       <td>1</td>
+                                                       <td><b>$30</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                       <td>Service NAme</td>
+                                                       <td>$30</td>
+                                                       <td>2</td>
+                                                       <td><b>$30</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                       <td>Service NAme</td>
+                                                       <td>$200</td>
+                                                       <td>2</td>
+                                                       <td><b>$400</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                       <td></td>
+                                                       <td></td>
+                                                       <th>Total</th>
+                                                       <th>$490</th>
+                                                    </tr>
+                                                 </tbody>
+                                              </table>
+                                              <div class="text-end mb-4">
+                                                 <button type="button" class="btn btn-success">Check Out</button>
+                                              </div>
+                                           </div>
+                                        </td>
+                                     </tr>
+                                     <tr class="jci-bill-head">
+                                        <td>10 Oct 2021</td>
+                                        <td>Name</td>
+                                        <td>10</td>
+                                        <td><b>$490</b></td>
+                                     </tr>
+                                     <tr class="jci-bill-detail">
+                                        <td colspan="4">
+                                           <div class="jci-bill-detail-content">
+                                              <h3 class="jci-bill-detail-title">Bill Details</h3>
+                                              <table class="table">
+                                                 <thead>
+                                                    <tr>
+                                                       <th scope="col">Service NAme</th>
+                                                       <th scope="col">Price</th>
+                                                       <th scope="col">Qty</th>
+                                                       <th scope="col">Sub Total</th>
+                                                    </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                    <tr>
+                                                       <td>Service NAme</td>
+                                                       <td>$30</td>
+                                                       <td>1</td>
+                                                       <td><b>$30</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                       <td>Service NAme</td>
+                                                       <td>$30</td>
+                                                       <td>2</td>
+                                                       <td><b>$30</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                       <td>Service NAme</td>
+                                                       <td>$200</td>
+                                                       <td>2</td>
+                                                       <td><b>$400</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                       <td></td>
+                                                       <td></td>
+                                                       <th>Total</th>
+                                                       <th>$490</th>
+                                                    </tr>
+                                                 </tbody>
+                                              </table>
+                                              <div class="text-end mb-4">
+                                                 <button type="button" class="btn btn-success">Check Out</button>
+                                              </div>
+                                           </div>
+                                        </td>
+                                     </tr>
+                                     <tr class="jci-bill-head">
+                                        <td>10 Oct 2021</td>
+                                        <td>Name</td>
+                                        <td>10</td>
+                                        <td><b>$490</b></td>
+                                     </tr>
+                                     <tr class="jci-bill-detail">
+                                        <td colspan="4">
+                                           <div class="jci-bill-detail-content">
+                                              <h3 class="jci-bill-detail-title">Bill Details</h3>
+                                              <table class="table">
+                                                 <thead>
+                                                    <tr>
+                                                       <th scope="col">Service NAme</th>
+                                                       <th scope="col">Price</th>
+                                                       <th scope="col">Qty</th>
+                                                       <th scope="col">Sub Total</th>
+                                                    </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                    <tr>
+                                                       <td>Service NAme</td>
+                                                       <td>$30</td>
+                                                       <td>1</td>
+                                                       <td><b>$30</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                       <td>Service NAme</td>
+                                                       <td>$30</td>
+                                                       <td>2</td>
+                                                       <td><b>$30</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                       <td>Service NAme</td>
+                                                       <td>$200</td>
+                                                       <td>2</td>
+                                                       <td><b>$400</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                       <td></td>
+                                                       <td></td>
+                                                       <th>Total</th>
+                                                       <th>$490</th>
+                                                    </tr>
+                                                 </tbody>
+                                              </table>
+                                              <div class="text-end mb-4">
+                                                 <button type="button" class="btn btn-success">Check Out</button>
+                                              </div>
+                                           </div>
+                                        </td>
+                                     </tr>
+                                     <tr class="jci-bill-head">
+                                        <td>10 Oct 2021</td>
+                                        <td>Name</td>
+                                        <td>10</td>
+                                        <td><b>$490</b></td>
+                                     </tr>
+                                     <tr class="jci-bill-detail">
+                                        <td colspan="4">
+                                           <div class="jci-bill-detail-content">
+                                              <h3 class="jci-bill-detail-title">Bill Details</h3>
+                                              <table class="table">
+                                                 <thead>
+                                                    <tr>
+                                                       <th scope="col">Service NAme</th>
+                                                       <th scope="col">Price</th>
+                                                       <th scope="col">Qty</th>
+                                                       <th scope="col">Sub Total</th>
+                                                    </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                    <tr>
+                                                       <td>Service NAme</td>
+                                                       <td>$30</td>
+                                                       <td>1</td>
+                                                       <td><b>$30</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                       <td>Service NAme</td>
+                                                       <td>$30</td>
+                                                       <td>2</td>
+                                                       <td><b>$30</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                       <td>Service NAme</td>
+                                                       <td>$200</td>
+                                                       <td>2</td>
+                                                       <td><b>$400</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                       <td></td>
+                                                       <td></td>
+                                                       <th>Total</th>
+                                                       <th>$490</th>
+                                                    </tr>
+                                                 </tbody>
+                                              </table>
+                                              <div class="text-end mb-4">
+                                                 <button type="button" class="btn btn-success">Check Out</button>
+                                              </div>
+                                           </div>
+                                        </td>
+                                     </tr>
+                                     <tr class="jci-bill-head">
+                                        <td>10 Oct 2021</td>
+                                        <td>Name</td>
+                                        <td>10</td>
+                                        <td><b>$490</b></td>
+                                     </tr>
+                                     <tr class="jci-bill-detail">
+                                        <td colspan="4">
+                                           <div class="jci-bill-detail-content">
+                                              <h3 class="jci-bill-detail-title">Bill Details</h3>
+                                              <table class="table">
+                                                 <thead>
+                                                    <tr>
+                                                       <th scope="col">Service NAme</th>
+                                                       <th scope="col">Price</th>
+                                                       <th scope="col">Qty</th>
+                                                       <th scope="col">Sub Total</th>
+                                                    </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                    <tr>
+                                                       <td>Service NAme</td>
+                                                       <td>$30</td>
+                                                       <td>1</td>
+                                                       <td><b>$30</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                       <td>Service NAme</td>
+                                                       <td>$30</td>
+                                                       <td>2</td>
+                                                       <td><b>$30</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                       <td>Service NAme</td>
+                                                       <td>$200</td>
+                                                       <td>2</td>
+                                                       <td><b>$400</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                       <td></td>
+                                                       <td></td>
+                                                       <th>Total</th>
+                                                       <th>$490</th>
+                                                    </tr>
+                                                 </tbody>
+                                              </table>
+                                              <div class="text-end mb-4">
+                                                 <button type="button" class="btn btn-success">Check Out</button>
+                                              </div>
+                                           </div>
+                                        </td>
+                                     </tr>
+                                  </tbody>
+                               </table>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <!-- Room Booking Status Content End -->
+                <!-- Book Taxi Content Start -->
+                <div class="tab-pane fade" id="v-pills-book-taxi" role="tabpanel"  aria-labelledby="v-pills-book-taxi-tab">
+                   <!-- <div class="jci-dashboard-content-area" data-scrollbar>
+                      <div class="jci-upcoming-booking">
+                          
+                      </div>
+                      </div> -->
+                </div>
+                <!-- Book Taxi Content End -->
+                <!-- Assign Book Content Start -->
+                <div class="tab-pane fade" id="v-pills-assign-room" role="tabpanel"  aria-labelledby="v-pills-assign-room-tab">
+                   <div class="jci-dashboard-content-area" data-scrollbar>
+                      <div class="jci-assign-room">
+                         <div class="jci-content-area">
+                            <h2 class="jci-dashboard-title">Assign Room</h2>
+                            <div class="table-responsive">
+                               <table class="table table-hover">
+                                  <thead>
+                                     <tr>
+                                        <th colspan="4">Room Type : Lorem ipsum dolor sit amet</th>
+                                     </tr>
+                                  </thead>
+                                  <tbody>
+                                     <tr>
+                                        <td>Room No. 1</td>
+                                        <td>Room No. 2</td>
+                                        <td>Room No. 3</td>
+                                        <td>Room No. 4</td>
+                                     </tr>
+                                     <tr>
+                                        <td>Room No. 1</td>
+                                        <td>Room No. 2</td>
+                                        <td>Room No. 3</td>
+                                        <td>Room No. 4</td>
+                                     </tr>
+                                     <tr>
+                                        <td>Room No. 1</td>
+                                        <td>Room No. 2</td>
+                                        <td>Room No. 3</td>
+                                        <td>Room No. 4</td>
+                                     </tr>
+                                     <tr>
+                                        <td>Room No. 1</td>
+                                        <td>Room No. 2</td>
+                                        <td>Room No. 3</td>
+                                        <td>Room No. 4</td>
+                                     </tr>
+                                  </tbody>
+                               </table>
+                            </div>
+                            <div class="table-responsive">
+                               <table class="table table-hover">
+                                  <thead>
+                                     <tr>
+                                        <th colspan="4">Room Type : Lorem ipsum dolor sit amet</th>
+                                     </tr>
+                                  </thead>
+                                  <tbody>
+                                     <tr>
+                                        <td>Room No. 1</td>
+                                        <td>Room No. 2</td>
+                                        <td>Room No. 3</td>
+                                        <td>Room No. 4</td>
+                                     </tr>
+                                     <tr>
+                                        <td>Room No. 1</td>
+                                        <td>Room No. 2</td>
+                                        <td>Room No. 3</td>
+                                        <td>Room No. 4</td>
+                                     </tr>
+                                     <tr>
+                                        <td>Room No. 1</td>
+                                        <td>Room No. 2</td>
+                                        <td>Room No. 3</td>
+                                        <td>Room No. 4</td>
+                                     </tr>
+                                     <tr>
+                                        <td>Room No. 1</td>
+                                        <td>Room No. 2</td>
+                                        <td>Room No. 3</td>
+                                        <td>Room No. 4</td>
+                                     </tr>
+                                  </tbody>
+                               </table>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <!-- Assign Book Content End -->
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+ <!-- Dashboard Section End -->
+ <!-- Checking in available room Modal -->
+ <div class="modal fade" id="checkingRoomModal" tabindex="-1" aria-labelledby="checkingRdalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+       <div class="modal-content">
+          <div class="modal-header">
+             <h5 class="modal-title" id="checkingRdalLabel">Checking in available room</h5>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+             <div class="jci-checkingRoomModal">
+                <form class="row g-3 ">
+                   <div class="col-md-6">
+                      <label for="inputPassword4" class="form-label">Rooms Type</label>
+                      <select id="inputState" class="form-select">
+                         <option selected="">Select Rooms Type</option>
+                         <option>Rooms Type 1</option>
+                         <option>Rooms Type 2</option>
+                         <option>Rooms Type 3</option>
+                         <option>Rooms Type 4</option>
+                      </select>
+                   </div>
+                   <div class="col-md-6">
+                      <label for="inputPassword4" class="form-label">Room Features</label>
+                      <select id="inputState" class="form-select">
+                         <option selected="">Select Room Features</option>
+                         <option>Room Features 1</option>
+                         <option>Room Features 2</option>
+                         <option>Room Features 3</option>
+                         <option>Room Features 4</option>
+                      </select>
+                   </div>
+                   <div class="col-12 text-center my-4">
+                      <a data-toggle="tab" id="jci-checkIn-modal-btn" class="btn btn-success" href="#v-pills-assign-room">Check In</a>
+                   </div>
+                </form>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
