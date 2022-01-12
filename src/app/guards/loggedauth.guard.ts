@@ -23,6 +23,9 @@ export class LoggedauthGuard implements CanActivate {
 		else if(this.authService.loggedInUserData.user_type == 'r'){
 				this.router.navigate(['/dashboard_reception']);    
 		}
+		else if(this.authService.loggedInUserData.user_type == 'a'){
+				this.router.navigate(['/dashboard_account']);    
+		}
 		return true;
 		
 	}

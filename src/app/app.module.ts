@@ -63,6 +63,7 @@ import { AssignRoleComponent } from './pages/assign-role/assign-role.component';
 import { AddBookingComponent } from './pages/add-booking/add-booking.component';
 import { DashboardReceptionComponent } from './pages/dashboard-reception/dashboard-reception.component';
 import { AssignRoomsComponent } from './pages/assign-rooms/assign-rooms.component';
+import { DashboardAccountComponent } from './pages/dashboard-account/dashboard-account.component';
 
 
 
@@ -119,7 +120,8 @@ export function  authServiceFactory(authService: AuthService): Function {
     AssignRoleComponent,
     AddBookingComponent,
     DashboardReceptionComponent,
-    AssignRoomsComponent
+    AssignRoomsComponent,
+    DashboardAccountComponent
   ],
   imports: [
     BrowserModule,

@@ -71,6 +71,9 @@ export class LoginComponent implements OnInit {
           else if(response.data.user_type == 'r'){
               this.router.navigate(['/dashboard_reception']);    
           }
+          else if(response.data.user_type == 'a'){
+              this.router.navigate(['/dashboard_account']);    
+          }
           //this.router.navigate(['/dashboard_manager']);
           return true;
           
