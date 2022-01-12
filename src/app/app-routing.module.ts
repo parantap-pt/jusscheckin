@@ -44,6 +44,7 @@ import { AddDepartmentComponent } from './pages/add-department/add-department.co
 import { AssignRoleComponent } from './pages/assign-role/assign-role.component';
 import { AddBookingComponent } from './pages/add-booking/add-booking.component';
 import { DashboardReceptionComponent } from './pages/dashboard-reception/dashboard-reception.component';
+import { AssignRoomsComponent } from './pages/assign-rooms/assign-rooms.component';
 
 const routes: Routes = [
   { 
@@ -228,6 +229,11 @@ const routes: Routes = [
     path: 'dashboard_reception', 
     canActivate : [AuthGuard],
     component: DashboardReceptionComponent 
+  },
+  { 
+    path: 'assign-rooms', 
+    canActivate : [AuthGuard],
+    component: AssignRoomsComponent 
   },
   { 
     path: '**', 

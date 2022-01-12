@@ -62,6 +62,7 @@ import { AddDepartmentComponent } from './pages/add-department/add-department.co
 import { AssignRoleComponent } from './pages/assign-role/assign-role.component';
 import { AddBookingComponent } from './pages/add-booking/add-booking.component';
 import { DashboardReceptionComponent } from './pages/dashboard-reception/dashboard-reception.component';
+import { AssignRoomsComponent } from './pages/assign-rooms/assign-rooms.component';
 
 
 
@@ -117,7 +118,8 @@ export function  authServiceFactory(authService: AuthService): Function {
     AddDepartmentComponent,
     AssignRoleComponent,
     AddBookingComponent,
-    DashboardReceptionComponent
+    DashboardReceptionComponent,
+    AssignRoomsComponent
   ],
   imports: [
     BrowserModule,
