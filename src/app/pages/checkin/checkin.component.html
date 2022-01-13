@@ -1,0 +1,76 @@
+<!-- Dashboard Section Start -->
+<section class="jci-dashboard-section">
+    <div class="jci-dashboard__inner">
+        <div class="jci-dashboard-sidebar">
+           <app-leftmenu></app-leftmenu>
+        </div>
+        <div class="jci-dashboard-content">
+            <div class="jci-dashboard-content__inner">
+                <div class="tab-content" id="v-pills-tabContent">
+                    
+                    <!-- Property Reports Content Start -->
+                    <div class="tab-pane active" id="v-pills-checkIn" role="tabpanel" aria-labelledby="v-pills-checkIn-tab">
+                        <div class="jci-dashboard-content-area" data-scrollbar>
+                            <div class="jci-content-area">
+                                <div class="jci-property-report">
+                                    <h2 class="jci-dashboard-title">Check In</h2>
+                                    <form class="row g-3" [formGroup]="frmBooking" name="frmBooking" method="POST" (ngSubmit)="submitCheckin()">
+                                        <span  formArrayName="members">
+                                            <div class="row" *ngFor="let quantity of members().controls; let i=index" [formGroupName]="i">
+                                                <div class="col-md-6">
+                                                    <label for="inputPassword4" class="form-label">Guest Name</label>
+                                                    <input type="text" class="form-control" formControlName="guest_name" placeholder="Enter Guest Name">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="inputPassword4" class="form-label">ID proof</label>
+                                                    <div class="jci-choose-file-input">
+                                                        <input type="file" class="form-control" formControlName="guest_id_proof">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </span>
+                                        <div class="col-12 text-center">
+                                            <button type="button" id="appendex" class="btn btn-success" (click)="addMember()">Add Guest</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="inputPassword4" class="form-label">Room No</label>
+                                            <input type="text" class="form-control" formControlName="room_no" placeholder="Enter Room No">
+                                            <div *ngIf="frmBooking.controls.room_no.invalid && (frmBooking.controls.room_no.dirty || frmBooking.controls.room_no.touched)">
+                                                <div class="error-block" *ngIf="frmBooking.get('room_no')?.hasError('required')">
+                                                    Please room no
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="inputPassword4" class="form-label">Checkout Date</label>
+                                            <input type="date" class="form-control" formControlName="check_out_date" placeholder="Select Checkout Date">
+                                            <div *ngIf="frmBooking.controls.check_out_date.invalid && (frmBooking.controls.check_out_date.dirty || frmBooking.controls.check_out_date.touched)">
+                                                <div class="error-block" *ngIf="frmBooking.get('check_out_date')?.hasError('required')">
+                                                    Please enter checkout date
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 text-center">
+                                            <button type="submit" [disabled]="(!frmBooking.valid)" data-bs-toggle="modal" data-bs-target="#checkingRoomModal" class="btn btn-success">Check In</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Property Reports Content End -->
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Dashboard Section End -->
+
+
+
+
+

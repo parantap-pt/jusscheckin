@@ -66,6 +66,7 @@ import { AssignRoomsComponent } from './pages/assign-rooms/assign-rooms.componen
 import { DashboardAccountComponent } from './pages/dashboard-account/dashboard-account.component';
 import { CheckoutGuestDetailsComponent } from './pages/checkout-guest-details/checkout-guest-details.component';
 import { CheckListComponent } from './pages/check-list/check-list.component';
+import { CheckinComponent } from './pages/checkin/checkin.component';
 
 
 
@@ -125,7 +126,8 @@ export function  authServiceFactory(authService: AuthService): Function {
     AssignRoomsComponent,
     DashboardAccountComponent,
     CheckoutGuestDetailsComponent,
-    CheckListComponent
+    CheckListComponent,
+    CheckinComponent
   ],
   imports: [
     BrowserModule,
