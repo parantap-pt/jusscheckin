@@ -1,0 +1,89 @@
+<section class="jci-dashboard-section">
+    <div class="jci-dashboard__inner">
+       <div class="jci-dashboard-sidebar">
+        <app-leftmenu></app-leftmenu>
+       </div>
+       <div class="jci-dashboard-content">
+          <div class="jci-dashboard-content__inner">
+             <div class="tab-content" id="v-pills-tabContent">
+                 <div class="tab-pane active" id="v-pills-check-out" role="tabpanel" aria-labelledby="v-pills-check-out-tab">
+                        <div class="jci-dashboard-content-area" data-scrollbar>
+                            <div class="jci-content-area">
+                                <div class="jci-check-out">
+                                    <h2 class="jci-dashboard-title">Check Out</h2>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Bookings Date</th>
+                                                    <th scope="col">Customer Name</th>
+                                                    <th scope="col">Room No.</th>
+                                                    <th scope="col" class="text-end">Bill Ammount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="jci-bill-head" *ngFor="let guest of guestData">
+                                                    <td>{{guest.booking_date | date:'dd MMM y'}}</td>
+                                                    <td>{{guest.guest_name}}</td>
+                                                    <td>{{guest.room_no}}</td>
+                                                    <td><b>$490</b></td>
+                                                </tr>
+                                                <tr class="jci-bill-detail">
+                                                    <td colspan="4">
+                                                        <div class="jci-bill-detail-content">
+                                                            <h3 class="jci-bill-detail-title">Bill Details</h3>
+                                                            <table class="table">
+                                                                <thead>
+                                                                    <tr>
+                                                                    <th scope="col">Service NAme</th>
+                                                                    <th scope="col">Price</th>
+                                                                    <th scope="col">Qty</th>
+                                                                    <th scope="col">Sub Total</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>Service NAme</td>
+                                                                        <td>$30</td>
+                                                                        <td>1</td>
+                                                                        <td><b>$30</b></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Service NAme</td>
+                                                                        <td>$30</td>
+                                                                        <td>2</td>
+                                                                        <td><b>$30</b></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Service NAme</td>
+                                                                        <td>$200</td>
+                                                                        <td>2</td>
+                                                                        <td><b>$400</b></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <th>Total</th>
+                                                                        <th>$490</th>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <div class="text-end mb-4">
+                                                                <button type="button" class="btn btn-success">Check Out</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>

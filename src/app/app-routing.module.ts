@@ -46,6 +46,8 @@ import { AddBookingComponent } from './pages/add-booking/add-booking.component';
 import { DashboardReceptionComponent } from './pages/dashboard-reception/dashboard-reception.component';
 import { AssignRoomsComponent } from './pages/assign-rooms/assign-rooms.component';
 import { DashboardAccountComponent } from './pages/dashboard-account/dashboard-account.component';
+import { CheckoutGuestDetailsComponent } from './pages/checkout-guest-details/checkout-guest-details.component';
+import { CheckListComponent } from './pages/check-list/check-list.component';
 
 const routes: Routes = [
   { 
@@ -235,6 +237,16 @@ const routes: Routes = [
     path: 'assign-rooms', 
     canActivate : [AuthGuard],
     component: AssignRoomsComponent 
+  },
+  { 
+    path: 'checkout-guest-details', 
+    canActivate : [AuthGuard],
+    component: CheckoutGuestDetailsComponent 
+  },
+  { 
+    path: 'check-list', 
+    canActivate : [AuthGuard],
+    component: CheckListComponent 
   },
   { 
     path: 'dashboard_account', 

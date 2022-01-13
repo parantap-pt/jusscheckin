@@ -64,6 +64,8 @@ import { AddBookingComponent } from './pages/add-booking/add-booking.component';
 import { DashboardReceptionComponent } from './pages/dashboard-reception/dashboard-reception.component';
 import { AssignRoomsComponent } from './pages/assign-rooms/assign-rooms.component';
 import { DashboardAccountComponent } from './pages/dashboard-account/dashboard-account.component';
+import { CheckoutGuestDetailsComponent } from './pages/checkout-guest-details/checkout-guest-details.component';
+import { CheckListComponent } from './pages/check-list/check-list.component';
 
 
 
@@ -121,7 +123,9 @@ export function  authServiceFactory(authService: AuthService): Function {
     AddBookingComponent,
     DashboardReceptionComponent,
     AssignRoomsComponent,
-    DashboardAccountComponent
+    DashboardAccountComponent,
+    CheckoutGuestDetailsComponent,
+    CheckListComponent
   ],
   imports: [
     BrowserModule,
