@@ -24,7 +24,7 @@
                                                 <div class="col-md-6">
                                                     <label for="inputPassword4" class="form-label">ID proof</label>
                                                     <div class="jci-choose-file-input">
-                                                        <input type="file" class="form-control" formControlName="guest_id_proof">
+                                                        <input type="file" class="form-control" formControlName="guest_id_proof"  (change)="onFileChange($event)">
                                                     </div>
                                                 </div>
                                             </div>

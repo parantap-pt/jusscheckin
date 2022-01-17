@@ -15,6 +15,7 @@ export class CheckinComponent implements OnInit {
 
   public Constant : any;
   public frmBooking: FormGroup;
+  public file: any;
 
   constructor(public commonservice:CommonService,private activatedRoute: ActivatedRoute,private router: Router,public fb: FormBuilder,public toastr : ToastrService,private spinner: NgxSpinnerService,public authService:AuthService) { 
 
@@ -54,18 +55,23 @@ export class CheckinComponent implements OnInit {
     this.members().push(this.newMember());  
   }
 
+  onFileChange(event:any) {
+
+    const reader = new FileReader();
+
+    if(event.target.files && event.target.files.length) {
+
+      this.file = event.target.files;
+    }
+  }
+
   submitCheckin(){
-    //console.log(this.frmBooking.value);
+    //console.log(this.frmBooking.value.members);
     if(this.frmBooking.value.members.length > 0){
         let body = new FormData();
-        body.append('user_id', this.authService.loggedInUserId);
-        body.append('property_id', this.frmBooking.value.property_id);
-        body.append('total_room', this.frmBooking.value.total_room);
-        body.append('room_number', this.frmBooking.value.room_no);
-        body.append('adult_guest', this.frmBooking.value.adult_guest);
-        body.append('children', this.frmBooking.value.children);
-        body.append('from_date', this.frmBooking.value.from_date);
-        body.append('to_date', this.frmBooking.value.to_date);
+        body.append('hotel_id', '1');
+        body.append('room_no', this.frmBooking.value.room_no);
+        body.append('check_out_date', this.frmBooking.value.check_out_date);
         body.append('members', JSON.stringify(this.frmBooking.value.members));
         body.append('token', this.Constant['API_TOKEN']);
 
