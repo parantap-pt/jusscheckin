@@ -542,19 +542,21 @@
    </div>
    <div class="jci-dashboard-sidebar-menu" data-scrollbar>
       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-         <button class="nav-link active" id="v-pills-manage-bookings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-manage-bookings" type="button" role="tab" aria-controls="v-pills-manage-bookings" aria-selected="true">
-            <svg id="analytics_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-               <rect id="Rectangle_41" data-name="Rectangle 41" width="24" height="24" fill="none"/>
-               <g id="Group_937" data-name="Group 937">
-                  <path id="Path_228" data-name="Path 228" d="M19,3H5A2.006,2.006,0,0,0,3,5V19a2.006,2.006,0,0,0,2,2H19a2.006,2.006,0,0,0,2-2V5A2.006,2.006,0,0,0,19,3Zm0,16H5V5H19Z" fill="#fff"/>
-                  <rect id="Rectangle_42" data-name="Rectangle 42" width="2" height="5" transform="translate(7 12)" fill="#fff"/>
-                  <rect id="Rectangle_43" data-name="Rectangle 43" width="2" height="10" transform="translate(15 7)" fill="#fff"/>
-                  <rect id="Rectangle_44" data-name="Rectangle 44" width="2" height="3" transform="translate(11 14)" fill="#fff"/>
-                  <rect id="Rectangle_45" data-name="Rectangle 45" width="2" height="2" transform="translate(11 10)" fill="#fff"/>
-               </g>
-            </svg>
-            <span>Manage Bookings</span>
-         </button>
+         <a routerLink="/dashboard_reception">
+            <button class="nav-link active" id="v-pills-manage-bookings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-manage-bookings" type="button" role="tab" aria-controls="v-pills-manage-bookings" aria-selected="true">
+               <svg id="analytics_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <rect id="Rectangle_41" data-name="Rectangle 41" width="24" height="24" fill="none"/>
+                  <g id="Group_937" data-name="Group 937">
+                     <path id="Path_228" data-name="Path 228" d="M19,3H5A2.006,2.006,0,0,0,3,5V19a2.006,2.006,0,0,0,2,2H19a2.006,2.006,0,0,0,2-2V5A2.006,2.006,0,0,0,19,3Zm0,16H5V5H19Z" fill="#fff"/>
+                     <rect id="Rectangle_42" data-name="Rectangle 42" width="2" height="5" transform="translate(7 12)" fill="#fff"/>
+                     <rect id="Rectangle_43" data-name="Rectangle 43" width="2" height="10" transform="translate(15 7)" fill="#fff"/>
+                     <rect id="Rectangle_44" data-name="Rectangle 44" width="2" height="3" transform="translate(11 14)" fill="#fff"/>
+                     <rect id="Rectangle_45" data-name="Rectangle 45" width="2" height="2" transform="translate(11 10)" fill="#fff"/>
+                  </g>
+               </svg>
+               <span>Manage Bookings</span>
+            </button>
+         </a>
          <a routerLink="/checkin">
             <button class="nav-link" id="v-pills-checkIn-tab" data-bs-toggle="pill" data-bs-target="#v-pills-checkIn" type="button" role="tab" aria-controls="v-pills-checkIn" aria-selected="false">
                <svg id="assignment_turned_in_black_24dp_2_" data-name="assignment_turned_in_black_24dp (2)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
