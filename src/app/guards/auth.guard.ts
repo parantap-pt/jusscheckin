@@ -23,6 +23,33 @@ export class AuthGuard implements CanActivate {
         this.router.navigate(['login']);
         return false;
       }
+
+      if(this.authService.loggedInUserData.user_type == 'm' && (next?.routeConfig?.path == 'dashboard_reception' || next?.routeConfig?.path == 'dashboard_account' || next?.routeConfig?.path == 'dashboard_owner')){
+      
+        this.router.navigate(['/dashboard_manager']);
+        this.toastr.error('You are not allowed to access this page.');
+        return false;
+      
+      }else if(this.authService.loggedInUserData.user_type == 'o' && (next?.routeConfig?.path == 'dashboard_reception' || next?.routeConfig?.path == 'dashboard_account' || next?.routeConfig?.path == 'dashboard_manager')){
+      
+        this.router.navigate(['/dashboard_owner']);
+        this.toastr.error('You are not allowed to access this page.');
+        return false;
+      
+      }else if(this.authService.loggedInUserData.user_type == 'r' && (next?.routeConfig?.path == 'dashboard_owner' || next?.routeConfig?.path == 'dashboard_account' || next?.routeConfig?.path == 'dashboard_manager')){
+      
+        this.router.navigate(['/dashboard_reception']);
+        this.toastr.error('You are not allowed to access this page.');
+        return false;
+      
+      }else if(this.authService.loggedInUserData.user_type == 'a' && (next?.routeConfig?.path == 'dashboard_owner' || next?.routeConfig?.path == 'dashboard_reception' || next?.routeConfig?.path == 'dashboard_manager')){
+      
+        this.router.navigate(['/dashboard_account']);
+        this.toastr.error('You are not allowed to access this page.');
+        return false;
+      
+      }
+
       return true;
   }
   
