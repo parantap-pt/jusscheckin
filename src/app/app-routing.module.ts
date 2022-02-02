@@ -49,6 +49,8 @@ import { DashboardAccountComponent } from './pages/dashboard-account/dashboard-a
 import { CheckoutGuestDetailsComponent } from './pages/checkout-guest-details/checkout-guest-details.component';
 import { CheckListComponent } from './pages/check-list/check-list.component';
 import { CheckinComponent } from './pages/checkin/checkin.component';
+import { ViewBookingsComponent } from './pages/view-bookings/view-bookings.component';
+import { UpcomingBookingsComponent } from './pages/upcoming-bookings/upcoming-bookings.component';
 
 const routes: Routes = [
   { 
@@ -253,6 +255,16 @@ const routes: Routes = [
     path: 'dashboard_account', 
     canActivate : [AuthGuard],
     component: DashboardAccountComponent 
+  },
+  { 
+    path: 'view_bookings', 
+    canActivate : [AuthGuard],
+    component: ViewBookingsComponent 
+  },
+  { 
+    path: 'upcoming_bookings', 
+    canActivate : [AuthGuard],
+    component: UpcomingBookingsComponent 
   },
   { 
     path: 'checkin', 

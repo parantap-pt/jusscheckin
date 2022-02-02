@@ -4,6 +4,7 @@
     </div>
     <div class="jci-dashboard-sidebar-menu" data-scrollbar>
        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+         <a routerLink="/dashboard_manager">
           <button class="nav-link active" id="v-pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#v-pills-dashboard" type="button" role="tab" aria-controls="v-pills-dashboard" aria-selected="true">
              <svg id="analytics_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <rect id="Rectangle_41" data-name="Rectangle 41" width="24" height="24" fill="none"/>
@@ -17,6 +18,8 @@
              </svg>
              <span>Dashboard</span>
           </button>
+          </a>
+          <a routerLink="/view_bookings">
           <button class="nav-link" id="v-pills-view-bookings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-view-bookings" type="button" role="tab" aria-controls="v-pills-view-bookings" aria-selected="false">
              <svg id="analytics_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <rect id="Rectangle_41" data-name="Rectangle 41" width="24" height="24" fill="none"/>
@@ -30,6 +33,7 @@
              </svg>
              <span>View Bookings</span>
           </button>
+         </a>
           <button class="nav-link" id="v-pills-room-booking-tab" data-bs-toggle="pill" data-bs-target="#v-pills-room-booking" type="button" role="tab" aria-controls="v-pills-room-booking" aria-selected="false">
              <svg id="meeting_room_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path id="Path_229" data-name="Path 229" d="M0,0H24V24H0Z" fill="none"/>
@@ -37,6 +41,7 @@
              </svg>
              <span>Room Booking Status</span>
           </button>
+          <a routerLink="/upcoming_bookings">
           <button class="nav-link" id="v-pills-upcoming-booking-tab" data-bs-toggle="pill" data-bs-target="#v-pills-upcoming-booking" type="button" role="tab" aria-controls="v-pills-upcoming-booking" aria-selected="false">
              <svg id="upcoming_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <g id="Group_942" data-name="Group 942">
@@ -48,6 +53,7 @@
              </svg>
              <span>Upcoming Bookings</span>
           </button>
+         </a>
           <a routerLink="/add-employee">
           <button class="nav-link" id="v-pills-add-employees-tab" data-bs-toggle="pill" data-bs-target="#v-pills-add-employees" type="button" role="tab" aria-controls="v-pills-add-employees" aria-selected="false">
              <svg id="group_add_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

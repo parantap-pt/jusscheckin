@@ -67,6 +67,8 @@ import { DashboardAccountComponent } from './pages/dashboard-account/dashboard-a
 import { CheckoutGuestDetailsComponent } from './pages/checkout-guest-details/checkout-guest-details.component';
 import { CheckListComponent } from './pages/check-list/check-list.component';
 import { CheckinComponent } from './pages/checkin/checkin.component';
+import { ViewBookingsComponent } from './pages/view-bookings/view-bookings.component';
+import { UpcomingBookingsComponent } from './pages/upcoming-bookings/upcoming-bookings.component';
 
 
 
@@ -127,7 +129,9 @@ export function  authServiceFactory(authService: AuthService): Function {
     DashboardAccountComponent,
     CheckoutGuestDetailsComponent,
     CheckListComponent,
-    CheckinComponent
+    CheckinComponent,
+    ViewBookingsComponent,
+    UpcomingBookingsComponent
   ],
   imports: [
     BrowserModule,
