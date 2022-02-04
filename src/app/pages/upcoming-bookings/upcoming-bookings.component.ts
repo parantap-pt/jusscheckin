@@ -5,6 +5,7 @@ import { CommonService } from '../../service/common.service';
 import { ToastrService } from 'ngx-toastr';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { NgxSpinnerService } from "ngx-spinner";
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-upcoming-bookings',
@@ -18,8 +19,10 @@ export class UpcomingBookingsComponent implements OnInit {
   public frmProperty: FormGroup;
   public property_data: any = {data : []};
   public frmSearchProperty: FormGroup;
+  public start : any;
+  public end : any;
 
-  constructor(public commonservice:CommonService,private activatedRoute: ActivatedRoute,private router: Router,public fb: FormBuilder,public toastr : ToastrService,private spinner: NgxSpinnerService, public authService:AuthService) { 
+  constructor(public commonservice:CommonService,private activatedRoute: ActivatedRoute,private router: Router,public fb: FormBuilder,public toastr : ToastrService,private spinner: NgxSpinnerService, public authService:AuthService,private datePipe: DatePipe) { 
 
     this.Constant = this.commonservice.getConstants();
 
@@ -37,7 +40,9 @@ export class UpcomingBookingsComponent implements OnInit {
 
     this.frmSearchProperty = fb.group({
       'booking_id' : [''],
-      'guest_name' : ['']
+      'guest_name' : [''],
+      'start' : [''],
+      'end' : ['']
     });
 
   }
@@ -77,7 +82,14 @@ export class UpcomingBookingsComponent implements OnInit {
 
   submitProperty(){
     let body = new FormData();
-    //body.append('user_id', this.authService.loggedInUserId);
+    
+    if(this.frmSearchProperty.value.start != '' && this.frmSearchProperty.value.end != ''){
+      this.start = this.datePipe.transform(this.frmSearchProperty.value.start,"yyyy-MM-dd");
+      this.end = this.datePipe.transform(this.frmSearchProperty.value.end,"yyyy-MM-dd");
+      body.append('start_date', this.start);
+      body.append('end_date', this.end);
+    }
+
     body.append('property_id', this.frmProperty.value.property_id);
     body.append('booking_id', this.frmSearchProperty.value.booking_id);
     body.append('guest_name', this.frmSearchProperty.value.guest_name);

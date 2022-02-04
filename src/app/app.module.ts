@@ -1,8 +1,12 @@
 import { NgModule,APP_INITIALIZER } from '@angular/core';
 import { BrowserModule,Title } from '@angular/platform-browser';
 import { HttpClientModule, HttpHeaders, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {DatePipe} from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -147,11 +151,15 @@ export function  authServiceFactory(authService: AuthService): Function {
     }),
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule
   ],
   providers: [
     LoggedauthGuard,
     Title,
+    DatePipe,
     CommonService,
     {
       provide: APP_INITIALIZER,
