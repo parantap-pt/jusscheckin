@@ -51,6 +51,7 @@ import { CheckListComponent } from './pages/check-list/check-list.component';
 import { CheckinComponent } from './pages/checkin/checkin.component';
 import { ViewBookingsComponent } from './pages/view-bookings/view-bookings.component';
 import { UpcomingBookingsComponent } from './pages/upcoming-bookings/upcoming-bookings.component';
+import { AddRoomsComponent } from './pages/add-rooms/add-rooms.component';
 
 const routes: Routes = [
   { 
@@ -270,6 +271,11 @@ const routes: Routes = [
     path: 'checkin', 
     canActivate : [AuthGuard],
     component: CheckinComponent 
+  },
+  { 
+    path: 'add_rooms', 
+    canActivate : [AuthGuard],
+    component: AddRoomsComponent 
   },
   { 
     path: '**', 

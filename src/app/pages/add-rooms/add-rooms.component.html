@@ -1,0 +1,46 @@
+<section class="jci-dashboard-section">
+    <div class="jci-dashboard__inner">
+       <div class="jci-dashboard-sidebar">
+        <app-leftmenu></app-leftmenu>
+       </div>
+       <div class="jci-dashboard-content">
+          <div class="jci-dashboard-content__inner">
+             <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane active" id="v-pills-manage-task" role="tabpanel"  aria-labelledby="v-pills-manage-task-tab">
+                    <div class="jci-dashboard-content-area" data-scrollbar>
+                        <div class="jci-guest-facilities h-100">
+                           <div class="jci-content-area">
+                              <h2 class="jci-dashboard-title">Add Rooms</h2>
+                              <form class="row g-3"  novalidate>
+                                <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Select Room Type</label>
+                                    <select id="inputState" class="form-select">
+                                        <option selected="">Single</option>
+                                        <option>Double</option>
+                                        <option>Triple</option>
+                                        <option>Squade</option>
+                                        <option>Queen</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Enter Room No</label>
+                                    <input type="number" class="form-control" id="inputPassword4" placeholder="Enter Room No">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Enter Price</label>
+                                    <input type="number" class="form-control" id="inputPassword4" placeholder="Enter Price">
+                                </div>
+                               
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-success">Add More</button>
+                                </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                 </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>

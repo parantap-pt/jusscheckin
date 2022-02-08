@@ -118,6 +118,25 @@
              <span>Manage Task</span>
           </button>
           </a>
+
+          <button class="nav-link" id="v-pills-list-rooms-tab" data-bs-toggle="pill" data-bs-target="#v-pills-list-rooms" type="button" role="tab" aria-controls="v-pills-list-rooms" aria-selected="false">
+               <svg id="meeting_room_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path id="Path_229" data-name="Path 229" d="M0,0H24V24H0Z" fill="none"/>
+                  <path id="Path_230" data-name="Path 230" d="M19,19V4H15V3H5V19H3v2H15V6h2V21h4V19Zm-6,0H7V5h6Zm-3-8h2v2H10Z" fill="#fff"/>
+               </svg>
+               <span>List of Rooms</span>
+         </button>
+
+         <a routerLink="/add_rooms">
+            <button class="nav-link" id="v-pills-add-rooms-tab" data-bs-toggle="pill" data-bs-target="#v-pills-add-rooms" type="button" role="tab" aria-controls="v-pills-add-rooms" aria-selected="false">
+            <svg id="add_box_black_24dp_1_" data-name="add_box_black_24dp (1)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                     <path id="Path_260" data-name="Path 260" d="M0,0H24V24H0Z" fill="none"/>
+                     <path id="Path_261" data-name="Path 261" d="M19,3H5A2,2,0,0,0,3,5V19a2,2,0,0,0,2,2H19a2.006,2.006,0,0,0,2-2V5A2.006,2.006,0,0,0,19,3Zm0,16H5V5H19Zm-8-2h2V13h4V11H13V7H11v4H7v2h4Z" fill="#fff"/>
+                  </svg>
+                  <span>Add Rooms</span>
+            </button>
+         </a>
+
           <a routerLink="/add-task">
           <button class="nav-link" id="v-pills-add-task-tab" data-bs-toggle="pill" data-bs-target="#v-pills-add-task" type="button" role="tab" aria-controls="v-pills-add-task" aria-selected="false">
              <svg id="add_box_black_24dp_1_" data-name="add_box_black_24dp (1)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -381,17 +400,19 @@
                <span>Room Booking Status</span>
            </button>
 
-           <button class="nav-link" id="v-pills-upcoming-booking-tab" data-bs-toggle="pill" data-bs-target="#v-pills-upcoming-booking" type="button" role="tab" aria-controls="v-pills-upcoming-booking" aria-selected="false">
-               <svg id="upcoming_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                   <g id="Group_942" data-name="Group 942">
-                       <rect id="Rectangle_47" data-name="Rectangle 47" width="24" height="24" fill="none"/>
-                   </g>
-                   <g id="Group_943" data-name="Group 943">
-                       <path id="Path_231" data-name="Path 231" d="M17.6,10.81,16.19,9.4l3.56-3.55,1.41,1.41C21.05,7.29,17.6,10.81,17.6,10.81ZM13,3H11V8h2ZM6.4,10.81,7.81,9.4,4.26,5.84,2.84,7.26C2.95,7.29,6.4,10.81,6.4,10.81ZM20,14H16.58a5,5,0,0,1-9.16,0H4v5H20V14m0-2a2.006,2.006,0,0,1,2,2v5a2.006,2.006,0,0,1-2,2H4a2.006,2.006,0,0,1-2-2V14a2.006,2.006,0,0,1,2-2H9a3,3,0,0,0,6,0Z" fill="#fff"/>
-                   </g>
-               </svg>
-              <span>Upcoming Bookings</span>
-           </button>
+           <a routerLink="/upcoming_bookings">
+            <button class="nav-link" id="v-pills-upcoming-booking-tab" data-bs-toggle="pill" data-bs-target="#v-pills-upcoming-booking" type="button" role="tab" aria-controls="v-pills-upcoming-booking" aria-selected="false">
+                  <svg id="upcoming_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                     <g id="Group_942" data-name="Group 942">
+                        <rect id="Rectangle_47" data-name="Rectangle 47" width="24" height="24" fill="none"/>
+                     </g>
+                     <g id="Group_943" data-name="Group 943">
+                        <path id="Path_231" data-name="Path 231" d="M17.6,10.81,16.19,9.4l3.56-3.55,1.41,1.41C21.05,7.29,17.6,10.81,17.6,10.81ZM13,3H11V8h2ZM6.4,10.81,7.81,9.4,4.26,5.84,2.84,7.26C2.95,7.29,6.4,10.81,6.4,10.81ZM20,14H16.58a5,5,0,0,1-9.16,0H4v5H20V14m0-2a2.006,2.006,0,0,1,2,2v5a2.006,2.006,0,0,1-2,2H4a2.006,2.006,0,0,1-2-2V14a2.006,2.006,0,0,1,2-2H9a3,3,0,0,0,6,0Z" fill="#fff"/>
+                     </g>
+                  </svg>
+               <span>Upcoming Bookings</span>
+            </button>
+            </a>
            
            <button class="nav-link" id="v-pills-staff-duty-tab" data-bs-toggle="pill" data-bs-target="#v-pills-staff-duty" type="button" role="tab" aria-controls="v-pills-staff-duty" aria-selected="false">
                <svg id="groups_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
