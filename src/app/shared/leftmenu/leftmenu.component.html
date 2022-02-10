@@ -119,13 +119,15 @@
           </button>
           </a>
 
-          <button class="nav-link" id="v-pills-list-rooms-tab" data-bs-toggle="pill" data-bs-target="#v-pills-list-rooms" type="button" role="tab" aria-controls="v-pills-list-rooms" aria-selected="false">
-               <svg id="meeting_room_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                  <path id="Path_229" data-name="Path 229" d="M0,0H24V24H0Z" fill="none"/>
-                  <path id="Path_230" data-name="Path 230" d="M19,19V4H15V3H5V19H3v2H15V6h2V21h4V19Zm-6,0H7V5h6Zm-3-8h2v2H10Z" fill="#fff"/>
-               </svg>
-               <span>List of Rooms</span>
-         </button>
+          <a routerLink="/room-list">
+            <button class="nav-link" id="v-pills-list-rooms-tab" data-bs-toggle="pill" data-bs-target="#v-pills-list-rooms" type="button" role="tab" aria-controls="v-pills-list-rooms" aria-selected="false">
+                  <svg id="meeting_room_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                     <path id="Path_229" data-name="Path 229" d="M0,0H24V24H0Z" fill="none"/>
+                     <path id="Path_230" data-name="Path 230" d="M19,19V4H15V3H5V19H3v2H15V6h2V21h4V19Zm-6,0H7V5h6Zm-3-8h2v2H10Z" fill="#fff"/>
+                  </svg>
+                  <span>List of Rooms</span>
+            </button>
+         </a>
 
          <a routerLink="/add_rooms">
             <button class="nav-link" id="v-pills-add-rooms-tab" data-bs-toggle="pill" data-bs-target="#v-pills-add-rooms" type="button" role="tab" aria-controls="v-pills-add-rooms" aria-selected="false">

@@ -74,6 +74,7 @@ import { CheckinComponent } from './pages/checkin/checkin.component';
 import { ViewBookingsComponent } from './pages/view-bookings/view-bookings.component';
 import { UpcomingBookingsComponent } from './pages/upcoming-bookings/upcoming-bookings.component';
 import { AddRoomsComponent } from './pages/add-rooms/add-rooms.component';
+import { RoomListComponent } from './pages/room-list/room-list.component';
 
 
 
@@ -137,7 +138,8 @@ export function  authServiceFactory(authService: AuthService): Function {
     CheckinComponent,
     ViewBookingsComponent,
     UpcomingBookingsComponent,
-    AddRoomsComponent
+    AddRoomsComponent,
+    RoomListComponent
   ],
   imports: [
     BrowserModule,

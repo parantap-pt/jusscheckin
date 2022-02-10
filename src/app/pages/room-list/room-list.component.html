@@ -1,0 +1,35 @@
+<section class="jci-dashboard-section">
+    <div class="jci-dashboard__inner">
+       <div class="jci-dashboard-sidebar">
+        <app-leftmenu></app-leftmenu>
+       </div>
+       <div class="jci-dashboard-content">
+          <div class="jci-dashboard-content__inner">
+             <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane active" id="v-pills-manage-task" role="tabpanel"  aria-labelledby="v-pills-manage-task-tab">
+                    <div class="jci-dashboard-content-area" data-scrollbar>
+                       <div class="jci-upcoming-booking">
+                          <h2 class="jci-dashboard-title">List of Rooms</h2>
+                          <div class="row">
+                            <div class="col col-12 col-md-4 col-lg-6 col-xl-4"  *ngFor="let rooms of rooms.data">
+                                <div class="jci-property-card card jci-property-coupon">                                            
+                                    <div class="card-body">
+                                        <h3 class="price"><strong>₹{{rooms.room_price}}</strong></h3>
+                                        <h3 class="jci-property-name">{{rooms.room_type}}</h3>
+                                        <h6 class="text-muted">Room No - {{rooms.room_no}}</h6>                                                    
+                                        <div class="col-md-12 mt-3">                                                    
+                                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editRoom">Edit</button>
+                                            <button type="button" class="btn btn-danger">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       </div>
+                    </div>
+                 </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>

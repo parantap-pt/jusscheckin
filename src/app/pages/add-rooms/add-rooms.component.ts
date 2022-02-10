@@ -87,7 +87,7 @@ export class AddRoomsComponent implements OnInit {
         
         this.toastr.success(response.message);
         this.frmAddRooms.reset();
-        //this.router.navigate(['/manage-task']);
+        this.router.navigate(['/room-list']);
         return true;
         
       }else{
