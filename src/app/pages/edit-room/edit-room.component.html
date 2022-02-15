@@ -1,0 +1,73 @@
+<section class="jci-dashboard-section">
+    <div class="jci-dashboard__inner">
+       <div class="jci-dashboard-sidebar">
+        <app-leftmenu></app-leftmenu>
+       </div>
+       <div class="jci-dashboard-content">
+          <div class="jci-dashboard-content__inner">
+             <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane active" id="v-pills-manage-task" role="tabpanel"  aria-labelledby="v-pills-manage-task-tab">
+                    <div class="jci-dashboard-content-area" data-scrollbar>
+                        <div class="jci-guest-facilities h-100">
+                           <div class="jci-content-area">
+                              <h2 class="jci-dashboard-title">Edit Rooms</h2>
+                              <form class="row g-3" id='frmRooms' [formGroup]="frmRooms" name="frmRooms" method="POST" (ngSubmit)="submitEditRoom()" novalidate>
+                                <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Select Property</label>
+                                    <select name="property_id" id="property_id" formControlName="property_id" class="form-select">
+                                        <option selected="" value="">Select Property</option>
+                                        <option *ngFor="let property of property" value="{{property.id}}">{{property.property_name}}</option>
+                                    </select>
+                                    <div *ngIf="frmRooms.controls.property_id.invalid && (frmRooms.controls.property_id.dirty || frmRooms.controls.property_id.touched)">
+                                       <div class="error-block" *ngIf="frmRooms.get('property_id')?.hasError('required')">
+                                          Please select property
+                                       </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Select Room Type</label>
+                                    <select name="room_type" id="room_type" formControlName="room_type" class="form-select">
+                                        <option selected="" value="single">Single</option>
+                                        <option value="double">Double</option>
+                                        <option value="triple">Triple</option>
+                                        <option value="squade">Squade</option>
+                                        <option value="queen">Queen</option>
+                                    </select>
+                                    <div *ngIf="frmRooms.controls.room_type.invalid && (frmRooms.controls.room_type.dirty || frmRooms.controls.room_type.touched)">
+                                        <div class="error-block" *ngIf="frmRooms.get('room_type')?.hasError('required')">
+                                           Please select room type
+                                        </div>
+                                     </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Enter Room No</label>
+                                    <input type="number" class="form-control" id="room_number" name="room_number" formControlName="room_number" placeholder="Enter Room No">
+                                    <div *ngIf="frmRooms.controls.room_number.invalid && (frmRooms.controls.room_number.dirty || frmRooms.controls.room_number.touched)">
+                                        <div class="error-block" *ngIf="frmRooms.get('room_number')?.hasError('required')">
+                                           Please enter room number
+                                        </div>
+                                     </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Enter Price</label>
+                                    <input type="number" class="form-control" id="room_price" name="room_price" formControlName="room_price" placeholder="Enter Price">
+                                    <div *ngIf="frmRooms.controls.room_price.invalid && (frmRooms.controls.room_price.dirty || frmRooms.controls.room_price.touched)">
+                                        <div class="error-block" *ngIf="frmRooms.get('room_price')?.hasError('required')">
+                                           Please enter room price
+                                        </div>
+                                     </div>
+                                </div>
+                               
+                                <div class="col-12">
+                                    <button type="submit" [disabled]="(!frmRooms.valid)" class="btn btn-success">Update Room</button>
+                                </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                 </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>

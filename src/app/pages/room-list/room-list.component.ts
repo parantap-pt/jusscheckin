@@ -64,5 +64,36 @@ export class RoomListComponent implements OnInit {
       return false;
     });
   }
+  
+  public deleteRoom(id : string = ''){
+
+    let exeFn = (result:any)=>{
+      if(result.value){
+        
+        let body = new FormData();
+        body.append('room_id', id);
+        body.append('user_id', this.authService.loggedInUserId);
+        body.append('token', this.Constant['API_TOKEN']);
+    
+        let options = this.commonservice.generateRequestHeaders(false);
+        this.commonservice.SubmiPostFormData('delete_room',body,options)
+        .then((response) => {          
+          if(response.status == true){
+            this.toastr.success(response.message);
+            this.loadAllRooms();
+            return true;
+          }else{
+            if(response.message != ''){
+              this.toastr.error(response.message);        
+            }
+            return false;
+          }  
+        }).catch((error) => {
+          return false;
+        });
+      }
+    };
+    this.commonservice.showConfirmDialog('Delete','Are you sure you want to delete this room','Yes','No',exeFn);
+  }
 
 }

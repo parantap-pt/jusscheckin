@@ -18,8 +18,8 @@
                                         <h3 class="jci-property-name">{{rooms.room_type}}</h3>
                                         <h6 class="text-muted">Room No - {{rooms.room_no}}</h6>                                                    
                                         <div class="col-md-12 mt-3">                                                    
-                                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editRoom">Edit</button>
-                                            <button type="button" class="btn btn-danger">Delete</button>
+                                            <a routerLink="/edit-rooms/{{rooms.room_id}}"><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editRoom">Edit</button></a>
+                                            <button (click)="deleteRoom(rooms.room_id)" type="button" class="btn btn-danger">Delete</button>
                                         </div>
                                     </div>
                                 </div>
