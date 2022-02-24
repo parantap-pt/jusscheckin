@@ -54,6 +54,7 @@ import { UpcomingBookingsComponent } from './pages/upcoming-bookings/upcoming-bo
 import { AddRoomsComponent } from './pages/add-rooms/add-rooms.component';
 import { RoomListComponent } from './pages/room-list/room-list.component';
 import { EditRoomComponent } from './pages/edit-room/edit-room.component';
+import { RoomBookingStatusComponent } from './pages/room-booking-status/room-booking-status.component';
 
 const routes: Routes = [
   { 
@@ -288,6 +289,11 @@ const routes: Routes = [
     path: 'edit-rooms/:id', 
     canActivate : [AuthGuard],
     component: EditRoomComponent 
+  },
+  { 
+    path: 'room-booking-status', 
+    canActivate : [AuthGuard],
+    component: RoomBookingStatusComponent 
   },
   { 
     path: '**', 

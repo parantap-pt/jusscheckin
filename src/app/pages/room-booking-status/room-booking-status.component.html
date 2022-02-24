@@ -1,0 +1,74 @@
+<section class="jci-dashboard-section">
+    <div class="jci-dashboard__inner">
+       <div class="jci-dashboard-sidebar">
+        <app-leftmenu></app-leftmenu>
+       </div>
+       <div class="jci-dashboard-content">
+          <div class="jci-dashboard-content__inner">
+             <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane active" id="v-pills-manage-task" role="tabpanel"  aria-labelledby="v-pills-manage-task-tab">
+                    <div class="jci-dashboard-content-area" data-scrollbar>
+                       <div class="jci-upcoming-booking">
+                        <div class="jci-dashboard-filter">
+                           <form class="col-md-12" [formGroup]="frmProperty" name="frmProperty" method="POST" (ngSubmit)="submitProperty()">
+                               <div class="col-md-3 col-lg-3 col-xl-2 mt-0">
+                                   <label for="Recipient's username" class="form-label mb-0">Property :</label>
+                               </div>
+                               <div class="col-md-9 col-lg-9 col-xl-8 mt-0">
+                                   <div class="input-group">
+                                       <select name="property_id" id="property_id" formControlName="property_id" class="form-select">
+                                           <option selected="selected" value="">Select Property</option>
+                                           <option *ngFor="let property of property" value="{{property.id}}">{{property.property_name}}</option>
+                                       </select>
+                                       <button [disabled]="(!frmProperty.valid)" class="btn btn-success" type="submit" id="button-addon2">Search</button>
+                                   </div>
+                               </div>
+                           </form>
+                       </div>
+                         <div class="row">
+                            <div class="col col-12 col-md-12 col-lg-12"  *ngFor="let property_data of property_data.data">
+                               <div class="jci-property-report-card">
+                                  <div class="jci-property-img">
+                                     <img src="{{property_data.property_img}}" alt="" class="img-fluid">
+                                  </div>
+                                  <div class="jci-property-card-body">
+                                     <div class="jci-property-details">
+                                        <div class="jci-property-details__inner">
+                                           <label class="jci-property-details-title"><span>Property Type: </span>{{property_data.property_type}}</label>
+                                           <ul class="jci-property-info-list">
+                                              <li class="jci-property-info-item">
+                                                 <svg id="meeting_room_black_24dp_1_" data-name="meeting_room_black_24dp (1)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                    <path id="Path_235" data-name="Path 235" d="M0,0H24V24H0Z" fill="none"/>
+                                                    <path id="Path_236" data-name="Path 236" d="M19,19V4H15V3H5V19H3v2H15V6h2V21h4V19Zm-6,0H7V5h6Zm-3-8h2v2H10Z" fill="#4ab862"/>
+                                                 </svg>
+                                                 <span>{{property_data.total_room}} Rooms</span>
+                                              </li>
+                                              <li class="jci-property-info-item">
+                                                 <svg id="meeting_room_black_24dp_1_" data-name="meeting_room_black_24dp (1)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                    <path id="Path_235" data-name="Path 235" d="M0,0H24V24H0Z" fill="none"/>
+                                                    <path id="Path_236" data-name="Path 236" d="M19,19V4H15V3H5V19H3v2H15V6h2V21h4V19Zm-6,0H7V5h6Zm-3-8h2v2H10Z" fill="#4ab862"/>
+                                                 </svg>
+                                                 <span>{{property_data.total_booked_room}} Rooms Booked</span>
+                                              </li>
+                                              <li class="jci-property-info-item">
+                                                 <svg id="meeting_room_black_24dp_1_" data-name="meeting_room_black_24dp (1)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                    <path id="Path_235" data-name="Path 235" d="M0,0H24V24H0Z" fill="none"/>
+                                                    <path id="Path_236" data-name="Path 236" d="M19,19V4H15V3H5V19H3v2H15V6h2V21h4V19Zm-6,0H7V5h6Zm-3-8h2v2H10Z" fill="#4ab862"/>
+                                                 </svg>
+                                                 <span>{{property_data.total_available_room}} Rooms available</span>
+                                              </li>
+                                           </ul>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                       </div>
+                    </div>
+                 </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
